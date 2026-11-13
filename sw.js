@@ -1,5 +1,5 @@
-// Service worker: permite instalar o site como aplicativo e abrir mais rápido.
-// Nunca guarda dados de clientes; só arquivos do próprio site.
+// Service worker: permite instalar o site como aplicativo e abrir mais rÃ¡pido.
+// Nunca guarda dados de clientes; sÃ³ arquivos do prÃ³prio site.
 const VERSAO = 'lanhi-v7-2026-11-13';
 const ESSENCIAIS = ['./', 'cliente.html', 'icon-192.png'];
 self.addEventListener('install', (e) => {
