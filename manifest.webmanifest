@@ -1,0 +1,51 @@
+{
+  "name": "Lanhi Advogados",
+  "short_name": "Lanhi Advogados",
+  "description": "Advocacia previdenciária para o trabalhador acidentado. Acompanhe seu processo na Área do Cliente e fale com o escritório.",
+  "id": "./",
+  "start_url": "./?app=1",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#08152b",
+  "theme_color": "#08152b",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Área do Cliente",
+      "short_name": "Meu processo",
+      "url": "cliente.html",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    "business",
+    "productivity"
+  ],
+  "dir": "ltr",
+  "prefer_related_applications": false
+}
