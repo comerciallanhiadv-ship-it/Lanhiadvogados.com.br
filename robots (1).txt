@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /cliente.html
+Disallow: /colaborador.html
+Sitemap: https://www.lanhiadvogados.com.br/sitemap.xml
