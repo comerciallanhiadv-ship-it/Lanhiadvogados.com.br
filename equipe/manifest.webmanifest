@@ -1,0 +1,50 @@
+{
+  "name": "Lanhi Advogados Equipe",
+  "short_name": "Lanhi Advogados Equipe",
+  "description": "App interno da equipe da Lanhi Advogados: painel, clientes, processos e acessos.",
+  "id": "/equipe/",
+  "start_url": "./?app=1",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": [
+    "standalone",
+    "minimal-ui"
+  ],
+  "background_color": "#f4f5f6",
+  "theme_color": "#f4f5f6",
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "orientation": "portrait",
+  "prefer_related_applications": false,
+  "launch_handler": {
+    "client_mode": [
+      "navigate-existing",
+      "auto"
+    ]
+  },
+  "categories": [
+    "business",
+    "productivity"
+  ],
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": []
+}
