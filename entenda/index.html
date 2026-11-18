@@ -146,6 +146,7 @@ input[type=range]{width:100%;accent-color:var(--tx)}
 .periodo{display:grid;grid-template-columns:1fr 1fr 1.3fr auto;gap:6px;margin-bottom:6px}.periodo .inp{height:42px;font-size:14px;padding:0 8px}
 .rm{width:34px;border-radius:10px;border:1px solid var(--linha);color:var(--tx3)}.add{font-size:13.5px;color:var(--tx);padding:6px 0;font-weight:600}
 .conta{margin-top:10px}.pc{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px dashed var(--linha);font-size:13.5px;color:var(--tx2)}.pc b{color:var(--tx);font-weight:600;white-space:nowrap}
+.fx .chip{font-size:13px}.fx-dica{font-size:12px;color:var(--tx3);margin-top:8px;line-height:1.45}.fx-dica a{color:var(--tx2);text-decoration:underline}
 .nota{font-size:12px;color:var(--tx3);line-height:1.5;margin-top:12px}
 .doc{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:12px 0;border-top:1px solid var(--linha)}
 .doc b{font-size:14.5px;font-weight:600}.doc span{display:block;font-size:13px;color:var(--tx2);line-height:1.4;margin-top:2px}.doc .onde{color:var(--azul)}
@@ -241,7 +242,8 @@ input[type=range]{width:100%;accent-color:var(--tx)}
  </div>
  <div class="linha" id="linha"></div>
  <div class="gancho"><i></i><span><b>Não existe prazo para pedir</b> o auxílio-acidente. Mas os atrasados alcançam só os últimos 5 anos, então o tempo conta a favor de quem organiza o caso antes.</span></div>
- <div class="campo"><div class="lb"><span>Sua média salarial</span><b id="cMedO"></b></div><input type="range" id="cMed" min="1621" max="8475" step="25" value="2800"></div>
+ <div class="campo" id="cFxBox"><div class="lb"><span id="cFxN">Quanto você ganhava por mês na época do acidente?</span></div><div class="chips fx" id="cFx"><button class="chip" data-v="0">Até R$ 1.621</button><button class="chip" data-v="1621">R$ 1.621 a 2.000</button><button class="chip on" data-v="2000">R$ 2.000 a 2.500</button><button class="chip" data-v="2500">R$ 2.500 a 3.000</button><button class="chip" data-v="3000">R$ 3.000 a 4.000</button><button class="chip" data-v="4000">R$ 4.000 a 5.000</button><button class="chip" data-v="5000">Acima de R$ 5.000</button></div><p class="fx-dica">Usamos sempre o menor valor da faixa, para a estimativa não passar do real. <a href="#" id="cFxExato">Sei o valor exato</a></p>
+  <div id="cMedBox" style="display:none;margin-top:10px"><div class="lb"><span>Média salarial exata</span><b id="cMedO"></b></div><input type="range" id="cMed" min="1621" max="8475" step="25" value="2000"></div></div>
  <details class="ajustes"><summary>Ajustar datas e detalhes</summary>
   <div class="campo"><div class="lb">Você era</div><div class="chips" id="cTipo"><button class="chip on" data-v="emp">Empregado, doméstico ou avulso</button><button class="chip" data-v="rural">Agricultor em regime familiar</button></div></div>
   <div class="campo"><div class="lb" id="cFimN">O auxílio-doença terminou em</div><div class="duo"><select class="inp" id="cFimM"></select><select class="inp" id="cFimA"></select></div></div>
@@ -249,7 +251,7 @@ input[type=range]{width:100%;accent-color:var(--tx)}
   <div class="campo"><div class="lb">Salários</div><div class="chips" id="cModo"><button class="chip on" data-v="media">Uma média</button><button class="chip" data-v="periodos">Por períodos</button></div><div id="cPer" style="display:none;margin-top:10px"><div id="cPerLista"></div><button class="add" id="cAdd">+ Período</button></div></div>
  </details>
  <div class="conta" id="oPassos"></div>
- <p class="nota">Teto do INSS em 2026: R$ 8.475,55. Salário mínimo: R$ 1.621,00. Sem correção e juros, que costumam aumentar os atrasados. O valor real depende do seu CNIS e da perícia.</p>
+ <p class="nota">Teto do INSS em 2026: R$ 8.475,55. Salário mínimo: R$ 1.621,00. Sem correção dos salários antigos, juros e correção dos atrasados, que costumam aumentar os valores. O valor real depende do seu CNIS e da perícia.</p>
 </div></div>
 </main>
 <div class="rodape">Lanhi Advogados · Capinzal (SC) · Informação de caráter educativo<br>Esqueleto: Mariana Ruiz Villarreal (LadyofHats), domínio público, Wikimedia Commons · Musculatura: js-rich-body-highlighter (MIT)</div>
