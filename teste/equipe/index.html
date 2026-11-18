@@ -7,7 +7,7 @@
 <meta name="lanhi-config" content="{&quot;supabaseUrl&quot;: &quot;https://vzjjzgbwaswpgrojqkhv.supabase.co&quot;, &quot;supabaseAnonKey&quot;: &quot;sb_publishable_jcz6obHiZYr6j-GY7qEV_g_QIRFZVX1&quot;, &quot;funcao&quot;: &quot;hyper-action&quot;, &quot;whatsapp&quot;: &quot;5549999045913&quot;, &quot;versaoTermos&quot;: &quot;2026-11&quot;}">
 <meta name="apple-mobile-web-app-title" content="Lanhi Advogados Equipe"><meta name="application-name" content="Lanhi Advogados Equipe">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-94P22XFQ/DxJOX0XHZtK3bPvw/l4EWzjqdh8horkgnc=' 'sha256-JPOjH9Jd0sBt16wwBXWilIKnbg2xjfPn7I0sW/EZWyc=' 'sha256-cGjyeHZbBDe2CdvPPUC1xT8WYJRFf7R4vQpyQrqiFrc=' 'sha256-L2DXDjaWJVFlHiy7rCWcvOxQqJD6zF94fsPXQZv6B8U=' 'sha256-r59SK6ZQ5ah5REgh6dOxTelKGU1MtO2nciw3zPTwpjA=' 'sha256-Hf9SI3m5AQA2AUqf99H8GoMSwUpaN/wpMO5TiWJ3TNo=' 'sha256-6FdgVYMuh4FuZurfPFCKSgWHKydLrxXeSZtlJUjvnAM=' 'sha256-sL88fxdDCAKN/nXd0U9T862Zet0larx11JaGkP//pFI=' 'sha256-ZrZE4pIoUwRrYBztUvArplZ9c6L0CPujeEJEGqtmJ+k='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob: https://*.supabase.co; media-src 'self' blob: https://*.supabase.co; connect-src 'self' https://*.supabase.co wss://*.supabase.co; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-94P22XFQ/DxJOX0XHZtK3bPvw/l4EWzjqdh8horkgnc=' 'sha256-JPOjH9Jd0sBt16wwBXWilIKnbg2xjfPn7I0sW/EZWyc=' 'sha256-cGjyeHZbBDe2CdvPPUC1xT8WYJRFf7R4vQpyQrqiFrc=' 'sha256-L2DXDjaWJVFlHiy7rCWcvOxQqJD6zF94fsPXQZv6B8U=' 'sha256-r59SK6ZQ5ah5REgh6dOxTelKGU1MtO2nciw3zPTwpjA=' 'sha256-zrfiFZHA+ZtsO13rE7d9rZiAnP8jKW8E8B7zHR7YdEc=' 'sha256-6FdgVYMuh4FuZurfPFCKSgWHKydLrxXeSZtlJUjvnAM=' 'sha256-sL88fxdDCAKN/nXd0U9T862Zet0larx11JaGkP//pFI=' 'sha256-ZrZE4pIoUwRrYBztUvArplZ9c6L0CPujeEJEGqtmJ+k=' 'sha256-apAwNFF1qUWpSgD+LBGnV0hj4KI6oRJMkBTEFnUu2Y8=' 'sha256-KnJMhlbmmQPyoELc7ptPkKdvt56Ai01kbvR0729BAHw=' 'sha256-xJGvl31uFBpQ/gAO6+df4nJUXFyvxBdzSu+q7Mw5B94='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob: https://*.supabase.co; media-src 'self' blob: https://*.supabase.co; connect-src 'self' https://*.supabase.co wss://*.supabase.co; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="robots" content="noindex, nofollow">
 <title>TESTE · Lanhi Advogados Equipe</title>
@@ -1659,6 +1659,99 @@ html[data-app="equipe"] .jan-campo select{min-height:44px;border-radius:10px;bor
 html[data-app="equipe"] .pan-sub{top:calc(var(--pan-topo,60px) + env(safe-area-inset-top,0px))}
 html[data-app="equipe"] .pan-col{display:flex;flex-direction:column}
 
+/* ===== Equipe: reuniões (voz e vídeo) ===== */
+html[data-app="equipe"] .reu-acoes{display:flex;gap:4px;margin-left:auto;flex:none}
+html[data-app="equipe"] .reu-acoes[hidden]{display:none}
+html[data-app="equipe"] .chat-editar-grupo:not([hidden])+.reu-acoes{margin-left:8px}
+html[data-app="equipe"] .reu-bt{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;border-radius:999px;border:1px solid var(--e-linha);background:var(--e-sup);color:var(--e-tx);font:inherit;font-size:13px;font-weight:600;cursor:pointer}
+html[data-app="equipe"] .reu-bt svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+html[data-app="equipe"] .reu-bt:focus-visible{outline:2px solid var(--e-azul);outline-offset:2px}
+@media(max-width:700px){html[data-app="equipe"] .reu-acoes .reu-bt span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}html[data-app="equipe"] .reu-acoes .reu-bt{padding:0;width:40px;justify-content:center}}
+html[data-app="equipe"] .reu-barra{display:flex;align-items:center;gap:10px;padding:8px 14px;background:var(--e-ok);color:#fff;font-size:14px}
+html[data-app="equipe"] .reu-barra[hidden]{display:none}
+html[data-app="equipe"] .reu-barra-tx{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+html[data-app="equipe"] .reu-barra .btn{width:auto;background:#fff;color:#0f3d26;border-color:#fff}
+html[data-app="equipe"] .reu-pulso{flex:none;width:10px;height:10px;border-radius:50%;background:#fff}
+@media(prefers-reduced-motion:no-preference){html[data-app="equipe"] .reu-pulso{animation:reuP 1.6s ease-in-out infinite}@keyframes reuP{50%{opacity:.35}}}
+.reu-sala{position:fixed;inset:0;z-index:200;display:none;flex-direction:column;background:#0b0d0f;color:#f2f3f4;padding:env(safe-area-inset-top,0) 0 env(safe-area-inset-bottom,0)}
+.reu-sala.aberta{display:flex}
+html.em-reuniao body{overflow:hidden}
+.reu-topo{display:flex;align-items:center;gap:12px;padding:12px 16px;flex-wrap:wrap}
+.reu-tit{font-size:16px}
+.reu-tempo{font-variant-numeric:tabular-nums;opacity:.8}
+.reu-aviso{margin-left:auto;font-size:12px;opacity:.7}
+.reu-grade{flex:1;min-height:0;display:grid;grid-template-columns:repeat(var(--col,1),1fr);grid-auto-rows:1fr;gap:8px;padding:0 8px}
+@media(max-width:640px){.reu-grade{grid-template-columns:repeat(min(var(--col,1),2),1fr)}}
+.reu-tile{position:relative;border-radius:14px;overflow:hidden;background:#1a1d21;min-height:120px;outline:3px solid transparent;transition:outline-color .15s}
+.reu-tile.falando{outline-color:#5d9cf5}
+.reu-tile video{width:100%;height:100%;object-fit:cover;display:block;background:#1a1d21}
+.reu-tile.local video{transform:scaleX(-1)}
+.reu-tile.tela video{object-fit:contain;transform:none}
+.reu-tile .reu-av{position:absolute;inset:0;margin:auto;width:84px;height:84px;border-radius:50%;display:none;align-items:center;justify-content:center;background:#2b3036;font-size:28px;font-weight:700}
+.reu-tile.sem-video video{opacity:0}
+.reu-tile.sem-video .reu-av{display:flex}
+.reu-nome{position:absolute;left:10px;bottom:10px;padding:3px 10px;border-radius:999px;background:rgba(0,0,0,.6);font-size:13px}
+.reu-tile.mudo .reu-nome::after{content:" · mudo";opacity:.8}
+.reu-tile.instavel::after{content:"Conexão instável";position:absolute;top:10px;left:10px;padding:3px 10px;border-radius:999px;background:#a8590a;font-size:12px}
+.reu-legendas{min-height:0;max-height:22vh;overflow:hidden;padding:6px 16px;display:flex;flex-direction:column;gap:4px;align-items:center}
+.reu-leg{margin:0;padding:4px 12px;border-radius:10px;background:rgba(0,0,0,.65);font-size:15px;line-height:1.35;max-width:min(760px,100%);text-align:center}
+.reu-leg.parcial{opacity:.75}
+html[data-app="equipe"] .reu-controles{display:flex;justify-content:center;gap:10px;padding:12px 12px 16px;flex-wrap:wrap}
+html[data-app="equipe"] .reu-controles .reu-bt{display:inline-flex;flex-direction:column;align-items:center;gap:4px;min-width:64px;min-height:64px;padding:8px 10px;border:0;border-radius:18px;background:#22262b;color:#f2f3f4;font:inherit;font-size:12px;cursor:pointer}
+html[data-app="equipe"] .reu-controles .reu-bt svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+html[data-app="equipe"] .reu-controles .reu-bt.off{background:#f2f3f4;color:#0b0d0f}
+html[data-app="equipe"] .reu-controles .reu-bt.on{background:#1f5fbf}
+html[data-app="equipe"] .reu-controles .reu-bt.perigo{background:#c62828}
+html[data-app="equipe"] .reu-controles .reu-bt[hidden]{display:none}
+html[data-app="equipe"] .reu-controles .reu-bt:disabled{opacity:.45;cursor:not-allowed}
+html[data-app="equipe"] .reu-controles .reu-bt:focus-visible{outline:2px solid #9cc4ff;outline-offset:2px}
+html[data-app="equipe"] .reu-hist{display:flex;flex-direction:column;gap:6px;max-height:55vh;overflow:auto}
+html[data-app="equipe"] .reu-hist-item{display:flex;flex-direction:column;gap:2px;text-align:left;padding:10px 12px;border-radius:12px;border:1px solid var(--e-linha);background:var(--e-sup);color:var(--e-tx);font:inherit;cursor:pointer}
+html[data-app="equipe"] .reu-trans{max-height:55vh;overflow:auto;display:flex;flex-direction:column;gap:6px;font-size:14px;line-height:1.45}
+html[data-app="equipe"] .reu-trans p{margin:0}
+html[data-app="equipe"] .reu-trans small{color:var(--e-tx2);font-variant-numeric:tabular-nums}
+html[data-app="equipe"] .res-sep{padding:8px 12px 4px;font-size:12px;color:var(--e-tx2);border-top:1px solid var(--e-linha);margin-top:4px}
+html[data-app="equipe"] .res-atalho b{color:var(--e-azul)}
+
+/* ===== Equipe: automações ===== */
+html[data-app="equipe"] .aut[hidden]{display:none}
+html[data-app="equipe"] .aut-cab{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+html[data-app="equipe"] .aut-cab .btn{width:auto;flex:none}
+html[data-app="equipe"] .aut-modelos{margin:6px 0 10px}
+html[data-app="equipe"] .aut-modelos>summary{cursor:pointer;font-weight:600;min-height:40px;display:flex;align-items:center}
+html[data-app="equipe"] .aut-mod-lista{display:flex;flex-wrap:wrap;gap:6px;padding:4px 0}
+html[data-app="equipe"] .aut-item{border-top:1px solid var(--e-linha);padding:12px 0}
+html[data-app="equipe"] .aut-item-cab{display:flex;justify-content:space-between;gap:10px;align-items:center}
+html[data-app="equipe"] .aut-st{font-size:12px;font-weight:700;padding:2px 10px;border-radius:999px;background:var(--e-sup2);color:var(--e-tx2);white-space:nowrap}
+html[data-app="equipe"] .aut-item.ativa .aut-st{color:var(--e-ok)}
+html[data-app="equipe"] .aut-ler{margin:6px 0 8px;line-height:1.45;font-size:14px}
+html[data-app="equipe"] dialog.aut-jan{width:min(640px,calc(100vw - 24px))}
+html[data-app="equipe"] .aut-jan .jan-form{max-height:calc(100vh - 40px);overflow:auto}
+html[data-app="equipe"] .aut-h{margin:6px 0 0;font-size:14px;color:var(--e-tx2)}
+html[data-app="equipe"] .aut-grupo{display:flex;flex-direction:column;gap:8px}
+html[data-app="equipe"] .aut-bloco{border:1px solid var(--e-linha);border-radius:12px;padding:10px;display:flex;flex-direction:column;gap:6px}
+html[data-app="equipe"] .aut-linha{display:flex;gap:8px;align-items:center}
+html[data-app="equipe"] .aut-linha select,html[data-app="equipe"] .jan-campo>select{flex:1;min-height:44px;border-radius:10px;border:1px solid var(--e-linha);background:var(--e-sup);color:var(--e-tx);padding:0 10px;font:inherit}
+html[data-app="equipe"] .aut-desc{margin:0}
+html[data-app="equipe"] .aut-params{display:flex;flex-direction:column;gap:8px}
+html[data-app="equipe"] .aut-vars{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}
+html[data-app="equipe"] .aut-vars .pan-chip{min-height:30px;font-size:12px}
+html[data-app="equipe"] .jan-form>.btn.mini{align-self:flex-start;width:auto}
+html[data-app="equipe"] .aut-resumo{padding:10px 12px;border-radius:12px;background:var(--e-sup2);font-size:14px;line-height:1.45}
+html[data-app="equipe"] .aut-leitura{display:inline;margin:0}
+html[data-app="equipe"] .aut-sim:empty{display:none}
+html[data-app="equipe"] .aut-sim{display:flex;flex-direction:column;gap:2px}
+html[data-app="equipe"] .aut-ex{margin:0}
+html[data-app="equipe"] .aut-alerta{color:var(--e-alerta)}
+html[data-app="equipe"] .aut-reg{display:flex;flex-direction:column;gap:6px;max-height:55vh;overflow:auto}
+html[data-app="equipe"] .aut-reg p{margin:0}
+html[data-app="equipe"] .aut-r-executada{color:var(--e-ok)}
+html[data-app="equipe"] .aut-r-aguardando_aprovacao,html[data-app="equipe"] .aut-r-limite{color:var(--e-alerta)}
+html[data-app="equipe"] .aut-r-erro{color:var(--e-perigo)}
+html[data-app="equipe"] .aut-ver{border-top:1px solid var(--e-linha);padding:8px 0;display:flex;flex-direction:column;gap:4px}
+html[data-app="equipe"] .aut-ver .btn{align-self:flex-start;width:auto}
+html[data-app="equipe"] .jan-campo[hidden]{display:none}
+
 </style>
 </head>
 <body><div role="status" style="position:fixed;left:0;right:0;bottom:0;z-index:2147483647;background:#ff8a00;color:#111;font:700 12.5px/1.25 system-ui,sans-serif;text-align:center;padding:6px 10px calc(6px + env(safe-area-inset-bottom));letter-spacing:.02em;pointer-events:none">AMBIENTE DE TESTE · dados fictícios · nada aqui vale para clientes reais</div>
@@ -2773,7 +2866,7 @@ Resources:`;for(let t of c){if(!t||typeof t!=`string`)throw Error(`@supabase/aut
   'use strict';
   var $ = L.$, el = L.el, sb = L.sb;
   var dados = { clientes: [], processos: [] };
-  window.LANHI_EQ = { souAdmin: function () { return souAdmin; }, meuEmail: function () { return meuEmail(); }, recarregarEquipe: function () { equipeLista = null; return carregarEquipe(); }, dados: dados, abrirCapa: function (p, c) { abrirCapa(p, c, function () { $('#busca').value = L.cnj(p.numero_cnj); abrirAba('clientes'); desenhar(); }); }, abrirAba: function (a) { abrirAba(a); } };
+  window.LANHI_EQ = { abrirTarefas: function (f) { abrirTarefas(f); }, souAdmin: function () { return souAdmin; }, meuEmail: function () { return meuEmail(); }, recarregarEquipe: function () { equipeLista = null; return carregarEquipe(); }, dados: dados, abrirCapa: function (p, c) { abrirCapa(p, c, function () { $('#busca').value = L.cnj(p.numero_cnj); abrirAba('clientes'); desenhar(); }); }, abrirAba: function (a) { abrirAba(a); } };
 
   if (!L.configurado) { L.mostra('telaConfig'); return; }
   L.mascaras();
@@ -6245,6 +6338,622 @@ Resources:`;for(let t of c){if(!t||typeof t!=`string`)throw Error(`@supabase/aut
   window.addEventListener('lanhi:clientes-desenhados', marcarClientes);
   window.addEventListener('lanhi:panorama', function () { desenharCartao(); });
   if (EQ().dados.clientes && EQ().dados.clientes.length) carregar();
+})();
+
+</script>
+<script>
+// mod:reunioes-equipe.js
+// Reuniões internas da equipe dentro das conversas: voz ou vídeo, direto entre os aparelhos (WebRTC),
+// com redução de ruído e cancelamento de eco do próprio navegador, qualidade que se ajusta ao número de
+// pessoas e transcrição em texto (cada um transcreve a própria fala; o áudio não é gravado).
+// O Supabase só faz a apresentação entre os aparelhos, num canal privado que só participantes acessam.
+(function () {
+  'use strict';
+  var $ = L.$, el = L.el, sb = L.sb;
+  var ICE = [{ urls: ['stun:stun.l.google.com:19302', 'stun:stun1.l.google.com:19302'] }, { urls: 'stun:stun.cloudflare.com:3478' }];
+  var Reco = window.SpeechRecognition || window.webkitSpeechRecognition;
+  var R = null;               // reunião em andamento neste aparelho
+  var conversaAtual = null, ativa = null, tAtiva = null;
+
+  function EQ() { return window.LANHI_EQ || {}; }
+  function eu() { return EQ().meuEmail ? EQ().meuEmail() : ''; }
+  function nomeDe(email) { var m = ((EQ().chat && EQ().chat.equipe()) || []).find(function (x) { return x.email === email; }); return m ? m.nome : String(email || '').split('@')[0]; }
+  function primeiro(n) { return String(n || '').split(' ')[0]; }
+  function iniciais(n) { return String(n || '?').trim().split(/\s+/).slice(0, 2).map(function (p) { return p.charAt(0); }).join('').toUpperCase(); }
+  function aviso(t, tipo) { if (L.aviso) L.aviso(t, tipo); }
+  function ico(path) { var s = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); s.setAttribute('viewBox', '0 0 24 24'); s.setAttribute('aria-hidden', 'true'); s.innerHTML = path; return s; }
+  var I = {
+    voz: '<path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 6 6L15 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>',
+    video: '<rect x="3" y="6" width="12" height="12" rx="2"/><path d="m15 10 6-3v10l-6-3z"/>',
+    mic: '<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/>',
+    tela: '<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/>',
+    leg: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 11h4M7 15h7M14 11h3"/>',
+    sair: '<path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 6 6L15 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" transform="rotate(135 12 12)"/>',
+    hist: '<path d="M12 7v5l3 2"/><circle cx="12" cy="12" r="9"/>'
+  };
+  function botao(icone, rot, fn, cls) { var b = el('button', { type: 'button', class: 'reu-bt' + (cls ? ' ' + cls : ''), 'aria-label': rot, title: rot }); b.appendChild(ico(I[icone])); b.appendChild(el('span', { text: rot })); b.addEventListener('click', fn); return b; }
+
+  // ---------- topo da conversa: botões e barra "Entrar na reunião" ----------
+  var acoes = el('div', { class: 'reu-acoes' });
+  var bVoz = botao('voz', 'Voz', function () { iniciar(false); }), bVid = botao('video', 'Vídeo', function () { iniciar(true); }), bHist = botao('hist', 'Reuniões', historico);
+  [bVoz, bVid, bHist].forEach(function (b) { b.classList.add('mini'); acoes.appendChild(b); });
+  var barra = el('div', { class: 'reu-barra', hidden: '' }, [el('span', { class: 'reu-pulso', 'aria-hidden': 'true' }), el('span', { class: 'reu-barra-tx' }), el('button', { type: 'button', class: 'btn mini reu-entrar', text: 'Entrar na reunião', onclick: function () { if (ativa) entrar(ativa.id, ativa.video); } })]);
+  function montarTopo() {
+    var cab = document.querySelector('.chat-conv-cab'); if (!cab || acoes.isConnected) return;
+    cab.appendChild(acoes);
+    var msgs = $('#chatMsgs'); if (msgs) msgs.parentNode.insertBefore(barra, msgs);
+  }
+  async function conferirAtiva() {
+    if (!conversaAtual) return;
+    var r = await sb.rpc('reuniao_ativa', { p_conversa: conversaAtual.id });
+    if (r.error) { acoes.hidden = /does not exist|Could not find/i.test(r.error.message); return; }
+    acoes.hidden = false;
+    ativa = r.data || null;
+    var estou = R && ativa && R.id === ativa.id;
+    barra.hidden = !ativa || estou;
+    if (ativa) barra.querySelector('.reu-barra-tx').textContent = (ativa.video ? 'Reunião com vídeo' : 'Reunião de voz') + ' em andamento · ' + (ativa.participantes || []).map(function (e) { return primeiro(nomeDe(e)); }).join(', ');
+  }
+  window.addEventListener('lanhi:chat-conversa', function (ev) {
+    montarTopo(); conversaAtual = ev.detail; ativa = null; barra.hidden = true;
+    conferirAtiva(); clearInterval(tAtiva); tAtiva = setInterval(function () { if (document.visibilityState === 'visible' && document.documentElement.classList.contains('em-chat')) conferirAtiva(); }, 15000);
+  });
+
+  async function iniciar(video) {
+    if (!conversaAtual) return;
+    if (R) return aviso('Você já está numa reunião.');
+    var r = await sb.rpc('reuniao_iniciar', { p_conversa: conversaAtual.id, p_video: video });
+    if (r.error || (r.data && r.data.ok === false)) return aviso(r.error ? (/does not exist|Could not find/i.test(r.error.message) ? 'Falta atualizar o banco (supabase/reunioes.sql).' : r.error.message) : r.data.erro);
+    if (EQ().chat) EQ().chat.recarregar();
+    entrar(r.data.id, video);
+  }
+
+  // ---------- sala ----------
+  var sala, grade, legendas, bMic, bCam, bTela, bLeg, cronometro, tCron;
+  function montarSala() {
+    grade = el('div', { class: 'reu-grade' });
+    legendas = el('div', { class: 'reu-legendas', 'aria-live': 'polite' });
+    bMic = botao('mic', 'Microfone', alternarMic); bCam = botao('video', 'Câmera', alternarCam); bTela = botao('tela', 'Tela', compartilharTela); bLeg = botao('leg', 'Transcrever', alternarTranscricao);
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getDisplayMedia || /Android|iPhone|iPad/i.test(navigator.userAgent)) bTela.hidden = true;
+    if (!Reco) { bLeg.disabled = true; bLeg.title = 'Este navegador não transcreve a fala. Use o Chrome.'; }
+    cronometro = el('span', { class: 'reu-tempo', text: '0:00' });
+    sala = el('div', { class: 'reu-sala', role: 'dialog', 'aria-modal': 'true', 'aria-label': 'Reunião' }, [
+      el('div', { class: 'reu-topo' }, [el('b', { class: 'reu-tit' }), cronometro, el('span', { class: 'reu-aviso', text: 'Transcrição em texto · áudio não é gravado' })]),
+      grade, legendas,
+      el('div', { class: 'reu-controles' }, [bMic, bCam, bTela, bLeg, botao('sair', 'Sair', sair, 'perigo')])
+    ]);
+    document.body.appendChild(sala);
+  }
+
+  function tile(id, nome, local) {
+    var t = grade.querySelector('[data-p="' + id + '"]');
+    if (t) return t;
+    var v = el('video', { autoplay: '', playsinline: '' }); if (local) v.muted = true;
+    t = el('div', { class: 'reu-tile' + (local ? ' local' : ''), 'data-p': id }, [v, el('span', { class: 'reu-av', text: iniciais(nome) }), el('span', { class: 'reu-nome', text: local ? 'Você' : nome })]);
+    t._video = v; grade.appendChild(t); ajustarGrade(); return t;
+  }
+  function ajustarGrade() { var n = grade.children.length; grade.style.setProperty('--col', n <= 1 ? 1 : n <= 4 ? 2 : 3); }
+  function atualizarTile(t, stream) {
+    var temVideo = stream && stream.getVideoTracks().some(function (x) { return x.enabled && x.readyState === 'live'; });
+    t.classList.toggle('sem-video', !temVideo);
+  }
+
+  async function entrar(id, video) {
+    if (R) return;
+    var meios;
+    try {
+      meios = await navigator.mediaDevices.getUserMedia({
+        audio: { echoCancellation: true, noiseSuppression: true, autoGainControl: true, channelCount: 1 },
+        video: video ? { width: { ideal: innerWidth < 700 ? 640 : 960 }, height: { ideal: innerWidth < 700 ? 360 : 540 }, frameRate: { ideal: 24, max: 30 }, facingMode: 'user' } : false
+      });
+    } catch (e) { return aviso('Sem acesso ao ' + (video ? 'microfone ou à câmera' : 'microfone') + '. Libere a permissão do navegador e tente de novo.'); }
+    if (!sala) montarSala();
+    R = { id: id, video: video, local: meios, peers: {}, meuId: Math.random().toString(36).slice(2) + Date.now().toString(36), transcrever: !!Reco, inicio: Date.now(), tela: null };
+    sala.querySelector('.reu-tit').textContent = conversaAtual ? (conversaAtual.tipo === 'equipe' ? (conversaAtual.titulo || 'Equipe') : conversaAtual.titulo || 'Reunião') : 'Reunião';
+    grade.textContent = ''; legendas.textContent = '';
+    var t = tile(R.meuId, 'Você', true); t._video.srcObject = meios; atualizarTile(t, meios);
+    bCam.hidden = !video; marcar();
+    sala.classList.add('aberta'); document.documentElement.classList.add('em-reuniao');
+    try { R.trava = await navigator.wakeLock.request('screen'); } catch (e) {}
+    clearInterval(tCron); tCron = setInterval(function () { var s = Math.floor((Date.now() - R.inicio) / 1000); cronometro.textContent = Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0'); }, 1000);
+    barra.hidden = true;
+    try { if (sb.realtime && sb.realtime.setAuth) await sb.realtime.setAuth(); } catch (e) {}
+    var canal = sb.channel('reuniao:' + id, { config: { private: true, broadcast: { self: false }, presence: { key: R.meuId } } });
+    R.canal = canal;
+    canal.on('broadcast', { event: 'sinal' }, function (m) { aoSinal(m.payload).catch(function () {}); });
+    canal.on('broadcast', { event: 'legenda' }, function (m) { mostrarLegenda(m.payload.nome, m.payload.texto); });
+    canal.on('presence', { event: 'sync' }, sincronizar);
+    canal.subscribe(async function (st) {
+      if (st === 'SUBSCRIBED') { await canal.track({ id: R.meuId, email: eu(), nome: nomeDe(eu()), video: video }); }
+      else if (st === 'CHANNEL_ERROR' || st === 'TIMED_OUT') aviso('A conexão da reunião falhou. Confira a internet e tente entrar de novo.');
+    });
+    iniciarTranscricao();
+    observarFala(R.meuId, meios);
+  }
+
+  function envia(para, dados) { if (R && R.canal) R.canal.send({ type: 'broadcast', event: 'sinal', payload: Object.assign({ de: R.meuId, para: para, email: eu() }, dados) }); }
+  function criarPeer(id, email) {
+    var pc = new RTCPeerConnection({ iceServers: ICE, bundlePolicy: 'max-bundle' });
+    var st = { pc: pc, fazendoOferta: false, ignorar: false, educado: R.meuId < id, email: email, stream: null };
+    R.local.getTracks().forEach(function (tr) { pc.addTrack(tr, R.local); });
+    if (R.tela) pc.addTrack(R.tela.getVideoTracks()[0], R.tela);
+    pc.onnegotiationneeded = async function () {
+      try { st.fazendoOferta = true; await pc.setLocalDescription(); envia(id, { descricao: pc.localDescription.toJSON() }); }
+      catch (e) {} finally { st.fazendoOferta = false; }
+    };
+    pc.onicecandidate = function (e) { if (e.candidate) envia(id, { candidato: e.candidate.toJSON() }); };
+    pc.ontrack = function (e) {
+      var s = e.streams[0] || new MediaStream([e.track]); st.stream = s;
+      var t = tile(id, nomeDe(email)); if (t._video.srcObject !== s) t._video.srcObject = s;
+      atualizarTile(t, s); e.track.onunmute = function () { atualizarTile(t, s); }; e.track.onmute = function () { atualizarTile(t, s); };
+      observarFala(id, s);
+    };
+    pc.onconnectionstatechange = function () {
+      var t = grade.querySelector('[data-p="' + id + '"]'); if (t) t.classList.toggle('instavel', pc.connectionState === 'disconnected' || pc.connectionState === 'failed');
+      if (pc.connectionState === 'failed') { try { pc.restartIce(); } catch (e) {} }
+      clearTimeout(st.tQueda);
+      if (pc.connectionState === 'disconnected' || pc.connectionState === 'failed') st.tQueda = setTimeout(function () { if (R && R.peers[id] === st && pc.connectionState !== 'connected') fecharPeer(id); }, 20000);
+      if (pc.connectionState === 'closed' && R && R.peers[id] === st) fecharPeer(id);
+    };
+    R.peers[id] = st; tile(id, nomeDe(email)); ajustarQualidade();
+    return st;
+  }
+  async function aoSinal(m) {
+    if (!R || m.para !== R.meuId) return;
+    var st = R.peers[m.de] || criarPeer(m.de, m.email), pc = st.pc;
+    if (m.descricao) {
+      var colisao = m.descricao.type === 'offer' && (st.fazendoOferta || pc.signalingState !== 'stable');
+      st.ignorar = !st.educado && colisao; if (st.ignorar) return;
+      await pc.setRemoteDescription(m.descricao);
+      if (m.descricao.type === 'offer') { await pc.setLocalDescription(); envia(m.de, { descricao: pc.localDescription.toJSON() }); }
+    } else if (m.candidato) {
+      try { await pc.addIceCandidate(m.candidato); } catch (e) { if (!st.ignorar) throw e; }
+    }
+  }
+  function sincronizar() {
+    if (!R) return;
+    var estado = R.canal.presenceState(), vivos = {};
+    Object.keys(estado).forEach(function (k) { (estado[k] || []).forEach(function (p) { if (p.id && p.id !== R.meuId) vivos[p.id] = p; }); });
+    // quem tem o identificador "maior" chama; o outro responde (evita as duas pontas chamando ao mesmo tempo)
+    Object.keys(vivos).forEach(function (id) { if (!R.peers[id] && R.meuId > id) criarPeer(id, vivos[id].email); if (R.peers[id]) R.peers[id].visto = true; });
+    // só fecha quem já apareceu na lista e saiu (o sinal pode chegar antes da lista atualizar)
+    Object.keys(R.peers).forEach(function (id) { if (!vivos[id] && R.peers[id].visto) fecharPeer(id); });
+    R.ultimosVivos = Object.keys(vivos).length;
+  }
+  function fecharPeer(id) {
+    var st = R.peers[id]; if (!st) return;
+    try { st.pc.close(); } catch (e) {}
+    delete R.peers[id];
+    var t = grade.querySelector('[data-p="' + id + '"]'); if (t) t.remove();
+    ajustarGrade(); ajustarQualidade();
+  }
+  // menos gente = mais qualidade por pessoa; mais gente = vídeo mais leve para não travar
+  function ajustarQualidade() {
+    var n = Object.keys(R.peers).length, max = n <= 1 ? 1200000 : n <= 3 ? 600000 : 320000, escala = n <= 1 ? 1 : n <= 3 ? 1.5 : 2;
+    Object.keys(R.peers).forEach(function (id) {
+      R.peers[id].pc.getSenders().forEach(function (s) {
+        if (!s.track || s.track.kind !== 'video' || (R.tela && s.track === R.tela.getVideoTracks()[0])) return;
+        var p = s.getParameters(); if (!p.encodings || !p.encodings.length) p.encodings = [{}];
+        p.encodings[0].maxBitrate = max; p.encodings[0].scaleResolutionDownBy = escala;
+        s.setParameters(p).catch(function () {});
+      });
+    });
+  }
+
+  // ---------- quem está falando ----------
+  var ctx = null, medidores = {};
+  function observarFala(id, stream) {
+    if (!stream.getAudioTracks().length || medidores[id]) return;
+    try {
+      ctx = ctx || new (window.AudioContext || window.webkitAudioContext)();
+      var src = ctx.createMediaStreamSource(stream), an = ctx.createAnalyser(); an.fftSize = 512; src.connect(an);
+      var buf = new Uint8Array(an.fftSize);
+      medidores[id] = setInterval(function () {
+        an.getByteTimeDomainData(buf); var s = 0; for (var i = 0; i < buf.length; i++) { var v = (buf[i] - 128) / 128; s += v * v; }
+        var t = grade && grade.querySelector('[data-p="' + id + '"]'); if (t) t.classList.toggle('falando', Math.sqrt(s / buf.length) > 0.04);
+      }, 250);
+    } catch (e) {}
+  }
+
+  // ---------- controles ----------
+  function marcar() {
+    var micOn = R.local.getAudioTracks().some(function (t) { return t.enabled; }), camOn = R.local.getVideoTracks().some(function (t) { return t.enabled; });
+    bMic.classList.toggle('off', !micOn); bMic.querySelector('span').textContent = micOn ? 'Microfone' : 'Mudo';
+    bCam.classList.toggle('off', !camOn); bTela.classList.toggle('on', !!R.tela);
+    bLeg.classList.toggle('on', R.transcrever && !!Reco);
+    var t = grade.querySelector('.reu-tile.local'); if (t) { t.classList.toggle('mudo', !micOn); atualizarTile(t, R.local); }
+  }
+  function alternarMic() { R.local.getAudioTracks().forEach(function (t) { t.enabled = !t.enabled; }); if (R.reco) { try { R.reco.stop(); } catch (e) {} } marcar(); }
+  function alternarCam() { R.local.getVideoTracks().forEach(function (t) { t.enabled = !t.enabled; }); marcar(); }
+  async function compartilharTela() {
+    if (R.tela) return pararTela();
+    try { R.tela = await navigator.mediaDevices.getDisplayMedia({ video: { frameRate: { ideal: 15 } }, audio: false }); } catch (e) { return; }
+    var tr = R.tela.getVideoTracks()[0]; tr.contentHint = 'detail'; tr.onended = pararTela;
+    Object.keys(R.peers).forEach(function (id) { R.peers[id].senderTela = R.peers[id].pc.addTrack(tr, R.tela); });
+    var t = tile(R.meuId + '-tela', 'Sua tela', true); t._video.srcObject = R.tela; t.classList.add('tela'); marcar();
+  }
+  function pararTela() {
+    if (!R || !R.tela) return;
+    R.tela.getTracks().forEach(function (t) { t.stop(); });
+    Object.keys(R.peers).forEach(function (id) { var st = R.peers[id]; st.pc.getSenders().forEach(function (s) { if (s.track && s.track.kind === 'video' && R.tela.getVideoTracks().indexOf(s.track) >= 0) { try { st.pc.removeTrack(s); } catch (e) {} } }); });
+    R.tela = null; var t = grade.querySelector('[data-p="' + R.meuId + '-tela"]'); if (t) t.remove(); ajustarGrade(); marcar();
+  }
+
+  // ---------- transcrição (cada um transcreve a própria fala) ----------
+  function iniciarTranscricao() {
+    if (!Reco || !R || !R.transcrever) return;
+    var rc = new Reco(); rc.lang = 'pt-BR'; rc.continuous = true; rc.interimResults = true;
+    var parcial = null;
+    rc.onresult = function (e) {
+      for (var i = e.resultIndex; i < e.results.length; i++) {
+        var txt = e.results[i][0].transcript.trim(); if (!txt) continue;
+        if (e.results[i].isFinal) {
+          mostrarLegenda('Você', txt, parcial); parcial = null;
+          sb.rpc('reuniao_fala', { p_reuniao: R.id, p_texto: txt });
+          if (R.canal) R.canal.send({ type: 'broadcast', event: 'legenda', payload: { nome: primeiro(nomeDe(eu())), texto: txt } });
+        } else parcial = mostrarLegenda('Você', txt, parcial, true);
+      }
+    };
+    rc.onend = function () { if (R && R.transcrever && R.local.getAudioTracks().some(function (t) { return t.enabled; })) { try { rc.start(); } catch (e) {} } };
+    rc.onerror = function (e) { if (e.error === 'not-allowed' || e.error === 'service-not-allowed') { R.transcrever = false; marcar(); aviso('A transcrição foi bloqueada pelo navegador. A reunião continua normalmente.'); } };
+    R.reco = rc; try { rc.start(); } catch (e) {}
+  }
+  function alternarTranscricao() {
+    if (!Reco) return;
+    R.transcrever = !R.transcrever;
+    if (R.transcrever) iniciarTranscricao(); else if (R.reco) { try { R.reco.onend = null; R.reco.stop(); } catch (e) {} }
+    marcar();
+  }
+  function mostrarLegenda(nome, texto, linha, parcial) {
+    linha = linha || el('p', { class: 'reu-leg' });
+    linha.textContent = ''; linha.appendChild(el('b', { text: nome + ': ' })); linha.appendChild(document.createTextNode(texto));
+    linha.classList.toggle('parcial', !!parcial);
+    if (!linha.isConnected) legendas.appendChild(linha);
+    while (legendas.children.length > 3) legendas.removeChild(legendas.firstChild);
+    clearTimeout(linha._t); linha._t = setTimeout(function () { if (linha.isConnected && !linha.classList.contains('parcial')) linha.remove(); }, 9000);
+    return linha;
+  }
+
+  async function sair() {
+    if (!R) return;
+    var r = R; R = null;
+    clearInterval(tCron);
+    if (r.reco) { try { r.reco.onend = null; r.reco.stop(); } catch (e) {} }
+    Object.keys(r.peers).forEach(function (id) { try { r.peers[id].pc.close(); } catch (e) {} });
+    r.local.getTracks().forEach(function (t) { t.stop(); }); if (r.tela) r.tela.getTracks().forEach(function (t) { t.stop(); });
+    Object.keys(medidores).forEach(function (k) { clearInterval(medidores[k]); }); medidores = {};
+    try { if (r.trava) r.trava.release(); } catch (e) {}
+    var sozinho = !r.ultimosVivos;
+    try { await r.canal.untrack(); } catch (e) {}
+    try { sb.removeChannel(r.canal); } catch (e) {}
+    sala.classList.remove('aberta'); document.documentElement.classList.remove('em-reuniao'); grade.textContent = '';
+    if (sozinho) await sb.rpc('reuniao_encerrar', { p_reuniao: r.id });
+    conferirAtiva();
+  }
+  window.addEventListener('pagehide', function () { if (R) sair(); });
+
+  // ---------- histórico e transcrições ----------
+  function janela(titulo, corpo) {
+    var fechar = el('button', { type: 'button', class: 'btn sec', text: 'Fechar' });
+    var d = el('dialog', { class: 'jan reu-jan', 'aria-label': titulo }, [el('div', { class: 'jan-form' }, [el('h3', { text: titulo })].concat(corpo).concat([el('div', { class: 'jan-acoes' }, [fechar])]))]);
+    document.body.appendChild(d); fechar.addEventListener('click', function () { d.close(); d.remove(); }); d.addEventListener('cancel', function (e) { e.preventDefault(); d.close(); d.remove(); });
+    d.showModal(); return d;
+  }
+  function quando(iso) { return new Date(iso).toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }); }
+  async function historico() {
+    if (!conversaAtual) return;
+    var r = await sb.rpc('reunioes_da_conversa', { p_conversa: conversaAtual.id });
+    var itens = r.error ? [] : (r.data || []), box = el('div', { class: 'reu-hist' });
+    if (!itens.length) box.appendChild(el('p', { class: 'peq suave', text: r.error ? 'Falta atualizar o banco (supabase/reunioes.sql).' : 'Nenhuma reunião nesta conversa ainda.' }));
+    itens.forEach(function (x) {
+      var dur = x.fim ? Math.max(1, Math.round((new Date(x.fim) - new Date(x.inicio)) / 60000)) + ' min' : 'em andamento';
+      var b = el('button', { type: 'button', class: 'reu-hist-item' }, [el('b', { text: (x.video ? 'Vídeo' : 'Voz') + ' · ' + quando(x.inicio) }),
+        el('span', { class: 'peq suave', text: dur + ' · ' + (x.participantes || []).map(function (e) { return primeiro(nomeDe(e)); }).join(', ') + ' · ' + x.falas + (x.falas === 1 ? ' fala transcrita' : ' falas transcritas') })]);
+      b.addEventListener('click', function () { transcricao(x); }); box.appendChild(b);
+    });
+    janela('Reuniões desta conversa', [box]);
+  }
+  async function transcricao(x) {
+    var r = await sb.rpc('reuniao_transcricao', { p_reuniao: x.id });
+    var falas = r.error ? [] : (r.data || []);
+    var box = el('div', { class: 'reu-trans' });
+    if (!falas.length) box.appendChild(el('p', { class: 'peq suave', text: 'Nada foi transcrito nesta reunião.' }));
+    falas.forEach(function (f) { box.appendChild(el('p', {}, [el('small', { text: new Date(f.em).toLocaleTimeString('pt-BR', { timeZone: 'America/Sao_Paulo', hour: '2-digit', minute: '2-digit' }) + ' ' }), el('b', { text: primeiro(nomeDe(f.autor)) + ': ' }), f.texto])); });
+    var copiar = el('button', { type: 'button', class: 'btn sec mini', text: 'Copiar texto' });
+    copiar.addEventListener('click', function () {
+      var t = falas.map(function (f) { return nomeDe(f.autor) + ': ' + f.texto; }).join('\n');
+      (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(function () { copiar.textContent = 'Copiado'; }, function () { copiar.textContent = 'Não foi possível copiar'; });
+    });
+    janela('Transcrição · ' + quando(x.inicio), [box, falas.length ? copiar : null].filter(Boolean));
+  }
+})();
+
+</script>
+<script>
+// mod:busca-equipe.js
+// Pesquisa geral turbinada (sem custo de IA): além de clientes e processos, procura no banco as
+// movimentações, intimações (só gestores), recados, tarefas, transcrições de reuniões e indicações.
+// Também entende pedidos comuns em português ("perícias", "parados", "indeferidos"...) e leva direto à tela certa.
+(function () {
+  'use strict';
+  var $ = L.$, el = L.el, sb = L.sb;
+  var inp = $('#buscaGlobal'), caixa = $('#resultadosBusca');
+  if (!inp || !caixa) return;
+  var t = null, seq = 0, indisponivel = false;
+  function EQ() { return window.LANHI_EQ || { dados: { clientes: [], processos: [] } }; }
+  function sem(s) { return String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase(); }
+  function aba(a) { if (EQ().abrirAba) EQ().abrirAba(a); }
+  function clicar(sel) { var x = document.querySelector(sel); if (x) x.click(); return x; }
+  function panorama(sub, depois) { aba('panorama'); setTimeout(function () { clicar('#pan-tab-' + sub); if (depois) setTimeout(depois, 60); }, 60); }
+  function chip(painel, v) { var b = document.querySelector('#pan-' + painel + ' .pan-chip[data-v="' + v + '"]'); if (b) b.click(); }
+  function rolar(sel) { var x = document.querySelector(sel); if (x) x.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+
+  var ATALHOS = [
+    [/peric/, 'Perícias marcadas', 'Panorama · próximas perícias', function () { panorama('geral', function () { rolar('#listaPericias'); }); }],
+    [/parad|sem novidade|sem moviment/, 'Processos parados há mais de 60 dias', 'Panorama · Processos', function () { panorama('processos', function () { rolar('#panParados'); }); }],
+    [/indeferid|negad|perdemos|improced/, 'Indeferidos e motivos', 'Panorama · Resultados', function () { panorama('resultados', function () { chip('resultados', 'indeferido'); rolar('#panMotivos'); }); }],
+    [/deferid|ganh|proceden/, 'Deferidos', 'Panorama · Resultados', function () { panorama('resultados', function () { chip('resultados', 'deferido'); }); }],
+    [/acordo/, 'Acordos', 'Panorama · Resultados', function () { panorama('resultados', function () { chip('resultados', 'acordo'); }); }],
+    [/sem resultado|registrar resultado|sugest/, 'Concluídos sem resultado e sugestões', 'Panorama · Resultados', function () { panorama('resultados', function () { chip('resultados', 'sem'); rolar('#panSugestoes'); }); }],
+    [/exito|taxa|metric|indicador/, 'Êxito por produto e por ano', 'Panorama · Resultados', function () { panorama('resultados'); }],
+    [/indica/, 'Indicações de clientes', 'Panorama · Visão geral', function () { panorama('geral', function () { rolar('.ind-eq'); }); }],
+    [/tarefa|atrasad|pendenc|fazer hoje/, 'Minhas tarefas', 'Para fazer agora', function () { if (EQ().abrirTarefas) EQ().abrirTarefas(/atrasad/.test(sem(inp.value)) ? 'atrasadas' : 'minhas'); }],
+    [/reuni|chamada|video|transcri/, 'Reuniões e transcrições', 'Mensagens · abra a conversa e toque em “Reuniões”', function () { aba('chat'); }],
+    [/intima/, 'Intimações', 'Movimentações', function () { aba('andamentos'); }]
+  ];
+  var ROT = { movimentacao: 'Andamento', intimacao: 'Intimação', recado: 'Recado', tarefa: 'Tarefa', reuniao: 'Reunião', indicacao: 'Indicação' };
+
+  function item(rot, sub, acao, cls) {
+    var b = el('button', { type: 'button', class: 'res-item' + (cls ? ' ' + cls : ''), role: 'option' }, [el('b', { text: rot }), el('span', { class: 'peq suave', text: sub })]);
+    b.addEventListener('click', function () { caixa.classList.add('esconde'); caixa.textContent = ''; acao(); });
+    return b;
+  }
+  function abrirResultado(x) {
+    var D = EQ().dados;
+    if (x.processo_id) {
+      var p = (D.processos || []).find(function (y) { return y.id === x.processo_id; });
+      if (p && EQ().abrirCapa) return EQ().abrirCapa(p, (D.clientes || []).find(function (c) { return c.id === p.cliente_id; }) || { nome: '' });
+    }
+    if (x.conversa_id && EQ().chat) {
+      aba('chat');
+      return setTimeout(function () { var c = EQ().chat.conversas().find(function (y) { return y.id === x.conversa_id; }); if (c) EQ().chat.abrir(c); }, 200);
+    }
+    if (x.cliente_id) { var c = (D.clientes || []).find(function (y) { return y.id === x.cliente_id; }); if (c) { $('#busca').value = c.nome; aba('clientes'); $('#busca').dispatchEvent(new Event('input')); return; } }
+    if (x.tipo === 'tarefa' && EQ().abrirTarefas) return EQ().abrirTarefas('minhas');
+  }
+  function descricao(x) {
+    var D = EQ().dados, p = x.processo_id && (D.processos || []).find(function (y) { return y.id === x.processo_id; });
+    var c = p ? (D.clientes || []).find(function (y) { return y.id === p.cliente_id; }) : x.cliente_id ? (D.clientes || []).find(function (y) { return y.id === x.cliente_id; }) : null;
+    var quando = x.em ? new Date(x.em).toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' }) : '';
+    return (ROT[x.tipo] || x.tipo) + (c ? ' · ' + c.nome : '') + (quando ? ' · ' + quando : '') + (x.trecho ? ' · ' + String(x.trecho).slice(0, 110) : '');
+  }
+
+  async function procurar() {
+    var q = inp.value.trim(), n = ++seq; if (q.length < 2) return;
+    var qs = sem(q), extras = [];
+    ATALHOS.forEach(function (a) { if (a[0].test(qs)) extras.push(item('→ ' + a[1], a[2], a[3], 'res-atalho')); });
+    if (extras.length) { var primeiro = caixa.firstChild; extras.slice(0, 2).forEach(function (b) { caixa.insertBefore(b, primeiro); }); caixa.classList.remove('esconde'); }
+    if (indisponivel || q.length < 3) return;
+    var r = await sb.rpc('busca_geral', { p_q: q });
+    if (n !== seq) return;
+    if (r.error) { if (/does not exist|Could not find/i.test(r.error.message)) indisponivel = true; return; }
+    var res = r.data || []; if (!res.length) return;
+    caixa.querySelectorAll('.res-banco').forEach(function (x) { x.remove(); });
+    caixa.appendChild(el('div', { class: 'res-sep res-banco', text: 'Também encontrado em andamentos, recados, tarefas e reuniões' }));
+    res.slice(0, 10).forEach(function (x) { var b = item(x.titulo, descricao(x), function () { abrirResultado(x); }, 'res-banco'); caixa.appendChild(b); });
+    caixa.classList.remove('esconde');
+  }
+  inp.addEventListener('input', function () { clearTimeout(t); t = setTimeout(procurar, 420); });
+})();
+
+</script>
+<script>
+// mod:automacoes-equipe.js
+// Automações (só gestores): regras "Quando… se… então…" montadas com listas, sem programar.
+// A regra é salva como dados e conferida no banco contra a lista de comandos permitidos.
+// Toda regra nasce pausada; dá para simular nos últimos 30 dias antes de ativar; cada edição vira uma versão.
+// Mensagem ao cliente nunca sai sozinha: vira tarefa "aguardando aprovação".
+(function () {
+  'use strict';
+  var $ = L.$, el = L.el, sb = L.sb;
+  var painel = document.querySelector('[data-painel="manutencao"]'); if (!painel) return;
+  var cmds = null, regras = [], pessoas = [], carregando = false;
+  var VARS = [['{{cliente.nome}}', 'nome do cliente'], ['{{cliente.primeiro_nome}}', 'primeiro nome'], ['{{processo.numero}}', 'número do processo'], ['{{processo.produto}}', 'produto'], ['{{movimento.nome}}', 'movimento'], ['{{indicacao.nome}}', 'pessoa indicada']];
+  var MODELOS = [
+    ['Perícia marcada', { gatilho: 'intimacao_nova', condicoes: [{ comando: 'texto_contem', parametros: { texto: 'perícia' } }], acoes: [{ comando: 'criar_tarefa', parametros: { titulo: 'Avisar {{cliente.primeiro_nome}} da perícia e enviar o guia', prazo_dias: '1', tipo_tarefa: 'pericia' } }, { comando: 'mensagem_cliente', parametros: { texto: 'Olá, {{cliente.primeiro_nome}}! A perícia do seu processo foi marcada. Já já passamos o dia, o horário e como se preparar.' } }] }],
+    ['Sentença de procedência', { gatilho: 'movimentacao_nova', condicoes: [{ comando: 'texto_contem', parametros: { texto: 'procedência' } }], acoes: [{ comando: 'avisar_equipe', parametros: { texto: 'Sentença no processo de {{cliente.nome}} ({{processo.produto}}): {{movimento.nome}}. Conferir e avisar o cliente.' } }] }],
+    ['Intimação para os advogados', { gatilho: 'intimacao_nova', condicoes: [], acoes: [{ comando: 'criar_tarefa', parametros: { titulo: 'Ler intimação · {{cliente.nome}}', prazo_dias: '2', tipo_tarefa: 'prazo' } }] }],
+    ['Indicação para o comercial', { gatilho: 'indicacao_nova', condicoes: [], acoes: [{ comando: 'criar_tarefa', parametros: { titulo: 'Chamar {{indicacao.nome}} (indicado por {{cliente.primeiro_nome}})', prazo_dias: '1', tipo_tarefa: 'outro' } }] }],
+    ['Processo parado há 90 dias', { gatilho: 'processo_parado', parametros: { dias: '90' }, condicoes: [], acoes: [{ comando: 'criar_tarefa', parametros: { titulo: 'Conferir andamento · {{cliente.nome}} ({{processo.produto}})', prazo_dias: '5', tipo_tarefa: 'outro' } }] }]
+  ];
+  function EQ() { return window.LANHI_EQ || {}; }
+  function adm() { return EQ().souAdmin ? EQ().souAdmin() : false; }
+  function cmd(id) { return (cmds || []).find(function (c) { return c.id === id; }); }
+  function de(tipo) { return (cmds || []).filter(function (c) { return c.tipo === tipo; }).sort(function (a, b) { return a.ordem - b.ordem; }); }
+  function nomePessoa(e) { var p = pessoas.find(function (x) { return x.email === e; }); return p ? p.nome.split(' ')[0] : e; }
+  function falta(r) { return r.error && /does not exist|Could not find|relation .* does not exist/i.test(r.error.message); }
+
+  function ler(rg) {
+    if (!rg || !cmds) return '';
+    var g = cmd(rg.gatilho), t = 'Quando ' + (g ? g.nome.charAt(0).toLowerCase() + g.nome.slice(1) : '?');
+    if (rg.gatilho === 'processo_parado') t += ' (' + ((rg.parametros || {}).dias || '?') + ' dias sem novidade)';
+    var cs = (rg.condicoes || []).map(function (c) { var k = cmd(c.comando), v = Object.keys(c.parametros || {}).map(function (x) { return '“' + c.parametros[x] + '”'; }).join(' '); return (k ? k.nome.toLowerCase() : '?') + ' ' + v; });
+    if (cs.length) t += ', se ' + cs.join(' e ');
+    var as = (rg.acoes || []).map(function (a) {
+      var k = cmd(a.comando), p = a.parametros || {};
+      if (a.comando === 'criar_tarefa') return 'criar a tarefa “' + (p.titulo || '') + '” para ' + (p.responsavel ? nomePessoa(p.responsavel) : 'os gestores') + ' (prazo ' + (p.prazo_dias || 3) + ' dias)';
+      if (a.comando === 'avisar_equipe') return 'avisar no chat da equipe: “' + (p.texto || '') + '”';
+      if (a.comando === 'mensagem_cliente') return 'preparar mensagem ao cliente para aprovação: “' + (p.texto || '') + '”';
+      return k ? k.nome.toLowerCase() : '?';
+    });
+    return (t + ', então ' + as.join('; e ') + '.').replace(/\{\{\s*([a-z_.]+)\s*\}\}/g, function (m) { var v = VARS.find(function (x) { return x[0].replace(/\s/g, '') === m.replace(/\s/g, ''); }); return v ? '[' + v[1] + ']' : m; });
+  }
+
+  // ---------- seção na Manutenção ----------
+  var lista = el('div', { class: 'aut-lista' });
+  var secao = el('section', { class: 'cartao aut', 'aria-labelledby': 'autTit', hidden: '' }, [
+    el('div', { class: 'aut-cab' }, [el('div', {}, [el('h3', { id: 'autTit', text: 'Automações' }), el('p', { class: 'peq suave', text: 'Regras “Quando… se… então…” que trabalham sozinhas. Toda regra nasce pausada: simule, confira e só então ative.' })]),
+      el('button', { type: 'button', class: 'btn mini', text: '+ Nova automação', onclick: function () { editar(null); } })]),
+    el('details', { class: 'aut-modelos' }, [el('summary', { text: 'Começar de um modelo pronto' }), el('div', { class: 'aut-mod-lista' }, MODELOS.map(function (m) {
+      return el('button', { type: 'button', class: 'pan-chip', text: m[0], onclick: function () { editar({ nome: m[0], regra: JSON.parse(JSON.stringify(m[1])) }); } });
+    }))]),
+    lista
+  ]);
+  var topo = painel.querySelector('.tela-topo'); painel.insertBefore(secao, topo ? topo.nextSibling : painel.firstChild);
+
+  async function carregar() {
+    if (carregando || !adm()) { secao.hidden = !adm(); return; }
+    carregando = true; secao.hidden = false;
+    var r1 = await sb.from('automacao_comandos').select('*');
+    if (falta(r1) || r1.error) { carregando = false; lista.textContent = ''; lista.appendChild(el('p', { class: 'peq suave', text: 'Disponível depois da atualização do banco (arquivo supabase/automacoes-regras.sql).' })); return; }
+    cmds = r1.data || [];
+    var r2 = await sb.from('automacao_regras').select('*').order('criado_em'); regras = (r2.data || []).filter(function (x) { return x.nome !== '(simulação)'; });
+    var r3 = await sb.rpc('equipe_listar'); pessoas = r3.error ? [] : (r3.data || []);
+    carregando = false; desenhar();
+  }
+  function desenhar() {
+    lista.textContent = '';
+    if (!regras.length) return lista.appendChild(el('p', { class: 'peq suave', text: 'Nenhuma automação ainda. Comece por um modelo pronto acima.' }));
+    regras.forEach(function (x) {
+      var tg = el('button', { type: 'button', class: 'btn mini ' + (x.ativa ? 'sec' : ''), text: x.ativa ? 'Pausar' : 'Ativar' });
+      tg.addEventListener('click', async function () {
+        if (!x.ativa && !(await confirmarAtivar(x))) return;
+        var alvo = !x.ativa, r = await sb.rpc('automacao_ativar', { p_id: x.id, p_ativa: alvo }); if (r.error || !r.data.ok) return aviso((r.data && r.data.erro) || r.error.message);
+        x.ativa = alvo; desenhar(); aviso(alvo ? 'Automação ativada.' : 'Automação pausada.', 'ok');
+      });
+      lista.appendChild(el('article', { class: 'aut-item' + (x.ativa ? ' ativa' : '') }, [
+        el('div', { class: 'aut-item-cab' }, [el('b', { text: x.nome }), el('span', { class: 'aut-st', text: (x.ativa ? 'Ativa' : 'Pausada') + ' · v' + x.versao })]),
+        el('p', { class: 'aut-ler', text: ler(x.regra) }),
+        el('div', { class: 'acoes' }, [tg,
+          el('button', { type: 'button', text: 'Editar', onclick: function () { editar(x); } }),
+          el('button', { type: 'button', text: 'Simular', onclick: function () { simular(x.regra, x.nome); } }),
+          el('button', { type: 'button', text: 'Registro', onclick: function () { registro(x); } }),
+          x.versao > 1 ? el('button', { type: 'button', text: 'Versões', onclick: function () { versoes(x); } }) : null])
+      ]));
+    });
+  }
+  function aviso(t, tipo) { if (L.aviso) L.aviso(t, tipo || 'erro'); }
+  function confirmarAtivar(x) {
+    return new Promise(function (ok) {
+      var externo = (x.regra.acoes || []).some(function (a) { var c = cmd(a.comando); return c && c.efeito !== 'interno'; });
+      var d = janela('Ativar “' + x.nome + '”?', [el('p', { text: ler(x.regra) }), externo ? el('p', { class: 'peq aut-alerta', text: 'Esta regra prepara mensagens ao cliente. Elas não saem sozinhas: aparecem como tarefa para alguém conferir e enviar.' }) : null], 'Ativar', function () { ok(true); return null; });
+      d.addEventListener('close', function () { ok(false); });
+    });
+  }
+
+  // ---------- janelas ----------
+  function janela(titulo, corpo, rotOk, aoOk, larga) {
+    var msg = el('p', { class: 'peq jan-msg', role: 'status' }), ca = el('button', { type: 'button', class: 'btn sec', text: rotOk ? 'Cancelar' : 'Fechar' });
+    var botoes = [ca]; var okb = null; if (rotOk) { okb = el('button', { type: 'submit', class: 'btn', text: rotOk }); botoes.push(okb); }
+    var f = el('form', { class: 'jan-form' }, [el('h3', { text: titulo })].concat(corpo.filter(Boolean)).concat([msg, el('div', { class: 'jan-acoes' }, botoes)]));
+    var d = el('dialog', { class: 'jan' + (larga ? ' aut-jan' : ''), 'aria-label': titulo }, [f]); document.body.appendChild(d);
+    function fecha() { try { d.close(); } catch (e) {} d.remove(); }
+    ca.addEventListener('click', fecha); d.addEventListener('cancel', function (e) { e.preventDefault(); fecha(); });
+    f.addEventListener('submit', async function (e) { e.preventDefault(); if (!aoOk) return fecha(); okb.disabled = true; msg.textContent = 'Conferindo…'; var er = await aoOk(msg); okb.disabled = false; if (er) { msg.textContent = er; return; } fecha(); });
+    d.showModal(); d._msg = msg; return d;
+  }
+  function campoParam(spec, valor, nomeParam) {
+    var n;
+    if (spec.tipo === 'lista') { n = el('select', {}); n.appendChild(el('option', { value: '', text: spec.obrigatorio ? 'Escolha…' : '(padrão)' })); spec.opcoes.forEach(function (o) { n.appendChild(el('option', { value: o, text: o })); }); }
+    else if (spec.tipo === 'pessoa') { n = el('select', {}); n.appendChild(el('option', { value: '', text: 'Gestores' })); pessoas.forEach(function (p) { n.appendChild(el('option', { value: p.email, text: p.nome })); }); }
+    else if (spec.tipo === 'numero') n = el('input', { type: 'number', min: String(spec.min || 0), max: String(spec.max || 365), inputmode: 'numeric' });
+    else n = el('input', { maxlength: '500', autocomplete: 'off' });
+    n.value = valor == null ? '' : String(valor); n.dataset.p = nomeParam; return n;
+  }
+  var ROTULO = { titulo: 'Título da tarefa', responsavel: 'Para quem', prazo_dias: 'Prazo (dias)', tipo_tarefa: 'Tipo', texto: 'Texto', produto: 'Produto', tribunal: 'Tribunal', resultado: 'Resultado', dias: 'Dias sem novidade' };
+  function blocoComando(tipo, item, aoMudar) {
+    var sel = el('select', { class: 'aut-cmd' }); de(tipo).forEach(function (c) { sel.appendChild(el('option', { value: c.id, text: c.nome })); });
+    if (item && item.comando) sel.value = item.comando;
+    var params = el('div', { class: 'aut-params' }), desc = el('p', { class: 'peq suave aut-desc' });
+    var rem = el('button', { type: 'button', class: 'link aut-rem', text: 'Remover' });
+    var box = el('div', { class: 'aut-bloco' }, [el('div', { class: 'aut-linha' }, [sel, rem]), desc, params]);
+    function montar(vals) {
+      params.textContent = ''; var c = cmd(sel.value); if (!c) return; desc.textContent = c.descricao + (c.efeito === 'externo' ? ' (precisa de aprovação humana)' : '');
+      Object.keys(c.parametros || {}).forEach(function (k) {
+        var spec = c.parametros[k], n = campoParam(spec, (vals || {})[k], k), id = 'ap' + Math.random().toString(36).slice(2, 7); n.id = id;
+        n.addEventListener('input', aoMudar); n.addEventListener('change', aoMudar);
+        var linha = el('div', { class: 'jan-campo' }, [el('label', { for: id, text: (ROTULO[k] || k) + (spec.obrigatorio ? '' : ' (opcional)') }), n]);
+        if (spec.tipo === 'texto' && tipo === 'acao') linha.appendChild(el('div', { class: 'aut-vars' }, VARS.map(function (v) { return el('button', { type: 'button', class: 'pan-chip', text: v[1], title: v[0], onclick: function () { n.value += (n.value && !/\s$/.test(n.value) ? ' ' : '') + v[0]; aoMudar(); n.focus(); } }); })));
+        params.appendChild(linha);
+      });
+    }
+    sel.addEventListener('change', function () { montar({}); aoMudar(); });
+    rem.addEventListener('click', function () { box.remove(); aoMudar(); });
+    montar(item && item.parametros);
+    box._valor = function () { var p = {}; params.querySelectorAll('[data-p]').forEach(function (n) { if (n.value !== '') p[n.dataset.p] = n.value; }); return { comando: sel.value, parametros: p }; };
+    return box;
+  }
+  function editar(x) {
+    if (!cmds) return;
+    var rg = (x && x.regra) || { gatilho: 'intimacao_nova', condicoes: [], acoes: [{ comando: 'criar_tarefa', parametros: {} }] };
+    var nome = el('input', { maxlength: '100', value: (x && x.nome) || '', autocomplete: 'off', placeholder: 'Ex.: Perícia marcada' });
+    var gat = el('select', {}); de('gatilho').forEach(function (c) { gat.appendChild(el('option', { value: c.id, text: c.nome })); }); gat.value = rg.gatilho;
+    var dias = el('input', { type: 'number', min: '15', max: '365', value: (rg.parametros || {}).dias || '90' });
+    var diasBox = el('div', { class: 'jan-campo' }, [el('label', { text: 'Dias sem novidade' }), dias]);
+    var conds = el('div', { class: 'aut-grupo' }), acts = el('div', { class: 'aut-grupo' });
+    var leitura = el('p', { class: 'aut-leitura', 'aria-live': 'polite' });
+    function valor() {
+      var r = { gatilho: gat.value, condicoes: [].map.call(conds.querySelectorAll(':scope > .aut-bloco'), function (b) { return b._valor(); }), acoes: [].map.call(acts.querySelectorAll(':scope > .aut-bloco'), function (b) { return b._valor(); }) };
+      if (gat.value === 'processo_parado') r.parametros = { dias: dias.value };
+      return r;
+    }
+    function mudou() { diasBox.hidden = gat.value !== 'processo_parado'; leitura.textContent = ler(valor()); }
+    (rg.condicoes || []).forEach(function (c) { conds.appendChild(blocoComando('condicao', c, mudou)); });
+    (rg.acoes || []).forEach(function (a) { acts.appendChild(blocoComando('acao', a, mudou)); });
+    gat.addEventListener('change', mudou); dias.addEventListener('input', mudou);
+    var maisC = el('button', { type: 'button', class: 'btn sec mini', text: '+ Condição', onclick: function () { conds.appendChild(blocoComando('condicao', null, mudou)); mudou(); } });
+    var maisA = el('button', { type: 'button', class: 'btn sec mini', text: '+ Ação', onclick: function () { acts.appendChild(blocoComando('acao', null, mudou)); mudou(); } });
+    var simBox = el('div', { class: 'aut-sim' });
+    var bSim = el('button', { type: 'button', class: 'btn sec mini', text: 'Simular nos últimos 30 dias', onclick: async function () { simBox.textContent = 'Simulando…'; mostrarSimulacao(simBox, await sb.rpc('automacao_simular', { p_regra: valor() })); } });
+    var d = janela(x && x.id ? 'Editar automação' : 'Nova automação', [
+      el('div', { class: 'jan-campo' }, [el('label', { text: 'Nome' }), nome]),
+      el('h4', { class: 'aut-h', text: 'Quando' }), el('div', { class: 'jan-campo' }, [gat]), diasBox,
+      el('h4', { class: 'aut-h', text: 'Se (opcional; todas precisam valer)' }), conds, maisC,
+      el('h4', { class: 'aut-h', text: 'Então' }), acts, maisA,
+      el('div', { class: 'aut-resumo' }, [el('b', { text: 'Como vai funcionar: ' }), leitura]), bSim, simBox,
+      el('p', { class: 'peq suave', text: 'Ao salvar, a regra fica pausada até você ativar. Editar uma regra ativa cria uma nova versão e pausa até reativar.' })
+    ], 'Salvar', async function () {
+      var r = await sb.rpc('automacao_salvar', { p_id: (x && x.id) || null, p_nome: nome.value, p_regra: valor(), p_limite: 100 });
+      if (r.error) return falta(r) ? 'Falta atualizar o banco (supabase/automacoes-regras.sql).' : r.error.message;
+      if (!r.data.ok) return r.data.erro;
+      aviso('Automação salva (pausada). Ative quando estiver de acordo.', 'ok'); await recarregar(); return null;
+    }, true);
+    mudou();
+  }
+  function mostrarSimulacao(box, r) {
+    box.textContent = '';
+    if (r.error || !r.data || !r.data.ok) return box.appendChild(el('p', { class: 'peq aut-alerta', text: (r.data && r.data.erro) || (r.error && r.error.message) || 'Não foi possível simular.' }));
+    var s = r.data;
+    box.appendChild(el('p', { class: 'peq' }, [el('b', { text: s.acoes + (s.acoes === 1 ? ' ação' : ' ações') }), ' teriam acontecido em ' + s.avaliados + (s.avaliados === 1 ? ' caso avaliado' : ' casos avaliados') + ' nos últimos 30 dias. Nada foi executado.']));
+    (s.exemplos || []).forEach(function (e) { box.appendChild(el('p', { class: 'peq suave aut-ex', text: '• ' + e.motivo + (e.alvo ? ' (movimento: ' + e.alvo + ')' : '') })); });
+  }
+  async function simular(regra, nome) {
+    var box = el('div', { class: 'aut-sim' }, ['Simulando…']);
+    janela('Simulação · ' + nome, [box], null, null, true);
+    mostrarSimulacao(box, await sb.rpc('automacao_simular', { p_regra: regra }));
+  }
+  var RES = { executada: 'Executada', simulada: 'Simulada', ignorada: 'Ignorada', aguardando_aprovacao: 'Aguardando aprovação', limite: 'Limite diário', erro: 'Erro' };
+  async function registro(x) {
+    var r = await sb.rpc('automacao_registro', { p_regra: x.id }), itens = r.error ? [] : (r.data || []);
+    var box = el('div', { class: 'aut-reg' }, itens.length ? itens.map(function (l) {
+      return el('p', { class: 'peq' }, [el('small', { text: new Date(l.em).toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }) + ' · v' + (l.versao || '?') + ' · ' }), el('b', { class: 'aut-r-' + l.resultado, text: RES[l.resultado] || l.resultado }), ' · ' + (l.motivo || '')]);
+    }) : [el('p', { class: 'peq suave', text: 'Ainda não rodou.' })]);
+    janela('Registro · ' + x.nome, [box], null, null, true);
+  }
+  async function versoes(x) {
+    var r = await sb.from('automacao_versoes').select('versao,nome,regra,salvo_por,salvo_em').eq('regra_id', x.id).order('versao', { ascending: false });
+    var itens = r.error ? [] : (r.data || []);
+    var box = el('div', { class: 'aut-reg' }, itens.map(function (v) {
+      var b = el('button', { type: 'button', class: 'btn sec mini', text: 'Voltar para esta' }); b.disabled = v.versao === x.versao;
+      b.addEventListener('click', async function () { var q = await sb.rpc('automacao_voltar_versao', { p_id: x.id, p_versao: v.versao }); if (q.error || !q.data.ok) return aviso((q.data && q.data.erro) || q.error.message); aviso('Voltou para a versão ' + v.versao + ' (salva como nova versão, pausada).', 'ok'); d.close(); d.remove(); recarregar(); });
+      return el('div', { class: 'aut-ver' }, [el('b', { text: 'v' + v.versao + (v.versao === x.versao ? ' (atual)' : '') }), el('p', { class: 'peq', text: ler(v.regra) }), el('small', { class: 'peq suave', text: (v.salvo_por || '') + ' · ' + new Date(v.salvo_em).toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' }) }), b]);
+    }));
+    var d = janela('Versões · ' + x.nome, [box], null, null, true);
+  }
+  async function recarregar() { carregando = false; await carregar(); }
+
+  // abre junto com a Manutenção
+  var obs = new MutationObserver(function () { if (!painel.classList.contains('esconde')) carregar(); });
+  obs.observe(painel, { attributes: true, attributeFilter: ['class'] });
 })();
 
 </script>
