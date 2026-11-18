@@ -9,8 +9,8 @@ var est={tipo:'acidente',alvo:null,d:{},seq:[],resp:{},docs:{}};var EIXO={},J=[]
 /* ---------- geometria do esqueleto ---------- */
 function chave(g){return g.dataset.bone+(g.dataset.side?'-'+g.dataset.side:'')}
 function E(k,s){return EIXO[k+(s?'-'+s:'')]}
-function preparar(){$('ossos').innerHTML=CORPO_SVG.replace(/^[\s\S]*?<svg[^>]*>/,'').replace(/<\/svg>\s*$/,'');ajustarEsqueleto();
- $('ossos').querySelectorAll('[data-bone]').forEach(function(g){EIXO[chave(g)]=eixoDe(g)});
+function preparar(){$('ossos').innerHTML=CORPO_SVG.replace(/^[\s\S]*?<svg[^>]*>/,'').replace(/<\/svg>\s*$/,'');var PR=window.ESQ_PRONTO,todos=$('ossos').querySelectorAll('*'),sx=(typeof MJS!=='undefined'&&MJ===MJS.f)?'f':'m';PR=PR&&PR.n===todos.length&&PR.v===CORPO_SVG.length&&PR[sx];if(PR){PR.t.forEach(function(x){var e=todos[x[0]];if(x[1]!==null)e.setAttribute('transform',x[1]);if(x[2])e.style.display=x[2]});for(var k in PR.e)EIXO[k]=PR.e[k]}else{ajustarEsqueleto();
+ $('ossos').querySelectorAll('[data-bone]').forEach(function(g){EIXO[chave(g)]=eixoDe(g)})}
  ['right','left'].forEach(function(s){var H=E('Humerus',s),C=E('Carpals',s),F=E('Femur',s),P=E('Patella',s),T=E('Tibia',s);
   J.push(['ombro',s,ponto(H,.03)],['cotovelo',s,ponto(H,.99)],['punho',s,[C.bb.x+C.bb.width/2,C.bb.y+C.bb.height/2]],['quadril',s,ponto(F,.04)],['joelho',s,[P.bb.x+P.bb.width/2,P.bb.y+P.bb.height/2+4]],['tornozelo',s,ponto(T,.985)])});
  if(!est._ossosOk){est._ossosOk=1;$('ossos').addEventListener('click',function(e){if(est.tipo!=='acidente'||est.alvo)return;var g=e.target.closest('[data-bone]');if(!g)return;var k=g.dataset.bone;if(k==='Skull')k='Cranium';if(!OSSO[k])return;
