@@ -1491,6 +1491,25 @@ html[data-app="equipe"] #instalarEquipe .nao{background:transparent;color:var(--
 })();
 
 </script>
+<style id="entrada-cheia">
+@media (max-width:640px){
+  main:has(> .cartao.centro:not(.esconde)){padding:0 0 calc(28px + env(safe-area-inset-bottom))}
+  .cartao.centro{background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important;margin:0!important;max-width:none!important;padding:26px 22px 8px!important;animation:none!important}
+  .cartao.centro > .faixa-logo{display:none!important}
+  .cartao.centro .nome-app{margin-top:0}
+  .cartao.centro h1{font-size:28px;line-height:1.15;margin:4px 0 10px}
+  .cartao.centro input,.cartao.centro .btn{min-height:52px}
+  html.claro .cartao.centro .link{color:#1b5fc4}
+}
+@media (min-width:900px){
+  main:has(> .cartao.centro:not(.esconde)){max-width:1040px}
+  .cartao.centro:has(> .faixa-logo){max-width:980px!important;width:100%;margin:5vh auto 0!important;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:56px;padding:44px 52px 40px 0!important;overflow:hidden}
+  .cartao.centro:has(> .faixa-logo) > *{grid-column:2}
+  .cartao.centro:has(> .faixa-logo) > .faixa-logo{grid-column:1;grid-row:1 / span 60;margin:-44px 0 -40px 0!important;border-radius:0!important;display:flex;align-items:center;justify-content:center;min-height:100%;padding:48px 32px!important}
+  .cartao.centro:has(> .faixa-logo) > .faixa-logo .logo-entrada{width:220px;height:auto}
+  .cartao.centro:has(> .faixa-logo) h1{font-size:32px;line-height:1.15}
+}
+</style>
 </head>
 <body>
 <header class="topo">
@@ -2425,7 +2444,7 @@ Resources:`;for(let t of c){if(!t||typeof t!=`string`)throw Error(`@supabase/aut
   // ---------------------------------------------------------------
   // Comportamento de aplicativo: modo instalado, sem internet, nova versão e toque
   // ---------------------------------------------------------------
-  var BUILD = 'lanhi-20261118-0430-equipe';
+  var BUILD = 'lanhi-20261118-1851-equipe';
   var instalado = (window.matchMedia && matchMedia('(display-mode: standalone)').matches) || window.navigator.standalone === true;
   document.documentElement.classList.toggle('instalado', !!instalado);
   if (/iphone|ipad|ipod/i.test(navigator.userAgent)) document.documentElement.classList.add('ios');
