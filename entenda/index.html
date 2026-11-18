@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Calcule o seu auxílio-acidente · Lanhi Advogados</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0b0d;--sup:#131518;--sup2:#1a1d21;--linha:#24282d;--tx:#f2f3f4;--tx2:#9ba1a9;--tx3:#646a72;--azul:#5d9cf5;--dor:#ff4d42;--ok:#4cc38a;--at:#e8b44a}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--tx);font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+button,input,select{font:inherit;color:inherit}button{background:none;border:0;cursor:pointer}
+.topo{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;position:sticky;top:0;z-index:30;background:rgba(10,11,13,.85);backdrop-filter:blur(14px)}
+.marca{font-weight:700;letter-spacing:.02em;font-size:17px;line-height:1}.marca small{display:block;font-size:7px;letter-spacing:.42em;font-weight:500;color:var(--tx2);margin-top:3px}
+.prog{display:flex;gap:4px}.prog i{width:18px;height:3px;border-radius:3px;background:var(--linha);transition:.4s}.prog i.on{background:var(--tx)}
+main{max-width:1120px;margin:0 auto;padding:12px 20px 60px}
+.tela{display:none;animation:entra .5s ease both}.tela.on{display:block}
+@keyframes entra{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+h1{font-size:clamp(28px,7vw,42px);line-height:1.05;letter-spacing:-.025em;font-weight:700}
+h2{font-size:19px;font-weight:600;letter-spacing:-.01em}
+.sub{color:var(--tx2);font-size:15px;line-height:1.55;margin-top:8px;max-width:560px}
+.tipos{display:flex;gap:6px;margin-top:18px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.tipos::-webkit-scrollbar{display:none}
+.tipo{flex:none;display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;border:1px solid var(--linha);font-size:14px;color:var(--tx2);transition:.25s;white-space:nowrap}
+.tipo svg{width:16px;height:16px}
+.tipo.on{background:var(--tx);color:#0a0b0d;border-color:var(--tx);font-weight:600}
+.palco{display:grid;grid-template-columns:1fr;gap:16px;margin-top:16px}
+.cena{position:relative;border-radius:28px;overflow:hidden;background:radial-gradient(ellipse at 50% 32%,#112241 0%,#0a1428 45%,#05080f 100%);aspect-ratio:4/5;max-height:76vh;width:100%}
+.cena:after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,transparent 58%,rgba(0,0,0,.5));pointer-events:none}
+svg#sk{position:absolute;inset:0;width:100%;height:100%}
+#ossos [data-bone]{cursor:pointer}
+.rx .h{fill:#d9e8ff}.rx .s{fill:#a3bfea}.rx .b{fill:#6c8dc6}.rx .g{fill:#5d9cf5;opacity:.6}.rx .n{fill:#d9e8ff}.rx .o{stroke:#fff;stroke-width:.3}
+.tc .h{fill:#cdd3db}.tc .s{fill:#8a929c}.tc .b{fill:#535a64}.tc .g{fill:#1b2430}.tc .n{fill:#cdd3db}.tc .o{stroke:#f6f8fb;stroke-width:.28}
+#ossos [class="o"]{fill:none}
+.rx #ossos [data-bone]:hover>g .h,.rx #ossos [data-bone]:hover>g>g .h{fill:#ffe08a}
+.apaga #ossos{opacity:.28}.apaga #auraU{opacity:.5}
+#orgaos{transition:opacity .6s}
+.org{cursor:pointer;transition:opacity .3s,filter .3s}
+.org:hover{filter:brightness(1.25)}
+.mira{cursor:pointer}.mira .a{fill:none;stroke:#ffd257;stroke-width:1.3}.mira .n{fill:#ffe7a0}.mira .p{fill:none;stroke:#ffd257;stroke-width:1;transform-box:fill-box;transform-origin:center;animation:pul 2.4s ease-out infinite}
+.mira text{font-size:15px;fill:#f1e3b8;font-weight:600;paint-order:stroke;stroke:#05080f;stroke-width:4px;opacity:.95}
+@keyframes pul{0%{transform:scale(.6);opacity:.8}100%{transform:scale(2.6);opacity:0}}
+.os .h{fill:#efe4cc}.os .s{fill:#cdb991}.os .b{fill:#8a7550}.os .g{fill:#a9c3d6;opacity:.75}.os .n{fill:#efe4cc}.os .o{stroke:#5b4a30;stroke-width:.3}
+.os #auraU{opacity:.35}.mu #ossos,.lg #ossos{opacity:.32}.mu #auraU,.lg #auraU{opacity:.25}
+#mus{opacity:0;transition:opacity .5s;pointer-events:none}.mu #mus,.pe #mus{opacity:1;pointer-events:auto}#imgMus,#musG,#tend{transition:opacity .5s}.pe #imgMus,.pe #musG,.pe #tend{opacity:0}.pe #ossos,.pe #auraU{opacity:0}.pe #musG{pointer-events:none}
+#mus{cursor:pointer}#musG path{fill:#ff5a4f;opacity:0;mix-blend-mode:screen;transition:opacity .25s}#musG path:hover{opacity:.22}.mu #ossos{opacity:0}.mu.zo #fx,.mu.zo #hw,.mu.zo #lig,.mu.zo #ner{opacity:0}#musMiras .mira{cursor:pointer}.mu #auraU{opacity:0}
+#ligAll .lig{stroke-width:2.6px;stroke:#7fd6ff}#ligAll{opacity:0;transition:opacity .5s}.lg #ligAll{opacity:1}
+.virar{position:absolute;left:14px;bottom:14px;z-index:7;display:flex;align-items:center;gap:7px;height:38px;padding:0 14px 0 11px;border-radius:999px;background:rgba(5,8,15,.62);border:1px solid rgba(255,255,255,.12);color:#e8eef7;font-size:13px;font-weight:600;backdrop-filter:blur(8px)}
+.virar svg{width:17px;height:17px}.virar.sexo{left:auto;right:62px}.virar.oculto{display:none}
+#musCostas{display:none}.costas #musCostas{display:inline}.costas #imgPele,.costas #imgMus,.costas #musG,.costas #tend{display:none}
+.pe #imgMusC{opacity:0}#imgMusC{transition:opacity .5s}
+.costas #ossos [data-bone="Mandible"]{opacity:0}.costas.rx #ossos [data-bone="Cranium"] path:not(.o){fill:#d9e8ff}.costas.tc #ossos [data-bone="Cranium"] path:not(.o){fill:#cdd3db}.costas.rx #ossos [data-bone="Cranium"] .b,.costas.tc #ossos [data-bone="Cranium"] .b{fill:#c4d6f2}
+.costas #flip text{transform:scaleX(-1);transform-box:fill-box;transform-origin:center}
+#sk.virando{animation:vira .45s ease}@keyframes vira{0%{opacity:1}45%{opacity:0;transform:scaleX(.6)}55%{opacity:0;transform:scaleX(.6)}100%{opacity:1}}
+.vis{position:absolute;right:10px;top:50%;transform:translateY(-50%);z-index:6;display:flex;flex-direction:column;gap:4px;padding:4px;border-radius:18px;background:rgba(5,8,15,.55);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(8px);transition:opacity .3s}
+.vis button{display:flex;flex-direction:column;align-items:center;gap:2px;width:50px;padding:7px 0 6px;border-radius:14px;font-size:9.5px;color:#8fa1ba;transition:.2s}
+.vis button svg{width:20px;height:20px}
+.vis button.on{background:#e8eef7;color:#0a0b0d;font-weight:600}
+.vis.oculto{opacity:0;pointer-events:none}
+.foto{position:absolute;right:14px;bottom:14px;z-index:7;width:38px;height:38px;border-radius:999px;background:rgba(5,8,15,.62);border:1px solid rgba(255,255,255,.1);display:grid;place-items:center;color:#d8e4f5}
+.foto svg{width:18px;height:18px}
+
+body.embed header,body.embed footer,body.embed .topo,body.embed .rodape{display:none!important}body.embed{padding:0!important}body.embed #tMapa>.sub{display:none}body.embed #tMapa>h1{font-size:24px;padding-right:46px;margin-bottom:10px}body.embed #tMapa>.gancho{margin:0}body.embed .tela>h1{padding-right:46px}
+.lig{fill:none;stroke:#62c8ff;stroke-linecap:round;filter:url(#glow)}.lig.ruim{stroke:#ff4d42}
+.ligT{fill:#bfe8ff;font-weight:600;paint-order:stroke;stroke:#05080f}
+.nervo{fill:none;stroke:#ffd34d;stroke-width:.9;stroke-linecap:round;opacity:.85}.nervo.ruim{stroke:#ff4d42}
+.traco{stroke-dasharray:260;stroke-dashoffset:260;animation:traca .9s ease-out forwards}@keyframes traca{to{stroke-dashoffset:0}}
+.surge{animation:surge .7s ease-out both;transform-box:fill-box;transform-origin:center}@keyframes surge{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:none}}
+.metal{filter:url(#bloom);animation:metal .9s cubic-bezier(.2,.9,.2,1) both}@keyframes metal{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
+.pisca{animation:pisca 1.6s ease-in-out infinite}@keyframes pisca{0%,100%{opacity:.45}50%{opacity:1}}
+.artef{stroke:#fff;stroke-width:.3;opacity:.16}
+.voltar{position:absolute;top:14px;left:14px;z-index:5;padding:8px 13px;border-radius:999px;background:rgba(5,8,15,.6);border:1px solid rgba(255,255,255,.08);font-size:13px;color:#d8e4f5;opacity:0;pointer-events:none;transition:.3s}
+.voltar.on{opacity:1;pointer-events:auto}
+.rotulo{position:absolute;top:16px;right:16px;z-index:5;font-size:12.5px;color:#e9d9a8;font-weight:600;opacity:0;transition:.3s}.rotulo.on{opacity:1}
+.legenda{margin-top:10px;padding:0 4px;min-height:38px;font-size:13.5px;line-height:1.45;color:#b9c6d8;transition:.3s}
+.legenda b{color:#fff;font-weight:600}
+.painel{background:var(--sup);border-radius:24px;padding:20px}
+.hpasso{font-size:12px;color:var(--tx3);margin-bottom:4px;letter-spacing:.01em}
+.hq{font-size:19px;font-weight:600;margin-bottom:14px;letter-spacing:-.01em}
+.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.tile{display:flex;flex-direction:column;gap:2px;padding:13px 14px;border-radius:16px;background:var(--sup2);text-align:left;transition:.2s;border:1px solid transparent}
+.tile b{font-size:14px;font-weight:600;line-height:1.25}.tile span{font-size:12px;color:var(--tx2);line-height:1.3}
+.tile:hover{border-color:#30353c}.tile.on{border-color:var(--tx);background:#202429}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{padding:8px 12px;border-radius:999px;background:var(--sup2);font-size:13.5px;color:var(--tx2);border:1px solid transparent}
+.chip.on{background:var(--tx);color:#0a0b0d;font-weight:600}
+.grupo{margin-top:16px}.grupo p{font-size:13px;color:var(--tx2);margin-bottom:8px}
+.btn{display:flex;align-items:center;justify-content:center;width:100%;min-height:52px;border-radius:16px;background:var(--tx);color:#0a0b0d;font-weight:600;font-size:15.5px;margin-top:16px;transition:transform .15s}
+.btn:active{transform:scale(.98)}.btn.sec{background:transparent;color:var(--tx2);border:1px solid var(--linha)}.btn.zap{background:#25d366;color:#04210f}
+.link{color:var(--tx2);font-size:13.5px;text-decoration:underline;text-underline-offset:3px;margin-top:12px;display:inline-block}
+.erro{color:#ff8a80;font-size:13px;margin-top:8px;min-height:16px}
+/* resultado */
+.res{display:grid;gap:14px;margin-top:18px}
+.cap{display:flex;gap:14px;align-items:center}
+.miniSk{width:96px;height:120px;flex:none;border-radius:18px;background:radial-gradient(#13264a,#05080f)}
+.tag{display:inline-block;font-size:12px;padding:4px 9px;border-radius:999px;background:var(--sup2);color:var(--tx2);margin:5px 5px 0 0}
+.sinal{display:flex;gap:10px;align-items:flex-start;padding:11px 0;border-top:1px solid var(--linha)}
+.sinal i{flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:12px;font-weight:700;margin-top:1px}
+.s-ok{background:rgba(76,195,138,.15);color:var(--ok)}.s-at{background:rgba(232,180,74,.15);color:var(--at)}.s-pa{background:rgba(93,156,245,.15);color:var(--azul)}
+.sinal b{display:block;font-size:14.5px;font-weight:600}.sinal span{font-size:13.5px;color:var(--tx2);line-height:1.45}
+/* calculadora integrada */
+.calc .topo-c{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
+.valor{font-size:clamp(36px,10vw,48px);font-weight:700;letter-spacing:-.035em;line-height:1}
+.valor small{font-size:14px;color:var(--tx2);font-weight:500;letter-spacing:0;margin-left:6px}
+.bens{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0 4px}
+.regra{font-size:12.5px;color:var(--tx2);margin-top:8px}
+.destaque{position:relative;margin:-6px -6px 14px;padding:20px 18px 16px;border-radius:22px;background:radial-gradient(120% 90% at 0% 0%,#1d3566 0%,#0e1a33 55%,#0a1222 100%);border:1px solid rgba(255,210,87,.28);box-shadow:0 18px 50px -24px rgba(93,156,245,.55),inset 0 1px 0 rgba(255,255,255,.06);overflow:hidden}
+.destaque:before{content:"";position:absolute;right:-60px;top:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(255,210,87,.22),transparent 65%);pointer-events:none}
+.destaque .dq-n{color:#f1d58a;font-weight:600;font-size:13px;margin-bottom:6px}
+.destaque .valor{font-size:clamp(46px,13vw,64px);font-variant-numeric:tabular-nums;color:#fff;text-shadow:0 4px 30px rgba(93,156,245,.35)}
+.destaque .valor .rs{font-size:.42em;font-weight:600;color:#b9c9e6;margin-right:6px;vertical-align:.62em;letter-spacing:0}
+.destaque .valor small{display:block;margin:8px 0 0;font-size:13.5px;color:#9fb0c8}
+.destaque .kpis{margin-top:16px}
+.destaque .kpi{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06)}
+.destaque .kpi small{color:#9fb0c8}.destaque .kpi strong{font-size:19px;font-variant-numeric:tabular-nums;color:#fff}
+.destaque .kpi strong .rs{font-size:.62em;color:#9fb0c8;margin-right:3px;font-weight:500}
+.destaque .kpi.ouro{background:linear-gradient(160deg,rgba(255,210,87,.2),rgba(255,210,87,.06));border-color:rgba(255,210,87,.35)}
+.destaque .kpi.ouro small{color:#f1d58a}.destaque .kpi.ouro strong{color:#ffe7a0}
+@media(max-width:420px){.destaque .kpis{grid-template-columns:1fr 1fr}.destaque .kpi.ouro{grid-column:1/-1;order:-1}.destaque .kpi.ouro strong{font-size:24px}}
+.essenciais{display:grid;grid-template-columns:1.35fr 1fr;gap:10px;margin-top:14px}
+.ess .lb{font-size:12.5px;color:var(--tx2);margin-bottom:6px}
+.passo-n{display:grid;grid-template-columns:42px 1fr 42px;align-items:center;height:46px;border-radius:12px;border:1px solid var(--linha);background:var(--sup2);overflow:hidden}
+.passo-n button{height:100%;font-size:20px;color:var(--tx);transition:background .15s}.passo-n button:active{background:rgba(255,255,255,.08)}
+.passo-n output{text-align:center;font-weight:700;font-size:18px;font-variant-numeric:tabular-nums}
+.linha{margin-top:16px;padding:14px;border-radius:16px;background:var(--sup2)}
+.linha .lt{display:flex;justify-content:space-between;font-size:12.5px;color:var(--tx2);margin-bottom:10px}.linha .lt b{color:#ffe7a0;font-weight:600}
+.linha .trilho{position:relative;height:30px;display:flex;gap:2px;align-items:flex-end}
+.linha .trilho i{flex:1;border-radius:3px 3px 1px 1px;background:#2a3140;height:30%;transition:height .5s cubic-bezier(.2,.9,.2,1),background .3s}
+.linha .trilho i.c{background:linear-gradient(#ffe7a0,#d9a93a)}
+.linha .anos{display:flex;justify-content:space-between;font-size:11px;color:var(--tx3);margin-top:6px;font-variant-numeric:tabular-nums}
+.linha .leg{font-size:12px;color:var(--tx3);margin-top:8px;line-height:1.45}
+.gancho{display:flex;gap:10px;align-items:flex-start;margin-top:14px;padding:11px 14px;border-radius:14px;background:linear-gradient(100deg,rgba(255,210,87,.12),rgba(255,210,87,.03));border:1px solid rgba(255,210,87,.22);font-size:13.5px;line-height:1.45;color:#e9dcb6}
+.gancho b{color:#fff;font-weight:600}.gancho i{flex:none;width:7px;height:7px;border-radius:50%;background:#ffd257;margin-top:6px;box-shadow:0 0 0 4px rgba(255,210,87,.15)}
+.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:16px}
+.kpi{background:var(--sup2);border-radius:14px;padding:12px}
+.kpi small{display:block;font-size:11.5px;color:var(--tx2);line-height:1.25}.kpi strong{font-size:17px;letter-spacing:-.02em;display:block;margin-top:4px}
+.ajustes{margin-top:16px;border-top:1px solid var(--linha);padding-top:4px}
+.ajustes summary{list-style:none;cursor:pointer;padding:12px 0;font-size:14px;font-weight:600;display:flex;justify-content:space-between}
+.ajustes summary::-webkit-details-marker{display:none}
+.ajustes summary:after{content:"+";color:var(--tx2);font-weight:400;font-size:18px;line-height:1}
+.ajustes[open] summary:after{content:"–"}
+.campo{margin-top:12px}.campo .lb{display:flex;justify-content:space-between;font-size:13px;color:var(--tx2);margin-bottom:8px}.campo .lb b{color:var(--tx);font-weight:600}
+.inp{width:100%;height:46px;border-radius:12px;border:1px solid var(--linha);background:var(--sup2);padding:0 12px;font-size:15px;color:var(--tx);outline:none}.inp:focus{border-color:var(--azul)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+input[type=range]{width:100%;accent-color:var(--tx)}
+.periodo{display:grid;grid-template-columns:1fr 1fr 1.3fr auto;gap:6px;margin-bottom:6px}.periodo .inp{height:42px;font-size:14px;padding:0 8px}
+.rm{width:34px;border-radius:10px;border:1px solid var(--linha);color:var(--tx3)}.add{font-size:13.5px;color:var(--tx);padding:6px 0;font-weight:600}
+.conta{margin-top:10px}.pc{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px dashed var(--linha);font-size:13.5px;color:var(--tx2)}.pc b{color:var(--tx);font-weight:600;white-space:nowrap}
+.nota{font-size:12px;color:var(--tx3);line-height:1.5;margin-top:12px}
+.doc{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:12px 0;border-top:1px solid var(--linha)}
+.doc b{font-size:14.5px;font-weight:600}.doc span{display:block;font-size:13px;color:var(--tx2);line-height:1.4;margin-top:2px}.doc .onde{color:var(--azul)}
+.tri{display:flex;background:var(--sup2);border-radius:10px;padding:3px}.tri button{font-size:12px;padding:6px 8px;border-radius:8px;color:var(--tx2)}
+.tri button.on[data-v=tem]{background:var(--ok);color:#04210f;font-weight:600}.tri button.on[data-v=nao]{background:#3a3f46;color:var(--tx)}.tri button.on[data-v=sei]{background:var(--at);color:#2a1d02;font-weight:600}
+.aviso{font-size:12px;color:var(--tx3);line-height:1.5;margin-top:12px}
+.rodape{text-align:center;color:var(--tx3);font-size:11px;padding:18px 20px 36px;line-height:1.6}
+@media (min-width:920px){.palco{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);align-items:start}.painel.hist{position:sticky;top:76px}.res{grid-template-columns:1fr 1.15fr;align-items:start}.res .largo{grid-column:1/-1}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+<meta name="description" content="Toque na região do corpo e veja, camada por camada, o que a perícia costuma avaliar e uma estimativa do benefício do INSS. Conteúdo informativo da Lanhi Advogados.">
+<meta property="og:title" content="Calcule o seu auxílio-acidente · Lanhi Advogados">
+<meta property="og:description" content="Mapa do corpo e calculadora informativa de auxílio-acidente e outros benefícios do INSS.">
+<meta property="og:image" content="https://www.lanhiadvogados.com.br/entenda/capa.webp">
+<link rel="icon" href="/favicon-32.png">
+<style>.topo .marca img{display:block;height:15px;width:auto}</style>
+</head>
+<body>
+<header class="topo"><a class="marca" href="/" aria-label="Lanhi Advogados, página inicial"><img src="logo.svg" alt="Lanhi Advogados" height="15"></a><div class="prog" id="prog"><i class="on"></i><i></i><i></i><i></i><i></i></div></header>
+<main>
+<section class="tela on" id="tMapa">
+ <h1>Calcule o seu auxílio-acidente</h1>
+ <p class="sub">Comece tocando onde ficou a sequela. Em menos de um minuto, você vê por dentro do corpo o que a perícia costuma avaliar e uma estimativa do valor por mês e dos atrasados.</p>
+ <div class="gancho"><i></i><span><b>Você sabia?</b> Dá para receber o auxílio-acidente e continuar trabalhando.</span></div>
+ <div class="tipos" id="tipos"></div>
+ <div class="palco">
+  <div class="cena" id="cena">
+   <svg id="sk" class="rx" viewBox="-128 2 660 826" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Corpo humano: toque na região">
+    <defs>
+     <filter id="aura" x="-30%" y="-10%" width="160%" height="120%"><feMorphology operator="dilate" radius="12" in="SourceAlpha" result="d"/><feGaussianBlur in="d" stdDeviation="8" result="b"/><feFlood flood-color="#4f8ff0" flood-opacity=".32"/><feComposite in2="b" operator="in"/></filter>
+     <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="1.3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+     <filter id="bloom" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="1.8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+     <filter id="ruido"><feTurbulence type="fractalNoise" baseFrequency=".95" numOctaves="2" seed="4"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .06 0"/></filter>
+     <radialGradient id="gDor"><stop offset="0" stop-color="#fff0c8"/><stop offset=".3" stop-color="#ff7a3a" stop-opacity=".8"/><stop offset=".7" stop-color="#ff4a2a" stop-opacity=".22"/><stop offset="1" stop-color="#ff3b1f" stop-opacity="0"/></radialGradient>
+     <radialGradient id="gCalor"><stop offset="0" stop-color="#ffcf6a" stop-opacity=".95"/><stop offset=".5" stop-color="#ff6a3a" stop-opacity=".45"/><stop offset="1" stop-color="#ff3b1f" stop-opacity="0"/></radialGradient>
+     <linearGradient id="gOrg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff9aa6"/><stop offset="1" stop-color="#c94b62"/></linearGradient>
+     <linearGradient id="gFig" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c98a62"/><stop offset="1" stop-color="#8e4f35"/></linearGradient>
+     <linearGradient id="gPul" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffb3bd"/><stop offset="1" stop-color="#d9707f"/></linearGradient>
+     <radialGradient id="gCer" cx="50%" cy="40%" r="65%"><stop offset="0" stop-color="#f6c7d4"/><stop offset="1" stop-color="#c98aa0"/></radialGradient>
+    </defs>
+    <g id="flip">
+    <use href="#ossos" filter="url(#aura)" id="auraU"/>
+    <g id="ossos"></g>
+    <g id="mus"></g>
+    <g id="ligAll"></g>
+    <g id="orgaos" opacity="0"></g>
+    <g id="cerebro" opacity="0"></g>
+    <g id="lig"></g><g id="ner"></g><g id="fx"></g><g id="hw"></g><g id="dorG"></g><g id="miras"></g>
+    </g>
+    <rect id="grao" x="-200" y="-100" width="900" height="1100" filter="url(#ruido)" opacity="0" pointer-events="none"/>
+   </svg>
+   <div class="vis" id="vis"><button data-v="pe" class="on" aria-label="Pele"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.4"/><path d="M8 9.5h8l-1 6h-1.5L13 21h-2l-.5-5.5H9z"/></svg>Pele</button><button data-v="mu" aria-label="Músculos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c3-1 4-4 4-7 3 3 8 3 10 0 1-2-1-5-4-4-1-3-4-5-6-3l1 3c-3 0-5 5-5 11z"/></svg>Músculos</button><button data-v="rx" aria-label="Ossos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M8 6.5a2.2 2.2 0 1 0-2.5 2.3L15.2 18.5a2.2 2.2 0 1 0 2.3 2.5 2.2 2.2 0 1 0 1-4.3L8.8 7A2.2 2.2 0 0 0 8 6.5z"/></svg>Ossos</button></div>
+   <button class="virar" id="virar" type="button" aria-label="Ver o corpo de costas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 14-5.3M20 4v4h-4M20 12a8 8 0 0 1-14 5.3M4 20v-4h4"/></svg><span>Ver costas</span></button>
+   <button class="virar sexo" id="sexoBt" type="button" aria-label="Trocar para corpo feminino"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="6" r="3"/><path d="M8 21v-6l-1.5-4.5h11L16 15v6"/></svg><span>Masculino</span></button>
+   <button class="foto" id="foto" aria-label="Salvar imagem para compartilhar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></button>
+   <button class="voltar" id="voltar">← Corpo inteiro</button>
+   <div class="rotulo" id="rotulo"></div>
+   <div class="legenda" id="legenda">Toque em um osso ou em um dos pontos dourados.</div>
+  </div>
+  <div class="painel hist" id="hist"></div>
+ </div>
+ <a href="#" class="link" id="soCalc">Prefiro só calcular o valor</a>
+</section>
+
+<section class="tela" id="tRes">
+ <h1 id="resTit">Seu caso merece uma análise</h1>
+ <div class="res" id="resGrid">
+  <div class="painel">
+   <div class="cap"><div class="miniSk" id="miniBox"></div><div><h2 id="resReg"></h2><div id="resTags"></div></div></div>
+   <div style="margin-top:14px" id="sinais"></div>
+  </div>
+  <div id="calcSlot"></div>
+  <div class="painel largo"><h2>Organize o seu caso</h2><p class="sub" style="margin-top:4px">Marque o que já tem. Mostramos onde conseguir o que falta.</p><div id="docs" style="margin-top:8px"></div></div>
+ </div>
+ <button class="btn zap" id="zap">Falar com um advogado sobre o meu caso</button>
+ <p class="aviso">Se este é o teu caso, e você quiser nos contar como foi, pode clicar no botão acima e falar agora com um dos nossos advogados. A mensagem já vai com o resumo do seu mapa. Conteúdo educativo: cada caso depende de documentos e de perícia.</p>
+ <button class="btn sec" id="refazer">Recomeçar</button>
+</section>
+
+<section class="tela" id="tCalc"><h1>Quanto você pode receber</h1><p class="sub">Uma estimativa transparente, com cada etapa da conta à mostra.</p><div id="calcSlot2" style="margin-top:18px"></div><a href="#" class="link" id="voltaMapa">Voltar para o mapa</a></section>
+
+<div hidden id="guarda"><div id="calcBloco" class="painel calc">
+ <div class="destaque">
+  <div class="hpasso dq-n" id="cBenNome">Auxílio-acidente estimado</div>
+  <div class="valor" id="oMes">R$ 0<small>por mês</small></div>
+  <div class="kpis"><div class="kpi"><small id="k1n">Por ano, com 13º</small><strong id="k1"></strong></div><div class="kpi ouro"><small id="k2n">Atrasados estimados</small><strong id="k2"></strong></div><div class="kpi"><small id="k3n">Até aposentar</small><strong id="k3"></strong></div></div>
+ </div>
+ <div class="bens chips" id="cBen"><button class="chip on" data-v="aa">Auxílio-acidente</button><button class="chip" data-v="ad">Auxílio-doença</button><button class="chip" data-v="ap">Aposentadoria por incapacidade</button></div>
+ <div class="regra" id="oRegra"></div>
+ <div class="essenciais">
+  <div class="ess"><div class="lb" id="cIniN">Data do acidente</div><div class="duo"><select class="inp" id="cAcM"></select><select class="inp" id="cAcA"></select></div></div>
+  <div class="ess"><div class="lb">Sua idade (anos)</div><div class="passo-n"><button type="button" data-d="-1" aria-label="Diminuir idade">−</button><output id="cIdO">40</output><button type="button" data-d="1" aria-label="Aumentar idade">+</button></div><input type="range" id="cId" min="18" max="64" step="1" value="40" hidden></div>
+ </div>
+ <div class="linha" id="linha"></div>
+ <div class="gancho"><i></i><span><b>Não existe prazo para pedir</b> o auxílio-acidente. Mas os atrasados alcançam só os últimos 5 anos, então o tempo conta a favor de quem organiza o caso antes.</span></div>
+ <div class="campo"><div class="lb"><span>Sua média salarial</span><b id="cMedO"></b></div><input type="range" id="cMed" min="1621" max="8475" step="25" value="2800"></div>
+ <details class="ajustes"><summary>Ajustar datas e detalhes</summary>
+  <div class="campo"><div class="lb">Você era</div><div class="chips" id="cTipo"><button class="chip on" data-v="emp">Empregado, doméstico ou avulso</button><button class="chip" data-v="rural">Agricultor em regime familiar</button></div></div>
+  <div class="campo"><div class="lb" id="cFimN">O auxílio-doença terminou em</div><div class="duo"><select class="inp" id="cFimM"></select><select class="inp" id="cFimA"></select></div></div>
+  <div class="campo" id="cApBox" style="display:none"><div class="lb"><span>Anos de contribuição</span><b id="cAnosO"></b></div><input type="range" id="cAnos" min="1" max="40" step="1" value="18"><div class="chips" style="margin-top:10px" id="cSexo"><button class="chip on" data-v="m">Homem</button><button class="chip" data-v="f">Mulher</button></div></div>
+  <div class="campo"><div class="lb">Salários</div><div class="chips" id="cModo"><button class="chip on" data-v="media">Uma média</button><button class="chip" data-v="periodos">Por períodos</button></div><div id="cPer" style="display:none;margin-top:10px"><div id="cPerLista"></div><button class="add" id="cAdd">+ Período</button></div></div>
+ </details>
+ <div class="conta" id="oPassos"></div>
+ <p class="nota">Teto do INSS em 2026: R$ 8.475,55. Salário mínimo: R$ 1.621,00. Sem correção e juros, que costumam aumentar os atrasados. O valor real depende do seu CNIS e da perícia.</p>
+</div></div>
+</main>
+<div class="rodape">Lanhi Advogados · Capinzal (SC) · Informação de caráter educativo<br>Esqueleto: Mariana Ruiz Villarreal (LadyofHats), domínio público, Wikimedia Commons · Musculatura: js-rich-body-highlighter (MIT)</div>
+<script src="esqueleto-data.js"></script>
+<script src="geo.js"></script>
+<script src="app.js"></script>
+<script src="app2.js"></script>
+<script src="corpo-data.js"></script>
+<script src="app3.js"></script>
+</body>
+</html>
