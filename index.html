@@ -889,6 +889,24 @@ nav.main .nav-avaliar:hover,.nav-avaliar:hover{background:#1b5fc4}
 .av-hero:hover .av-lk{background:#1b5fc4}
 .calc-cta:focus-visible,.nav-avaliar:focus-visible,.av-float:focus-visible,.av-hero:focus-visible{outline:3px solid #ffd257;outline-offset:3px}
 </style>
+<style id="faixa-aval-css">
+.faixa-aval{padding:44px 0 34px;border-bottom:1px solid var(--line)}
+.fa-head{display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px;margin-bottom:18px}
+.fa-nota{display:flex;align-items:center;gap:12px}
+.fa-g{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:#fff;color:#4285F4;font:800 22px var(--body,system-ui);border:1px solid var(--line);flex:none}
+.fa-nota b{display:block;font-size:24px;line-height:1.1}
+.fa-st{color:#f4b400;font-size:17px;letter-spacing:1px;margin-left:4px}
+.fa-nota small{color:var(--muted);font-size:13px}
+.fa-tx{flex:1 1 260px;color:var(--muted);font-size:15px;margin:0}
+.fa-acoes{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px}
+.fa-btn{white-space:nowrap;display:inline-flex;align-items:center;gap:6px;background:#2270e6;color:#fff;font-weight:700;font-size:15px;padding:11px 18px;border-radius:999px;text-decoration:none;box-shadow:0 8px 22px rgba(34,112,230,.32)}
+.fa-btn:hover{background:#1b5fc4}
+.fa-btn:focus-visible,.fa-ver:focus-visible{outline:3px solid #ffd257;outline-offset:3px}
+.fa-ver{color:var(--ink);font-weight:600;font-size:14.5px;text-decoration:underline;text-underline-offset:3px}
+.rev-f p{display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden;font-size:15px}
+.rev-f{flex-basis:320px;padding:20px}
+@media (max-width:560px){.faixa-aval{padding:32px 0 26px}.fa-acoes{width:100%;flex-direction:column;align-items:stretch;gap:12px}.fa-btn{justify-content:center;padding:13px 18px}.fa-ver{text-align:center}.rev-f{flex-basis:82vw}}
+</style>
 </head>
 <body><script>(function(){if(/[?&]app=1/.test(location.search)||(window.matchMedia&&matchMedia("(display-mode: standalone)").matches)){location.replace("cliente/");return}var d=document.documentElement,q=location.search,v=false;try{v=sessionStorage.getItem("lanhi-entrada")==="1"}catch(e){}var app=/[?&]app=1/.test(q)||(window.matchMedia&&matchMedia("(display-mode: standalone)").matches);var anuncio=/[?&](utm_|fbclid|gclid)/.test(q);if(v||location.hash||(anuncio&&!app))return;d.classList.add("com-intro")})()</script><div id="intro" aria-hidden="true"><div class="intro-marca"><span class="logo" role="img" aria-label="Lanhi Advogados"></span><span class="intro-barra"></span></div><div class="intro-escolha"><p class="intro-kicker">Advocacia previdenciária</p></div></div></div><script>(function(){var d=document.documentElement,i=document.getElementById("intro");if(!i||!d.classList.contains("com-intro"))return;var foi=false;function sai(){if(foi)return;foi=true;try{sessionStorage.setItem("lanhi-entrada","1")}catch(e){}i.classList.add("saindo");setTimeout(function(){d.classList.remove("com-intro");i.remove()},450)}var curto=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;setTimeout(sai,curto?600:2100);i.addEventListener("click",sai);document.addEventListener("keydown",sai,{once:true})})()</script>
 
@@ -1155,6 +1173,8 @@ document.getElementById('mapaFechar').onclick=fechar;document.addEventListener('
   <div class="stat"><b data-count="11" data-suffix=" mil+">11 mil+</b><span>pessoas acompanham nosso conteúdo</span></div>
   <div class="stat"><b>4,9 <span class="st">★</span></b><span>nota no Google, com 126 avaliações</span></div>
 </div></section>
+<section class="faixa-aval" id="faixaAval" aria-label="Avaliações no Google"><div class="wrap fa-head"><div class="fa-nota"><span class="fa-g" aria-hidden="true">G</span><div><b>4,9 <span class="fa-st" aria-hidden="true">★★★★★</span></b><small>126 avaliações no Google</small></div></div><p class="fa-tx">Quem já foi atendido recomenda. Depoimentos públicos do nosso perfil no Google.</p><div class="fa-acoes"><a class="fa-btn" href="/avaliar/">★ Avaliar o escritório</a><a class="fa-ver" href="https://share.google/EC6lMRHWf5HcbNnTK" target="_blank" rel="noopener">Ver todas no Google ↗</a></div></div><div class="track-outer"><div class="track fa-track" id="revFaixa" tabindex="0" aria-label="Avaliações no Google: arraste para os lados"><article class="rev rev-f"><div class="rev-top"><span class="av">W</span><div><b>Willian S.</b><small>Avaliação no Google</small></div><span class="g">G</span></div><div class="rstars" aria-label="5 de 5 estrelas">★★★★★</div><p>“Atendimento acima da média, profissionalismo total, todas as dúvidas que eu tive conseguiram me responder com muita clareza e perfeição, indico a todos.”</p></article><article class="rev rev-f"><div class="rev-top"><span class="av">G</span><div><b>Gregori B.</b><small>Avaliação no Google</small></div><span class="g">G</span></div><div class="rstars" aria-label="5 de 5 estrelas">★★★★★</div><p>“Um ótimo atendimento, fui muito bem atendido. Tiraram todas as minhas dúvidas. Atendimento bem ágil e com atenção total ao cliente.”</p></article><article class="rev rev-f"><div class="rev-top"><span class="av">S</span><div><b>Sidmar T.</b><small>Avaliação no Google</small></div><span class="g">G</span></div><div class="rstars" aria-label="5 de 5 estrelas">★★★★★</div><p>“Está sendo uma boa experiência, são bem ágil, e explicam tudo certinho para não deixar dúvidas.”</p></article><article class="rev rev-f"><div class="rev-top"><span class="av">M</span><div><b>Maria Zilda O.</b><small>Avaliação no Google</small></div><span class="g">G</span></div><div class="rstars" aria-label="5 de 5 estrelas">★★★★★</div><p>“Ótimo... fui muito bem atendida pelos Drs. Tirei algumas dúvidas que eu tinha. Eles foram muito atenciosos comigo. Eu recomendo.”</p></article><article class="rev rev-f"><div class="rev-top"><span class="av">R</span><div><b>Reni Z.</b><small>Avaliação no Google</small></div><span class="g">G</span></div><div class="rstars" aria-label="5 de 5 estrelas">★★★★★</div><p>“Um atendimento excepcional, muito atenciosos com o cliente e tiram todas as dúvidas!”</p></article><article class="rev rev-f"><div class="rev-top"><span class="av">E</span><div><b>Everson S.</b><small>Avaliação no Google</small></div><span class="g">G</span></div><div class="rstars" aria-label="5 de 5 estrelas">★★★★★</div><p>“Muito bem atendido e com respostas rápidas, obrigado.”</p></article><article class="rev rev-f"><div class="rev-top"><span class="av">F</span><div><b>Felipe S.</b><small>Avaliação no Google</small></div><span class="g">G</span></div><div class="rstars" aria-label="5 de 5 estrelas">★★★★★</div><p>“Ótimos profissionais, sempre fui muito bem atendido, capacitados e competentes!”</p></article><article class="rev rev-f"><div class="rev-top"><span class="av">D</span><div><b>Deividy R.</b><small>Avaliação no Google</small></div><span class="g">G</span></div><div class="rstars" aria-label="5 de 5 estrelas">★★★★★</div><p>“Equipe excelente! Profissionais de qualidade.”</p></article></div></div><div class="wrap"><div class="rev-foot"><div class="gloss-bar light"><i id="rbarF"></i></div><div class="gloss-nav light"><button id="rPrevF" aria-label="Avaliação anterior">←</button><button id="rNextF" aria-label="Próxima avaliação">→</button></div></div></div></section>
+
 
 <section class="hook" id="sequela"><div class="wrap">
   <div class="hook-img reveal">
@@ -1384,7 +1404,7 @@ document.getElementById('mapaFechar').onclick=fechar;document.addEventListener('
     tr.addEventListener('pointerup',end);tr.addEventListener('pointercancel',end);tr.addEventListener('pointerleave',end);
     tr.addEventListener('keydown',e=>{if(e.key==='ArrowRight')tr.scrollBy({left:step(),behavior:'smooth'});if(e.key==='ArrowLeft')tr.scrollBy({left:-step(),behavior:'smooth'})});
   }
-  rail('revTrack','rbar','rPrev','rNext');
+  rail('revTrack','rbar','rPrev','rNext');rail('revFaixa','rbarF','rPrevF','rNextF');
 
   // explorador de benefícios
   const btabs=[...document.querySelectorAll('.btab')];
