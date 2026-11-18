@@ -6,7 +6,7 @@
 <meta name="lanhi-config" content="{&quot;supabaseUrl&quot;: &quot;https://ntcowwgnazronmfrylcm.supabase.co&quot;, &quot;supabaseAnonKey&quot;: &quot;sb_publishable_u1OJZtLr0kUxyzeOr4eM0w_KKW8TJTF&quot;, &quot;whatsapp&quot;: &quot;5549999045913&quot;, &quot;versaoTermos&quot;: &quot;2026-11&quot;}">
 <meta name="apple-mobile-web-app-title" content="Lanhi Advogados Equipe"><meta name="application-name" content="Lanhi Advogados Equipe">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-94P22XFQ/DxJOX0XHZtK3bPvw/l4EWzjqdh8horkgnc=' 'sha256-JPOjH9Jd0sBt16wwBXWilIKnbg2xjfPn7I0sW/EZWyc=' 'sha256-cGjyeHZbBDe2CdvPPUC1xT8WYJRFf7R4vQpyQrqiFrc=' 'sha256-HA+qODF+/kt28sD+DY+KXTnsmA8m9JN5cHba5TWibmw=' 'sha256-r59SK6ZQ5ah5REgh6dOxTelKGU1MtO2nciw3zPTwpjA=' 'sha256-+eXorTbntugpj+elBFcslgvdE1MHdIJUv1+mEpHoBDo='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob: https://*.supabase.co; media-src 'self' blob: https://*.supabase.co; connect-src 'self' https://*.supabase.co wss://*.supabase.co; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-94P22XFQ/DxJOX0XHZtK3bPvw/l4EWzjqdh8horkgnc=' 'sha256-JPOjH9Jd0sBt16wwBXWilIKnbg2xjfPn7I0sW/EZWyc=' 'sha256-cGjyeHZbBDe2CdvPPUC1xT8WYJRFf7R4vQpyQrqiFrc=' 'sha256-BvcKnNxUsE5XSdCR+lgs88JTk0+VDnbJqDDJQIm03oE=' 'sha256-r59SK6ZQ5ah5REgh6dOxTelKGU1MtO2nciw3zPTwpjA=' 'sha256-79QGz2XHIbEGaBgcqCqC3LZS1bleDWXU1tR3Z9pjFkQ='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob: https://*.supabase.co; media-src 'self' blob: https://*.supabase.co; connect-src 'self' https://*.supabase.co wss://*.supabase.co; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="robots" content="noindex, nofollow">
 <title>Lanhi Advogados Equipe</title>
@@ -1458,6 +1458,23 @@ html[data-app].instalado header{padding-top:env(safe-area-inset-top)}
 #faixaRede{background:#5c1d1a;color:#ffd9d4;padding-right:16px}
 @media (prefers-reduced-motion:reduce){.app-faixa{transition:none}}
 html[data-app] select{max-width:100%;min-width:0}html[data-app] [data-modulo] select{width:100%}
+
+/* app do cliente: convite para avaliar no Google */
+html[data-app="cliente"] .avaliar-cli{display:flex;align-items:center;gap:14px;margin:14px 0;padding:16px 18px;text-decoration:none;color:inherit}
+html[data-app="cliente"] .avaliar-cli .av-est{flex:none;color:#f4b400;font-size:15px;letter-spacing:1px}
+html[data-app="cliente"] .avaliar-cli .av-tx{display:flex;flex-direction:column;gap:3px;min-width:0;flex:1}
+html[data-app="cliente"] .avaliar-cli .av-ir{flex:none;font-size:26px;color:var(--e-tx2,#9aa0a7)}
+@media (max-width:420px){html[data-app="cliente"] .avaliar-cli{flex-wrap:wrap}html[data-app="cliente"] .avaliar-cli .av-est{width:100%}}
+
+/* convite para instalar o app da equipe: mesmo destaque do app do cliente */
+html[data-app="equipe"] #instalarEquipe.instalar{background:var(--e-sup);color:var(--e-tx);border:1px solid var(--e-linha);box-shadow:var(--e-sombra2);bottom:calc(12px + env(safe-area-inset-bottom));z-index:70;padding:14px 14px 14px 16px}
+html[data-app="equipe"].eq-logado #instalarEquipe.instalar{bottom:calc(var(--e-nav) + 12px + env(safe-area-inset-bottom))}
+html[data-app="equipe"] #instalarEquipe .inst-ico{flex:none;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--e-prim);color:var(--e-prim-tx)}
+html[data-app="equipe"] #instalarEquipe .inst-ico svg{width:24px;height:24px}
+html[data-app="equipe"] #instalarEquipe p{font-size:14px;line-height:1.4}
+html[data-app="equipe"] #instalarEquipe .sim{background:var(--e-prim);color:var(--e-prim-tx);border:0;padding:11px 18px}
+html[data-app="equipe"] #instalarEquipe .nao{background:transparent;color:var(--e-tx2);border:0}
+@media (max-width:420px){html[data-app="equipe"] #instalarEquipe.instalar{flex-wrap:wrap}html[data-app="equipe"] #instalarEquipe p{flex:1 1 calc(100% - 60px)}html[data-app="equipe"] #instalarEquipe .nao{margin-left:auto}}
 </style>
 <script>
 // Modo claro ou escuro (escolha guardada no aparelho). Roda no <head> para não piscar.
@@ -1495,7 +1512,12 @@ html[data-app] select{max-width:100%;min-width:0}html[data-app] [data-modulo] se
     <p class="nome-app">Lanhi Advogados Equipe</p>
     <h1>Área do Colaborador</h1>
     <p class="suave peq">Acesso restrito à equipe da Lanhi Advogados. Cada pessoa entra com o próprio e-mail e a própria senha.</p>
-    <div id="instalarEquipe" class="msg info esconde">Instale o app <b>Lanhi Advogados Equipe</b> neste aparelho para abrir com um toque. <button class="btn sec mini" type="button" id="btnInstalarEquipe">Instalar</button></div>
+    <div id="instalarEquipe" class="instalar esconde" role="dialog" aria-label="Instalar o app da equipe">
+      <span class="inst-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M12 7v7M9 11l3 3 3-3"/></svg></span>
+      <p id="instalarEqTxt"><b>Instale o app da equipe</b><br>Abra o Lanhi Advogados Equipe com um toque, direto da tela inicial.</p>
+      <button class="nao" type="button" id="instalarEqNao">Agora não</button>
+      <button class="sim" type="button" id="btnInstalarEquipe">Instalar</button>
+    </div>
     <form id="fLogin" novalidate>
       <label for="lEmail">Seu e-mail do escritório</label>
       <input id="lEmail" name="email" type="email" autocomplete="username" required>
@@ -1721,6 +1743,7 @@ html[data-app] select{max-width:100%;min-width:0}html[data-app] [data-modulo] se
           <button type="button" class="btn sec" id="capaManual">Atualizar fase</button>
           <button type="button" class="btn sec" id="capaMovs">Movimentações</button>
           <button type="button" class="btn zap capa-zap" id="capaZap">Avisar o cliente no WhatsApp</button>
+          <button type="button" class="btn sec" id="capaAvaliar">Pedir avaliação no Google</button>
         </div>
       </div>
     </div>
@@ -2402,7 +2425,7 @@ Resources:`;for(let t of c){if(!t||typeof t!=`string`)throw Error(`@supabase/aut
   // ---------------------------------------------------------------
   // Comportamento de aplicativo: modo instalado, sem internet, nova versão e toque
   // ---------------------------------------------------------------
-  var BUILD = 'lanhi-20261118-0334-equipe';
+  var BUILD = 'lanhi-20261118-0430-equipe';
   var instalado = (window.matchMedia && matchMedia('(display-mode: standalone)').matches) || window.navigator.standalone === true;
   document.documentElement.classList.toggle('instalado', !!instalado);
   if (/iphone|ipad|ipod/i.test(navigator.userAgent)) document.documentElement.classList.add('ios');
@@ -3885,9 +3908,18 @@ Resources:`;for(let t of c){if(!t||typeof t!=`string`)throw Error(`@supabase/aut
   }
 
   // Instalar o app da equipe (Android/Chrome); no iPhone: Safari > Compartilhar > Adicionar à Tela de Início
-  var pedidoInstalar = null;
-  window.addEventListener('beforeinstallprompt', function (e) { e.preventDefault(); pedidoInstalar = e; $('#instalarEquipe').classList.remove('esconde'); });
+  var pedidoInstalar = null, instDispensado = false;
+  try { instDispensado = localStorage.getItem('lanhi-equipe-instalar') === 'nao'; } catch (e) {}
+  window.addEventListener('beforeinstallprompt', function (e) { e.preventDefault(); pedidoInstalar = e; if (!instDispensado) $('#instalarEquipe').classList.remove('esconde'); });
+  (function () {
+    var ios = /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    if (ios && !window.navigator.standalone && !instDispensado) {
+      $('#instalarEqTxt').innerHTML = '<b>Instale o app da equipe</b><br>No Safari, toque em Compartilhar e depois em “Adicionar à Tela de Início”.';
+      $('#btnInstalarEquipe').classList.add('esconde'); $('#instalarEquipe').classList.remove('esconde');
+    }
+  })();
   $('#btnInstalarEquipe').addEventListener('click', function () { if (pedidoInstalar) { pedidoInstalar.prompt(); pedidoInstalar = null; } $('#instalarEquipe').classList.add('esconde'); });
+  $('#instalarEqNao').addEventListener('click', function () { $('#instalarEquipe').classList.add('esconde'); try { localStorage.setItem('lanhi-equipe-instalar', 'nao'); } catch (e) {} });
   window.addEventListener('appinstalled', function () { $('#instalarEquipe').classList.add('esconde'); });
 
   // Chama uma função do banco e devolve { erro } ou { dados } (as funções novas respondem { ok:false, erro })
@@ -4649,6 +4681,7 @@ Resources:`;for(let t of c){if(!t||typeof t!=`string`)throw Error(`@supabase/aut
     var f = p ? (p.fase_manual != null ? Number(p.fase_manual) : p.fase_auto != null ? Number(p.fase_auto) : null) : null;
     var corpo;
     if (tipo === 'pericia' && p && p.pericia_em) corpo = 'sua perícia foi marcada para ' + L.data(p.pericia_em, true) + '. Vamos te passar as orientações e o local. Separe seus exames, atestados e um documento com foto.';
+    if (tipo === 'avaliacao') return 'Olá, ' + nome + '! Aqui é da Lanhi Advogados. Obrigado pela confiança no nosso trabalho.\n\nSe puder, conte no Google como está sendo o seu atendimento. Leva menos de um minuto e ajuda outros trabalhadores a encontrarem orientação:\nhttps://lanhiadvogados.com.br/avaliar/\n\nMuito obrigado!';
     else if (tipo === 'decisao') corpo = 'saiu uma decisão no seu processo' + prod + '. Vamos te explicar os próximos passos.';
     else corpo = 'há uma novidade no seu processo' + prod + (f != null && FRASE_FASE[f] ? ': ' + FRASE_FASE[f] : '') + '.';
     return 'Olá, ' + nome + '! Aqui é da Lanhi Advogados. ' + corpo.charAt(0).toUpperCase() + corpo.slice(1) + '\n\nVocê acompanha tudo pelo app: ' + LINK_APP + '\n\nQualquer dúvida, é só responder esta mensagem.';
@@ -4679,6 +4712,7 @@ Resources:`;for(let t of c){if(!t||typeof t!=`string`)throw Error(`@supabase/aut
     $('#capaNum').onclick = function () { copiar(L.cnj(p.numero_cnj), 'Número copiado.'); };
     $('#capaMais').onclick = function () { fecharFolha($('#folhaProc'), menu); };
     $('#capaZap').onclick = function () { fecharFolha($('#folhaProc'), function () { avisarWhatsApp(c, p, null); }); };
+    $('#capaAvaliar').onclick = function () { fecharFolha($('#folhaProc'), function () { avisarWhatsApp(c, p, 'avaliacao'); }); };
     $('#capaManual').onclick = function () { fecharFolha($('#folhaProc'), function () { abrirManual(p, c); }); };
     $('#capaMovs').onclick = function () { fecharFolha($('#folhaProc'), function () { $('#andBusca').value = L.cnj(p.numero_cnj); abrirAba('andamentos'); if (andCarregadoDias) desenharAndamentos(); }); };
     var ano = anoCnj(p.numero_cnj), dl = $('#capaDados'); dl.textContent = '';
