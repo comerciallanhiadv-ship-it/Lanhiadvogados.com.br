@@ -1,9 +1,10 @@
-"""Atualiza videos.json com os 7 Shorts mais recentes do canal do Felipe Lanhi no YouTube.
+"""Atualiza videos.json com os Shorts mais recentes do canal do Felipe Lanhi no YouTube (12 no total, com os fixos).
 Roda no GitHub Actions (videos.yml). Usa só o feed público do YouTube, sem chave.
 As capas são baixadas para img/yt/ (o site só carrega imagens do próprio domínio)."""
 import json, os, re, sys, urllib.request, urllib.error, xml.etree.ElementTree as ET
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 CANAL = 'UCIMM4x-Q2mR63haBAcSdGrQ'            # @felipelanhi
-QTD = 7
+QTD = 12          # total no site: os mais recentes + os fixos
 RAIZ = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 ARQ = os.path.join(RAIZ, 'videos.json'); PASTA = os.path.join(RAIZ, 'img', 'yt')
 # Vídeos antigos que ficam sempre no site, depois dos 7 mais recentes (título usado se o feed não trouxer mais o vídeo)
@@ -36,17 +37,25 @@ def tag(t):
                         ('acidente', 'Acidente'), ('aposentad', 'Aposentadoria'), ('bpc', 'BPC/LOAS'), ('loas', 'BPC/LOAS'), ('inss', 'INSS'), ('dúvida', 'Dúvidas')]:
         if chave in t: return nome
     return 'Seus direitos'
-def capa(vid):
-    os.makedirs(PASTA, exist_ok=True); dest = os.path.join(PASTA, vid + '.webp')
+FRASES = os.path.join(RAIZ, 'videos-frases.json')   # frase da capa escolhida pela equipe: {"id": "frase"}
+def capa(v):
+    """Novos vídeos: capa de destaque (imagem do vídeo + frase-gancho grande). Fixos: imagem original do YouTube."""
+    import hashlib, capa as cp
+    frases = json.load(open(FRASES)) if os.path.exists(FRASES) else {}
+    frase = None if v.get('fixo') else (frases.get(v['id']) or cp.gancho(v['titulo']))
+    chave = hashlib.md5((frase or 'original').encode()).hexdigest()[:6]
+    os.makedirs(PASTA, exist_ok=True); nome = f"{v['id']}-{chave}.webp"; dest = os.path.join(PASTA, nome)
     if not os.path.exists(dest):
-        for nome in ('oar2.jpg', 'hq720.jpg', 'hqdefault.jpg'):
-            try: bruto = baixa(f'https://i.ytimg.com/vi/{vid}/{nome}', True); break
-            except urllib.error.HTTPError: bruto = None
-        if bruto:
+        bruto = None
+        for arq in ('oar2.jpg', 'hq720.jpg', 'hqdefault.jpg'):
+            try: bruto = baixa(f"https://i.ytimg.com/vi/{v['id']}/{arq}", True); break
+            except urllib.error.HTTPError: continue
+        if not bruto: return ''
+        if frase: cp.monta(bruto, v['titulo'], v['id'], dest, frase=frase)
+        else:
             from PIL import Image; import io
-            im = Image.open(io.BytesIO(bruto)).convert('RGB'); im.thumbnail((540, 960))
-            im.save(dest, 'WEBP', quality=78, method=6)   # ~25 KB em vez de ~100 KB
-    return '/img/yt/' + vid + '.webp' if os.path.exists(dest) else ''
+            im = Image.open(io.BytesIO(bruto)).convert('RGB'); im.thumbnail((540, 960)); im.save(dest, 'WEBP', quality=82, method=6)
+    return '/img/yt/' + nome
 def main():
     lista = []
     try: lista = le_feed(baixa('https://www.youtube.com/feeds/videos.xml?playlist_id=UUSH' + CANAL[2:]))
@@ -55,19 +64,18 @@ def main():
         todos = le_feed(baixa('https://www.youtube.com/feeds/videos.xml?channel_id=' + CANAL))
         lista = [v for v in todos if eh_short(v['id'])]
     feed = {v['id']: v for v in lista}
-    lista = sorted(lista, key=lambda v: v['publicado'], reverse=True)[:QTD]
     if not lista: print('nenhum vídeo encontrado; nada alterado'); return 0
-    for vid, tit in FIXOS:
-        if not any(v['id'] == vid for v in lista):
-            lista.append(dict(feed.get(vid) or {'id': vid, 'titulo': tit, 'publicado': ''}, fixo=True))
-    for v in lista: v['tag'] = tag(v['titulo']); v['capa'] = capa(v['id'])
+    ids_fixos = [vid for vid, _ in FIXOS]
+    recentes = [v for v in sorted(lista, key=lambda v: v['publicado'], reverse=True) if v['id'] not in ids_fixos][:QTD - len(FIXOS)]
+    lista = recentes + [dict(feed.get(vid) or {'id': vid, 'titulo': tit, 'publicado': ''}, fixo=True) for vid, tit in FIXOS]
+    for v in lista: v['tag'] = tag(v['titulo']); v['capa'] = capa(v)
     novo = {'canal': '@felipelanhi', 'videos': lista}
     antigo = json.load(open(ARQ)) if os.path.exists(ARQ) else {}
     if {k: antigo.get(k) for k in novo} == novo: print('sem novidades'); return 0
     novo['atualizado_em'] = __import__('datetime').datetime.utcnow().strftime('%Y-%m-%dT%H:%MZ')
     json.dump(novo, open(ARQ, 'w'), ensure_ascii=False, indent=1)
     if os.path.isdir(PASTA):
-        manter = {v['id'] + '.webp' for v in lista}
+        manter = {os.path.basename(v['capa']) for v in lista if v['capa']}
         for f in os.listdir(PASTA):
             if f not in manter: os.remove(os.path.join(PASTA, f))
     print('atualizado:', [v['titulo'] for v in lista]); return 0
