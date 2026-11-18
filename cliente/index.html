@@ -5,7 +5,7 @@
 <!-- CONFIGURAÇÃO do Supabase (Project URL e chave publishable, que é pública) -->
 <meta name="lanhi-config" content="{&quot;supabaseUrl&quot;: &quot;https://ntcowwgnazronmfrylcm.supabase.co&quot;, &quot;supabaseAnonKey&quot;: &quot;sb_publishable_u1OJZtLr0kUxyzeOr4eM0w_KKW8TJTF&quot;, &quot;whatsapp&quot;: &quot;5549999045913&quot;, &quot;versaoTermos&quot;: &quot;2026-11&quot;}">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-94P22XFQ/DxJOX0XHZtK3bPvw/l4EWzjqdh8horkgnc=' 'sha256-JPOjH9Jd0sBt16wwBXWilIKnbg2xjfPn7I0sW/EZWyc=' 'sha256-cGjyeHZbBDe2CdvPPUC1xT8WYJRFf7R4vQpyQrqiFrc=' 'sha256-r59SK6ZQ5ah5REgh6dOxTelKGU1MtO2nciw3zPTwpjA=' 'sha256-F22FfIKMV4+qZswk1rcdeUWD9qTBRq6HmiOYbANvP3c=' 'sha256-kSXmOeobsfhafgwn9QTd+9ocBn616lA8dzGTPxnmj8s='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://*.supabase.co wss://*.supabase.co; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-94P22XFQ/DxJOX0XHZtK3bPvw/l4EWzjqdh8horkgnc=' 'sha256-JPOjH9Jd0sBt16wwBXWilIKnbg2xjfPn7I0sW/EZWyc=' 'sha256-cGjyeHZbBDe2CdvPPUC1xT8WYJRFf7R4vQpyQrqiFrc=' 'sha256-r59SK6ZQ5ah5REgh6dOxTelKGU1MtO2nciw3zPTwpjA=' 'sha256-RyyqgrtC6jDousgeNYkjkw6MwjXJwyQLTwQon8neIW8=' 'sha256-kSXmOeobsfhafgwn9QTd+9ocBn616lA8dzGTPxnmj8s='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://*.supabase.co wss://*.supabase.co; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="robots" content="noindex, nofollow">
 <title>Lanhi Advogados Cliente</title>
@@ -1458,6 +1458,23 @@ html[data-app].instalado header{padding-top:env(safe-area-inset-top)}
 #faixaRede{background:#5c1d1a;color:#ffd9d4;padding-right:16px}
 @media (prefers-reduced-motion:reduce){.app-faixa{transition:none}}
 html[data-app] select{max-width:100%;min-width:0}html[data-app] [data-modulo] select{width:100%}
+
+/* app do cliente: convite para avaliar no Google */
+html[data-app="cliente"] .avaliar-cli{display:flex;align-items:center;gap:14px;margin:14px 0;padding:16px 18px;text-decoration:none;color:inherit}
+html[data-app="cliente"] .avaliar-cli .av-est{flex:none;color:#f4b400;font-size:15px;letter-spacing:1px}
+html[data-app="cliente"] .avaliar-cli .av-tx{display:flex;flex-direction:column;gap:3px;min-width:0;flex:1}
+html[data-app="cliente"] .avaliar-cli .av-ir{flex:none;font-size:26px;color:var(--e-tx2,#9aa0a7)}
+@media (max-width:420px){html[data-app="cliente"] .avaliar-cli{flex-wrap:wrap}html[data-app="cliente"] .avaliar-cli .av-est{width:100%}}
+
+/* convite para instalar o app da equipe: mesmo destaque do app do cliente */
+html[data-app="equipe"] #instalarEquipe.instalar{background:var(--e-sup);color:var(--e-tx);border:1px solid var(--e-linha);box-shadow:var(--e-sombra2);bottom:calc(12px + env(safe-area-inset-bottom));z-index:70;padding:14px 14px 14px 16px}
+html[data-app="equipe"].eq-logado #instalarEquipe.instalar{bottom:calc(var(--e-nav) + 12px + env(safe-area-inset-bottom))}
+html[data-app="equipe"] #instalarEquipe .inst-ico{flex:none;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--e-prim);color:var(--e-prim-tx)}
+html[data-app="equipe"] #instalarEquipe .inst-ico svg{width:24px;height:24px}
+html[data-app="equipe"] #instalarEquipe p{font-size:14px;line-height:1.4}
+html[data-app="equipe"] #instalarEquipe .sim{background:var(--e-prim);color:var(--e-prim-tx);border:0;padding:11px 18px}
+html[data-app="equipe"] #instalarEquipe .nao{background:transparent;color:var(--e-tx2);border:0}
+@media (max-width:420px){html[data-app="equipe"] #instalarEquipe.instalar{flex-wrap:wrap}html[data-app="equipe"] #instalarEquipe p{flex:1 1 calc(100% - 60px)}html[data-app="equipe"] #instalarEquipe .nao{margin-left:auto}}
 </style>
 <script>
 // Modo claro ou escuro (escolha guardada no aparelho). Roda no <head> para não piscar.
@@ -1674,6 +1691,11 @@ html[data-app] select{max-width:100%;min-width:0}html[data-app] [data-modulo] se
       <p class="peq suave">Processos que você já teve com o escritório e que foram encerrados no tribunal.</p>
       <div id="listaConcluidos"></div>
     </details>
+    <a class="cartao avaliar-cli" href="https://search.google.com/local/writereview?placeid=ChIJe-xFWj3q45QRV7G6-fNAbhI" target="_blank" rel="noopener">
+      <span class="av-est" aria-hidden="true">★★★★★</span>
+      <span class="av-tx"><b>Como está sendo o atendimento?</b><span class="peq suave">Avalie a Lanhi Advogados no Google. Leva menos de um minuto e ajuda outros trabalhadores.</span></span>
+      <span class="av-ir" aria-hidden="true">›</span>
+    </a>
     <details class="cartao outro-proc" id="maisProc">
       <summary><b>Não encontrou um processo seu?</b><span class="peq suave">Consulte pelo CPF ou pelo número</span></summary>
       <form id="fConsulta" class="consulta" novalidate>
@@ -2044,7 +2066,7 @@ Resources:`;for(let t of c){if(!t||typeof t!=`string`)throw Error(`@supabase/aut
   // ---------------------------------------------------------------
   // Comportamento de aplicativo: modo instalado, sem internet, nova versão e toque
   // ---------------------------------------------------------------
-  var BUILD = 'lanhi-20261118-0334-cliente';
+  var BUILD = 'lanhi-20261118-0430-cliente';
   var instalado = (window.matchMedia && matchMedia('(display-mode: standalone)').matches) || window.navigator.standalone === true;
   document.documentElement.classList.toggle('instalado', !!instalado);
   if (/iphone|ipad|ipod/i.test(navigator.userAgent)) document.documentElement.classList.add('ios');
