@@ -6,7 +6,7 @@
 <!-- CONFIGURAÇÃO do Supabase (Project URL e chave publishable, que é pública) -->
 <meta name="lanhi-config" content="{&quot;supabaseUrl&quot;: &quot;https://vzjjzgbwaswpgrojqkhv.supabase.co&quot;, &quot;supabaseAnonKey&quot;: &quot;sb_publishable_jcz6obHiZYr6j-GY7qEV_g_QIRFZVX1&quot;, &quot;funcao&quot;: &quot;hyper-action&quot;, &quot;whatsapp&quot;: &quot;5549999045913&quot;, &quot;versaoTermos&quot;: &quot;2026-11&quot;}">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-94P22XFQ/DxJOX0XHZtK3bPvw/l4EWzjqdh8horkgnc=' 'sha256-JPOjH9Jd0sBt16wwBXWilIKnbg2xjfPn7I0sW/EZWyc=' 'sha256-cGjyeHZbBDe2CdvPPUC1xT8WYJRFf7R4vQpyQrqiFrc=' 'sha256-r59SK6ZQ5ah5REgh6dOxTelKGU1MtO2nciw3zPTwpjA=' 'sha256-b8oaDFhk3zHsfD1kGZMqIVhtJn6T1rbvqE/uoaO3L5c=' 'sha256-kSXmOeobsfhafgwn9QTd+9ocBn616lA8dzGTPxnmj8s='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://*.supabase.co wss://*.supabase.co; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-94P22XFQ/DxJOX0XHZtK3bPvw/l4EWzjqdh8horkgnc=' 'sha256-JPOjH9Jd0sBt16wwBXWilIKnbg2xjfPn7I0sW/EZWyc=' 'sha256-cGjyeHZbBDe2CdvPPUC1xT8WYJRFf7R4vQpyQrqiFrc=' 'sha256-r59SK6ZQ5ah5REgh6dOxTelKGU1MtO2nciw3zPTwpjA=' 'sha256-b8oaDFhk3zHsfD1kGZMqIVhtJn6T1rbvqE/uoaO3L5c=' 'sha256-sYk93MNjTDNrYsdVyG3zdsPfqeZlnuw11scGkK98Wt8=' 'sha256-Nr0F/IQ8frLuS/wirwg8NgA3zbRkmi3RsObO0AfhbMU='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://*.supabase.co wss://*.supabase.co; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="robots" content="noindex, nofollow">
 <title>TESTE · Lanhi Advogados Cliente</title>
@@ -1512,6 +1512,86 @@ html[data-app="equipe"] #instalarEquipe .nao{background:transparent;color:var(--
 }
 </style>
 <style>body{padding-bottom:calc(44px + env(safe-area-inset-bottom))!important}</style>
+<style id="cli-areas">
+/* ===== App do cliente: abas Início, Processo, Guia e Ajuda (18/11/2026) ===== */
+.cli-abas{position:fixed;left:0;right:0;bottom:0;z-index:40;display:none;grid-template-columns:repeat(4,1fr);background:var(--cartao,#fff);border-top:1px solid var(--linha,rgba(127,127,127,.2));padding:6px 6px calc(6px + env(safe-area-inset-bottom));box-shadow:0 -8px 24px rgba(0,0,0,.08)}
+html.cli-logado .cli-abas{display:grid}
+html.cli-logado body{padding-bottom:calc(74px + env(safe-area-inset-bottom))}
+html.cli-logado .rodape{display:none}
+.cli-aba{appearance:none;border:0;background:none;color:var(--txt2,#5b6168);display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 2px;border-radius:12px;font:600 11.5px/1.1 inherit;cursor:pointer;min-height:54px}
+.cli-aba svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.cli-aba[aria-selected="true"]{color:var(--txt,#151719)}
+.cli-aba[aria-selected="true"] svg{stroke-width:2.3}
+.cli-aba:focus-visible{outline:3px solid #2270e6;outline-offset:2px}
+.cli-painel[hidden]{display:none!important}
+.cli-tit{font-size:22px;margin:4px 0 6px}
+.cli-status h2{font-size:26px;line-height:1.15;margin:4px 0 8px}
+.cli-rotulo{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--txt2,#5b6168)}
+.cli-trilha{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:4px;padding:0;margin:14px 0 10px;counter-reset:f}
+.cli-trilha li{font-size:10.5px;font-weight:600;line-height:1.2;color:var(--txt2,#5b6168);padding-top:10px;border-top:4px solid var(--linha,rgba(127,127,127,.25));text-align:left;word-break:break-word}
+.cli-trilha li.feita{border-top-color:#2270e6}
+.cli-trilha li.atual{border-top-color:#2270e6;color:var(--txt,#151719);font-weight:800}
+.cli-alerta{display:flex;flex-direction:column;gap:4px;border-left:4px solid #ff8a00!important}
+.cli-alerta b{font-size:18px}
+.cli-alerta span{text-transform:capitalize}
+.cli-alerta .link{align-self:flex-start;padding:6px 0;font-weight:700}
+.cli-voce-agora h3,.cli-equipe h3{margin:0 0 6px;font-size:16px}
+.cli-voce-agora p{margin:0}
+.cli-recado p{margin:6px 0 0}
+.cli-ultima{margin:-6px 4px 14px}
+.cli-vigia{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;margin:0 0 14px;border-radius:14px;background:rgba(34,112,230,.08);font-size:14px;line-height:1.45}
+.cli-ponto{flex:none;width:10px;height:10px;margin-top:5px;border-radius:50%;background:#1f9d55;box-shadow:0 0 0 4px rgba(31,157,85,.18)}
+@media (prefers-reduced-motion:no-preference){.cli-ponto{animation:cliPulso 2.4s ease-in-out infinite}@keyframes cliPulso{50%{box-shadow:0 0 0 7px rgba(31,157,85,.06)}}}
+.cli-pessoas{display:grid;gap:12px;margin:8px 0 10px}
+.cli-pessoa{display:flex;gap:12px;align-items:center}
+.cli-pessoa img{width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none}
+.cli-pessoa>span{display:flex;flex-direction:column}
+.cli-provas{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:12px 0 0;margin:6px 0 0;border-top:1px solid var(--linha,rgba(127,127,127,.2));text-align:center;font-size:12.5px;color:var(--txt2,#5b6168)}
+.cli-provas b{display:block;font-size:17px;color:var(--txt,#151719)}
+.cli-zap{display:grid;grid-template-columns:1fr auto;align-items:center;text-decoration:none;color:inherit}
+.cli-zap b{grid-column:1}.cli-zap span{grid-column:1;font-size:14px}.cli-zap .cli-seta{grid-column:2;grid-row:1/3;font-size:28px;color:#1f9d55}
+.cli-guia>summary{display:flex;flex-direction:column;gap:2px;cursor:pointer;list-style:none;padding-right:26px;position:relative}
+.cli-guia>summary::-webkit-details-marker{display:none}
+.cli-guia>summary::after{content:"+";position:absolute;right:2px;top:0;font-size:22px;line-height:1;color:var(--txt2,#5b6168)}
+.cli-guia[open]>summary::after{content:"–"}
+.cli-guia[open]>summary{margin-bottom:10px}
+.cli-lista{margin:0;padding-left:20px;display:grid;gap:8px}
+.cli-etapas{margin:0;padding:0;list-style:none;display:grid;gap:14px}
+.cli-etapas li{display:flex;flex-direction:column;gap:3px}
+.cli-voce{font-size:14px;font-weight:600}
+.cli-faq{margin:0}.cli-faq dt{font-weight:700;margin-top:12px}.cli-faq dt:first-child{margin-top:0}.cli-faq dd{margin:4px 0 0}
+.cli-videos{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}
+.cli-video{flex:0 0 135px;scroll-snap-align:start;text-decoration:none;color:inherit;font-size:12.5px;font-weight:600;line-height:1.3}
+.cli-video img{display:block;width:135px;height:240px;object-fit:cover;border-radius:12px;margin-bottom:6px;background:#111}
+.cli-legal{margin:16px 4px}
+@media (min-width:900px){
+  .cli-abas{position:sticky;top:0;bottom:auto;grid-template-columns:repeat(4,auto);justify-content:start;gap:6px;border:0;border-bottom:1px solid var(--linha,rgba(127,127,127,.2));box-shadow:none;padding:6px 0;margin:0 0 18px;background:var(--fundo,#f3f4f6)}
+  html.cli-logado body{padding-bottom:0}
+  .cli-aba{flex-direction:row;gap:8px;font-size:14.5px;padding:10px 16px;min-height:0}
+  .cli-aba[aria-selected="true"]{background:var(--cartao,#fff);box-shadow:0 1px 0 var(--linha,rgba(127,127,127,.2))}
+  #painel-inicio{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:0 18px;align-items:start}
+  #painel-inicio>*{grid-column:1}
+  #painel-inicio>.cli-lado{grid-column:2;grid-row:1 / span 40;position:sticky;top:76px}
+}
+/* barra de abas nos dois temas */
+.cli-abas{background:#fff;border-top-color:#e8eaeb}
+.cli-aba{color:#676f77}.cli-aba[aria-selected="true"]{color:#1c1e20}
+html:not(.claro) .cli-abas{background:#1a1c1e;border-top-color:rgba(255,255,255,.08);box-shadow:0 -8px 24px rgba(0,0,0,.4)}
+html:not(.claro) .cli-aba{color:#9ba1a8}
+html:not(.claro) .cli-aba[aria-selected="true"]{color:#fff}
+html:not(.claro) .cli-trilha li{color:#9ba1a8;border-top-color:rgba(255,255,255,.14)}
+html:not(.claro) .cli-trilha li.atual,html:not(.claro) .cli-provas b{color:#fff}
+html:not(.claro) .cli-rotulo,html:not(.claro) .cli-provas{color:#9ba1a8}
+html:not(.claro) .cli-vigia{background:rgba(93,156,245,.12)}
+@media (min-width:900px){
+  .cli-abas,html:not(.claro) .cli-abas{background:transparent;box-shadow:none}
+  .cli-aba[aria-selected="true"]{background:#fff}
+  html:not(.claro) .cli-aba[aria-selected="true"]{background:#1a1c1e}
+}
+.cli-painel .barra-zap{position:static!important;inset:auto!important;transform:none!important;margin:0 0 14px;box-shadow:none}
+html:not(.claro) .cli-trilha li.feita,html:not(.claro) .cli-trilha li.atual{border-top-color:#5d9cf5}
+
+</style>
 </head>
 <body><div role="status" style="position:fixed;left:0;right:0;bottom:0;z-index:2147483647;background:#ff8a00;color:#111;font:700 12.5px/1.25 system-ui,sans-serif;text-align:center;padding:6px 10px calc(6px + env(safe-area-inset-bottom));letter-spacing:.02em;pointer-events:none">AMBIENTE DE TESTE · dados fictícios · nada aqui vale para clientes reais</div>
 <header class="topo">
@@ -2714,6 +2794,7 @@ Resources:`;for(let t of c){if(!t||typeof t!=`string`)throw Error(`@supabase/aut
     $('#qtdConcluidos').textContent = concluidos.length;
     $('#blocoConcluidos').classList.toggle('esconde', !concluidos.length);
     if (!andamento.length && concluidos.length) $('#blocoConcluidos').open = true;
+    try { window.dispatchEvent(new CustomEvent('lanhi:processos', { detail: { processos: processos, nome: nomeCompleto } })); } catch (e) {}
     if (!silencioso) {
       L.mostra('telaProcessos'); atualizarVelhos(); ofertarDigital();
       try { sb.rpc('registrar_acesso').then(function () {}, function () {}); } catch (e) {}
@@ -2832,6 +2913,228 @@ Resources:`;for(let t of c){if(!t||typeof t!=`string`)throw Error(`@supabase/aut
   $('#instalarNao').addEventListener('click', function () { painel.classList.add('esconde'); try { localStorage.setItem('lanhi-instalar', 'nao'); } catch (e) {} });
 
   fluxo();
+})();
+
+</script>
+<script>
+// App do cliente: áreas Início, Processo, Guia e Ajuda (18/11/2026).
+// Objetivo: o cliente entende em que pé está, sabe o que fazer (ou que não precisa fazer nada),
+// vê que o caso é acompanhado de perto e encontra respostas sem precisar perguntar.
+// Conteúdo só informativo (Provimento 205/2021 da OAB): nada de promessa de resultado ou prazo.
+(function () {
+  'use strict';
+  var C = window.LANHI_CONFIG || {};
+  var tela = document.getElementById('telaProcessos');
+  if (!tela) return;
+  function $(s, r) { return (r || document).querySelector(s); }
+  function el(tag, at, filhos) {
+    var e = document.createElement(tag);
+    Object.keys(at || {}).forEach(function (k) {
+      if (k === 'text') e.textContent = at[k];
+      else if (k === 'class') e.className = at[k];
+      else if (k.slice(0, 2) === 'on') e.addEventListener(k.slice(2), at[k]);
+      else if (at[k] != null) e.setAttribute(k, at[k]);
+    });
+    (filhos || []).forEach(function (f) { if (f != null) e.appendChild(typeof f === 'string' ? document.createTextNode(f) : f); });
+    return e;
+  }
+  var ZAP = String(C.whatsapp || '5549999045913');
+  var ZAP_TXT = '(' + ZAP.slice(2, 4) + ') ' + ZAP.slice(4, 9) + '-' + ZAP.slice(9);
+  var FASES = window.FASES_PROCESSO || ['Início', 'Resposta do INSS', 'Perícia', 'Decisão', 'Pagamento'];
+  var EXPLICA = {
+    'Início': ['A ação foi registrada na Justiça.', 'O juiz recebe o pedido e manda avisar o INSS para que ele responda.', 'Nada por enquanto. Só mantenha o seu telefone atualizado com o escritório.'],
+    'Resposta do INSS': ['O INSS foi chamado e apresenta a defesa dele.', 'É comum o INSS discordar do pedido nesta etapa. Isso faz parte do processo e não significa que o caso foi perdido.', 'Nada por enquanto. O escritório responde ao que o INSS apresentar.'],
+    'Perícia': ['Um médico nomeado pela Justiça vai avaliar as suas sequelas.', 'É uma das etapas mais importantes: o laudo do perito ajuda o juiz a decidir.', 'Comparecer no dia e horário marcados, levando documento com foto e todos os exames, laudos e atestados. O guia da perícia está na aba Guia.'],
+    'Decisão': ['As partes comentam o laudo e o juiz decide.', 'Depois da decisão, tanto o INSS quanto o escritório podem recorrer. O escritório avalia cada passo.', 'Nada por enquanto. Avisamos você assim que houver decisão.'],
+    'Pagamento': ['Com a decisão definitiva, vem a fase de pagamento.', 'O benefício é implantado e os valores atrasados, quando houver, são pagos pela Justiça na forma que a lei prevê.', 'Confira se os seus dados bancários e o telefone estão atualizados com o escritório.']
+  };
+  function faseDe(p) {
+    var ms = (p.movimentacoes || []).filter(function (m) { return !/^Publica/.test(m.nome || ''); });
+    if (p.fase_manual != null && p.fase_manual < FASES.length) return Number(p.fase_manual);
+    if (!ms.length || !window.faseProcesso) return 0;
+    return Math.min(window.faseProcesso(ms.map(function (m) { return m.nome; })).indice, FASES.length - 1);
+  }
+  function quando(iso) {
+    if (!iso) return '';
+    var d = new Date(iso), agora = new Date(), hoje = new Date(agora.getFullYear(), agora.getMonth(), agora.getDate());
+    var hora = d.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', timeZone: 'America/Sao_Paulo' });
+    var dia = new Date(d.getFullYear(), d.getMonth(), d.getDate());
+    var dif = Math.round((hoje - dia) / 864e5);
+    return dif === 0 ? 'hoje às ' + hora : dif === 1 ? 'ontem às ' + hora : d.toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' }) + ' às ' + hora;
+  }
+  function dataLonga(iso) {
+    return new Date(iso).toLocaleString('pt-BR', { weekday: 'long', day: '2-digit', month: 'long', hour: '2-digit', minute: '2-digit', timeZone: 'America/Sao_Paulo' });
+  }
+  function zapLink(txt) { return 'https://wa.me/' + ZAP + '?text=' + encodeURIComponent(txt); }
+
+  // ---------- estrutura: painéis e barra de abas ----------
+  var ABAS = [
+    { id: 'inicio', nome: 'Início', ico: '<path d="M4 11.5 12 5l8 6.5V20a1 1 0 0 1-1 1h-4.5v-6h-5v6H5a1 1 0 0 1-1-1z"/>' },
+    { id: 'processo', nome: 'Processo', ico: '<path d="M7 3.5h7l4 4V20a.5.5 0 0 1-.5.5h-10A.5.5 0 0 1 7 20z"/><path d="M14 3.5V8h4M9.5 12.5h6M9.5 16h4"/>' },
+    { id: 'guia', nome: 'Guia', ico: '<path d="M4.5 5.5c2.5-1 5-1 7.5.5 2.5-1.5 5-1.5 7.5-.5v13c-2.5-1-5-1-7.5.5-2.5-1.5-5-1.5-7.5-.5z"/><path d="M12 6v13"/>' },
+    { id: 'ajuda', nome: 'Ajuda', ico: '<circle cx="12" cy="12" r="8.5"/><path d="M9.7 9.6a2.4 2.4 0 1 1 3.4 2.2c-.7.3-1.1.9-1.1 1.6v.4M12 16.8v.2"/>' }
+  ];
+  var paineis = {};
+  var OLA = document.getElementById('ola'), DIG = document.getElementById('cartaoDigital');
+  var ancora = $('#resumo') || tela.firstChild;
+  ABAS.forEach(function (a) {
+    paineis[a.id] = el('div', { class: 'cli-painel', id: 'painel-' + a.id, role: 'tabpanel', 'aria-labelledby': 'aba-' + a.id });
+    tela.insertBefore(paineis[a.id], ancora);
+  });
+  function move(sel, painel) { var n = typeof sel === 'string' ? $(sel) : sel; if (n) paineis[painel].appendChild(n); }
+  ['#resumo', '#graficoCli', '#lista', '#blocoConcluidos', '#maisProc'].forEach(function (s) { move(s, 'processo'); });
+  var zap = $('.barra-zap', tela), conta = $('#cartaoConta'), avaliar = $('.avaliar-cli', tela);
+  var lado = $('#ladoCli'); if (lado) lado.classList.add('esconde');
+
+  var barra = el('nav', { class: 'cli-abas', role: 'tablist', 'aria-label': 'Áreas do app' });
+  ABAS.forEach(function (a) {
+    var b = el('button', { type: 'button', class: 'cli-aba', id: 'aba-' + a.id, role: 'tab', 'aria-controls': 'painel-' + a.id, onclick: function () { abre(a.id, true); } });
+    b.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true">' + a.ico + '</svg><span>' + a.nome + '</span>';
+    barra.appendChild(b);
+  });
+  tela.insertBefore(barra, paineis.inicio);
+  function abre(id, rolar) {
+    ABAS.forEach(function (a) {
+      var on = a.id === id;
+      paineis[a.id].hidden = !on;
+      var b = document.getElementById('aba-' + a.id); b.setAttribute('aria-selected', on ? 'true' : 'false'); b.tabIndex = on ? 0 : -1;
+    });
+    try { sessionStorage.setItem('lanhi-cli-aba', id); } catch (e) {}
+    if (rolar) window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (navigator.vibrate) try { navigator.vibrate(6); } catch (e) {}
+  }
+  barra.addEventListener('keydown', function (e) {
+    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+    var i = ABAS.findIndex(function (a) { return document.getElementById('aba-' + a.id).getAttribute('aria-selected') === 'true'; });
+    var n = (i + (e.key === 'ArrowRight' ? 1 : ABAS.length - 1)) % ABAS.length; abre(ABAS[n].id); document.getElementById('aba-' + ABAS[n].id).focus();
+  });
+  var inicial = 'inicio'; try { inicial = sessionStorage.getItem('lanhi-cli-aba') || 'inicio'; } catch (e) {}
+  abre(paineis[inicial] ? inicial : 'inicio');
+  // a barra só aparece quando a área logada está na tela
+  function sincBarra() { document.documentElement.classList.toggle('cli-logado', !tela.classList.contains('esconde')); }
+  new MutationObserver(sincBarra).observe(tela, { attributes: true, attributeFilter: ['class'] }); sincBarra();
+
+  // ---------- Guia (conteúdo fixo) ----------
+  function bloco(titulo, sub, corpo, aberto) {
+    var d = el('details', { class: 'cartao cli-guia' }, [el('summary', null, [el('b', { text: titulo }), sub ? el('span', { class: 'peq suave', text: sub }) : null])].concat(corpo));
+    if (aberto) d.open = true;
+    return d;
+  }
+  var etapas = el('ol', { class: 'cli-etapas' });
+  FASES.forEach(function (f, i) {
+    var t = EXPLICA[f] || ['', '', ''];
+    etapas.appendChild(el('li', null, [el('b', { text: (i + 1) + '. ' + f }), el('span', { text: t[0] + ' ' + t[1] }), el('span', { class: 'cli-voce', text: 'Você: ' + t[2] })]));
+  });
+  var lista = function (itens) { return el('ul', { class: 'cli-lista' }, itens.map(function (x) { return el('li', { text: x }); })); };
+  paineis.guia.appendChild(el('h2', { class: 'cli-tit', text: 'Guia do seu processo' }));
+  paineis.guia.appendChild(el('p', { class: 'suave peq', text: 'Tudo o que costuma gerar dúvida, explicado de forma simples. Se o seu caso tiver alguma particularidade, o escritório avisa você.' }));
+  var guiaPericia = bloco('Como se preparar para a perícia', 'O que levar e como se comportar', [
+    lista(['Documento oficial com foto (RG ou CNH).', 'Todos os exames, laudos, receitas e atestados, dos mais antigos aos mais recentes.', 'Carteira de trabalho, se tiver.', 'Chegue com pelo menos 30 minutos de antecedência.', 'Conte com sinceridade como a sequela atrapalha o seu trabalho e o seu dia a dia: o que você não consegue mais fazer, ou faz com dor ou com mais demora.', 'Não exagere e não diminua: fale do jeito que acontece.', 'Se precisar, pode ir acompanhado.']),
+    el('p', { class: 'peq suave', text: 'Depois da perícia, avise o escritório pelo WhatsApp contando como foi.' })
+  ]);
+  paineis.guia.appendChild(guiaPericia);
+  paineis.guia.appendChild(bloco('As etapas do processo, uma a uma', 'O que acontece em cada fase e o que você precisa fazer', [etapas]));
+  paineis.guia.appendChild(bloco('Por que o processo demora?', 'Entenda o tempo da Justiça', [
+    el('p', { text: 'Cada etapa depende da agenda da Justiça e do INSS: o prazo para o INSS responder, a fila de perícias da região, o tempo do juiz para decidir e os recursos que a lei permite. Não existe um prazo fixo, e cada processo anda no seu ritmo.' }),
+    el('p', { text: 'Enquanto isso, o escritório confere o seu processo todos os dias nos sistemas da Justiça e age sempre que há algo a fazer. Quando não aparece novidade, é porque o processo está aguardando a próxima etapa.' })
+  ]));
+  paineis.guia.appendChild(bloco('Cuidado com golpes', 'O escritório nunca pede dinheiro para liberar valores', [
+    lista(['A Lanhi Advogados nunca pede Pix, depósito ou pagamento de "taxa" para liberar valores do seu processo.', 'Desconfie de mensagens de números desconhecidos, mesmo com a foto ou o nome do escritório.', 'O número oficial do escritório é ' + ZAP_TXT + '. Na dúvida, fale com a gente antes de fazer qualquer coisa.'])
+  ], true));
+  var blocoVideos = bloco('Vídeos do Dr. Felipe', 'Explicações curtas sobre os seus direitos', [el('div', { class: 'cli-videos', id: 'cliVideos' }, [el('p', { class: 'peq suave', text: 'Carregando…' })])]);
+  paineis.guia.appendChild(blocoVideos);
+  blocoVideos.addEventListener('toggle', function () {
+    if (!blocoVideos.open || blocoVideos.dataset.ok) return; blocoVideos.dataset.ok = '1';
+    fetch('/videos.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+      var box = document.getElementById('cliVideos'); box.textContent = '';
+      var v = d && Array.isArray(d.videos) ? d.videos.filter(function (x) { return x && /^[\w-]{6,20}$/.test(x.id); }).slice(0, 8) : [];
+      if (!v.length) return box.appendChild(el('a', { href: 'https://www.youtube.com/@felipelanhi/shorts', target: '_blank', rel: 'noopener', text: 'Ver os vídeos no YouTube' }));
+      v.forEach(function (x) {
+        box.appendChild(el('a', { class: 'cli-video', href: 'https://youtube.com/shorts/' + x.id, target: '_blank', rel: 'noopener', 'aria-label': 'Assistir: ' + x.titulo }, [
+          x.capa && x.capa[0] === '/' ? el('img', { src: x.capa, alt: '', loading: 'lazy', width: '135', height: '240' }) : null, el('span', { text: x.titulo })]));
+      });
+    }).catch(function () {});
+  });
+
+  // ---------- Ajuda ----------
+  paineis.ajuda.appendChild(el('h2', { class: 'cli-tit', text: 'Ajuda' }));
+  if (zap) paineis.ajuda.appendChild(zap);
+  paineis.ajuda.appendChild(bloco('Perguntas frequentes', null, [
+    el('dl', { class: 'cli-faq' }, [
+      el('dt', { text: 'Preciso ir até o escritório?' }), el('dd', { text: 'Não. Todo o atendimento é feito pelo celular. Se precisarmos de algo, avisamos por aqui ou pelo WhatsApp.' }),
+      el('dt', { text: 'O processo ficou um tempo sem novidade. Está parado?' }), el('dd', { text: 'Não necessariamente. Muitas etapas dependem da agenda da Justiça e do INSS. O escritório confere o processo todos os dias e avisa quando houver algo importante.' }),
+      el('dt', { text: 'Mudei de telefone, endereço ou conta bancária. O que faço?' }), el('dd', { text: 'Avise o escritório pelo WhatsApp o quanto antes, para que nenhum aviso ou pagamento se perca.' }),
+      el('dt', { text: 'Posso continuar trabalhando?' }), el('dd', { text: 'Depende do benefício e do seu caso. Antes de mudar qualquer coisa no trabalho, fale com o escritório.' })
+    ])
+  ]));
+  if (conta) paineis.ajuda.appendChild(conta);
+  paineis.ajuda.appendChild(el('p', { class: 'peq suave cli-legal', text: 'As informações deste app são gerais e não substituem a orientação do advogado sobre o seu caso.' }));
+
+  // ---------- Início (montado com os dados de cada carregamento) ----------
+  function cartaoEquipe() {
+    var pessoa = function (img, nome, oab) { return el('div', { class: 'cli-pessoa' }, [el('img', { src: img, alt: '', width: '56', height: '56', loading: 'lazy' }), el('span', null, [el('b', { text: nome }), el('span', { class: 'peq suave', text: oab })])]); };
+    return el('section', { class: 'cartao cli-equipe', 'aria-label': 'Quem cuida do seu caso' }, [
+      el('h3', { text: 'Quem cuida do seu caso' }),
+      el('div', { class: 'cli-pessoas' }, [pessoa('/img/felipe-200.webp', 'Dr. Felipe Schena Lanhi', 'OAB/SC 30.297'), pessoa('/img/daniele-200.webp', 'Dra. Daniele Schena Lanhi', 'OAB/SC 37.550')]),
+      el('p', { class: 'peq suave', text: 'Com o apoio da equipe do escritório, que acompanha cada etapa e responde pelo WhatsApp.' }),
+      el('ul', { class: 'cli-provas', 'aria-label': 'O escritório em números' }, [el('li', null, [el('b', { text: '16 anos' }), ' de atuação']), el('li', null, [el('b', { text: '11 mil+' }), ' atendimentos']), el('li', null, [el('b', { text: '4,9 ★' }), ' no Google'])])
+    ]);
+  }
+  function montaInicio(det) {
+    var box = paineis.inicio; box.textContent = '';
+    if (OLA) box.appendChild(OLA); if (DIG) box.appendChild(DIG); var ola = OLA;
+    var procs = (det && det.processos) || [];
+    var ativos = procs.filter(function (p) { return !p.concluido; });
+    var nome = String((det && det.nome) || '').split(' ')[0];
+    var sinc = procs.map(function (p) { return p.ultima_sincronizacao; }).filter(Boolean).sort().pop();
+    if (!ativos.length) {
+      box.appendChild(el('section', { class: 'cartao cli-status' }, [
+        el('h2', { text: procs.length ? 'Seus processos foram concluídos' : 'Ainda não encontramos um processo seu' }),
+        el('p', { class: 'suave', text: procs.length ? 'Veja o histórico na aba Processo. Se precisar de algo, fale com o escritório.' : 'Assim que o seu processo for registrado na Justiça, ele aparece aqui automaticamente.' })
+      ]));
+    }
+    ativos.slice(0, 3).forEach(function (p) {
+      var f = faseDe(p), nomeF = FASES[f], t = EXPLICA[nomeF] || ['', '', ''];
+      var trilha = el('ol', { class: 'cli-trilha', 'aria-label': 'Etapa ' + (f + 1) + ' de ' + FASES.length + ': ' + nomeF });
+      FASES.forEach(function (n, i) { trilha.appendChild(el('li', { class: i < f ? 'feita' : i === f ? 'atual' : '', text: n })); });
+      var pericia = p.pericia_em && new Date(p.pericia_em).getTime() > Date.now() - 864e5;
+      var dias = pericia ? Math.ceil((new Date(p.pericia_em) - Date.now()) / 864e5) : 0;
+      var ultima = (p.movimentacoes || []).filter(function (m) { return !/^Publica/.test(m.nome || ''); })[0];
+      var nota = (p.notas || [])[0];
+      box.appendChild(el('section', { class: 'cartao cli-status', 'aria-label': 'Situação do processo' }, [
+        el('span', { class: 'cli-rotulo', text: ativos.length > 1 ? (p.apelido || p.classe || 'Processo') : 'Seu processo agora' }),
+        el('h2', { text: nomeF }),
+        el('p', { text: t[0] }),
+        trilha,
+        el('p', { class: 'peq suave', text: 'Etapa ' + (f + 1) + ' de ' + FASES.length + '. ' + t[1] })
+      ]));
+      if (pericia) box.appendChild(el('section', { class: 'cartao cli-alerta' }, [
+        el('b', { text: dias <= 0 ? 'Sua perícia é hoje' : dias === 1 ? 'Sua perícia é amanhã' : 'Sua perícia é em ' + dias + ' dias' }),
+        el('span', { text: dataLonga(p.pericia_em) }),
+        el('button', { type: 'button', class: 'link', text: 'Ver como se preparar', onclick: function () { abre('guia', true); guiaPericia.open = true; setTimeout(function () { guiaPericia.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 150); } })
+      ]));
+      box.appendChild(el('section', { class: 'cartao cli-voce-agora' }, [
+        el('h3', { text: 'O que você precisa fazer agora' }),
+        el('p', { text: pericia ? 'Comparecer à perícia no dia e horário marcados, com documento com foto e todos os exames e atestados.' : t[2] })
+      ]));
+      if (nota) box.appendChild(el('section', { class: 'cartao cli-recado' }, [el('b', { text: 'Recado do escritório' }), el('p', { text: nota.texto })]));
+      if (ultima) box.appendChild(el('p', { class: 'peq suave cli-ultima', text: 'Última movimentação no tribunal: ' + new Date(ultima.data_hora).toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' }) + '.' }));
+    });
+    if (ativos.length > 3) box.appendChild(el('button', { type: 'button', class: 'btn sec', text: 'Ver todos os ' + ativos.length + ' processos', onclick: function () { abre('processo', true); } }));
+    if (sinc) box.appendChild(el('div', { class: 'cli-vigia', role: 'note' }, [
+      el('span', { class: 'cli-ponto', 'aria-hidden': 'true' }),
+      el('span', null, [el('b', { text: 'Acompanhado de perto. ' }), 'Conferimos o seu processo nos sistemas da Justiça ' + quando(sinc) + '. Se surgir novidade, ela aparece aqui.'])
+    ]));
+    var ladoI = el('div', { class: 'cli-lado' }); box.appendChild(ladoI);
+    ladoI.appendChild(cartaoEquipe());
+    ladoI.appendChild(el('a', { class: 'cartao cli-zap', href: zapLink('Olá! Sou ' + ((det && det.nome) || 'cliente') + ' e tenho uma dúvida sobre o meu processo.'), target: '_blank', rel: 'noopener' }, [
+      el('b', { text: 'Ficou com dúvida?' }), el('span', { text: 'Fale com a equipe pelo WhatsApp' }), el('span', { class: 'cli-seta', 'aria-hidden': 'true', text: '›' })
+    ]));
+    if (avaliar) ladoI.appendChild(avaliar);
+    if (nome && ola) ola.textContent = 'Olá, ' + nome + '!';
+  }
+  window.addEventListener('lanhi:processos', function (e) { montaInicio(e.detail); });
+  montaInicio({ processos: [] });
 })();
 
 </script>
