@@ -12,6 +12,7 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
+      - run: python3 -m pip install --quiet pillow
       - run: python3 .github/scripts/videos.py
       - name: Publicar se mudou
         run: |

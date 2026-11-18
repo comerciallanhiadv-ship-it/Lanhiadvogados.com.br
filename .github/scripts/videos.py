@@ -18,6 +18,7 @@ def le_feed(xml):
     for e in raiz.findall('a:entry', NS):
         vid = e.findtext('yt:videoId', namespaces=NS); tit = (e.findtext('a:title', namespaces=NS) or '').strip()
         pub = e.findtext('a:published', namespaces=NS) or ''
+        tit = re.sub(r'\s*#shorts?\b', '', tit, flags=re.I).strip()
         if vid: out.append({'id': vid, 'titulo': tit, 'publicado': pub[:10]})
     return out
 def eh_short(vid):
@@ -34,12 +35,16 @@ def tag(t):
     return 'Seus direitos'
 def capa(vid):
     if vid in CAPAS_PROPRIAS: return CAPAS_PROPRIAS[vid]
-    os.makedirs(PASTA, exist_ok=True); dest = os.path.join(PASTA, vid + '.jpg')
+    os.makedirs(PASTA, exist_ok=True); dest = os.path.join(PASTA, vid + '.webp')
     if not os.path.exists(dest):
         for nome in ('oar2.jpg', 'hq720.jpg', 'hqdefault.jpg'):
-            try: open(dest, 'wb').write(baixa(f'https://i.ytimg.com/vi/{vid}/{nome}', True)); break
-            except urllib.error.HTTPError: continue
-    return '/img/yt/' + vid + '.jpg' if os.path.exists(dest) else ''
+            try: bruto = baixa(f'https://i.ytimg.com/vi/{vid}/{nome}', True); break
+            except urllib.error.HTTPError: bruto = None
+        if bruto:
+            from PIL import Image; import io
+            im = Image.open(io.BytesIO(bruto)).convert('RGB'); im.thumbnail((540, 960))
+            im.save(dest, 'WEBP', quality=78, method=6)   # ~25 KB em vez de ~100 KB
+    return '/img/yt/' + vid + '.webp' if os.path.exists(dest) else ''
 def main():
     lista = []
     try: lista = le_feed(baixa('https://www.youtube.com/feeds/videos.xml?playlist_id=UUSH' + CANAL[2:]))
@@ -56,7 +61,7 @@ def main():
     novo['atualizado_em'] = __import__('datetime').datetime.utcnow().strftime('%Y-%m-%dT%H:%MZ')
     json.dump(novo, open(ARQ, 'w'), ensure_ascii=False, indent=1)
     if os.path.isdir(PASTA):
-        manter = {v['id'] + '.jpg' for v in lista}
+        manter = {v['id'] + '.webp' for v in lista}
         for f in os.listdir(PASTA):
             if f not in manter: os.remove(os.path.join(PASTA, f))
     print('atualizado:', [v['titulo'] for v in lista]); return 0
