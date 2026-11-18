@@ -918,6 +918,7 @@ html.claro section:not(.dark) .eyebrow.cine{color:#1b5fc4!important}
 .calc-cta small,html.claro .calc-cta small{color:#fff}
 html .hero .eyebrow,html.claro .hero .eyebrow{color:#9cc4ff!important;text-shadow:0 1px 3px rgba(0,0,0,.8),0 0 14px rgba(0,0,0,.55)}
 </style>
+<style id="videos-css">.v-canal{display:inline-block;margin-top:12px;color:#fff;font-weight:700;font-size:14.5px;text-decoration:underline;text-underline-offset:3px}.v-canal:focus-visible{outline:3px solid #ffd257;outline-offset:3px}.vthumb{background:#111}</style>
 </head>
 <body><script>(function(){if(/[?&]app=1/.test(location.search)||(window.matchMedia&&matchMedia("(display-mode: standalone)").matches)){location.replace("cliente/");return}var d=document.documentElement,q=location.search,v=false;try{v=sessionStorage.getItem("lanhi-entrada")==="1"}catch(e){}var app=/[?&]app=1/.test(q)||(window.matchMedia&&matchMedia("(display-mode: standalone)").matches);var anuncio=/[?&](utm_|fbclid|gclid)/.test(q);if(v||location.hash||(anuncio&&!app))return;d.classList.add("com-intro")})()</script><div id="intro" aria-hidden="true"><div class="intro-marca"><span class="logo" role="img" aria-label="Lanhi Advogados"></span><span class="intro-barra"></span></div><div class="intro-escolha"><p class="intro-kicker">Advocacia previdenciária</p></div></div></div><script>(function(){var d=document.documentElement,i=document.getElementById("intro");if(!i||!d.classList.contains("com-intro"))return;var foi=false;function sai(){if(foi)return;foi=true;try{sessionStorage.setItem("lanhi-entrada","1")}catch(e){}i.classList.add("saindo");setTimeout(function(){d.classList.remove("com-intro");i.remove()},450)}var curto=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;setTimeout(sai,curto?600:2100);i.addEventListener("click",sai);document.addEventListener("keydown",sai,{once:true})})()</script>
 
@@ -1284,7 +1285,7 @@ document.getElementById('mapaFechar').onclick=fechar;document.addEventListener('
 <section class="dark videos" id="videos">
   <div class="wrap vhead">
     <div><span class="eyebrow">Vídeos · YouTube Shorts</span><h2 style="margin-top:12px">Felipe Lanhi explica os seus direitos</h2></div>
-    <p class="lead" style="max-width:40ch">Vídeos curtos, em linguagem simples, sobre os benefícios do INSS e o que fazer em cada situação.</p>
+    <div><p class="lead" style="max-width:40ch">Os vídeos mais recentes do canal: curtos, em linguagem simples, sobre os benefícios do INSS e o que fazer em cada situação.</p><a class="v-canal" href="https://www.youtube.com/@felipelanhi/shorts" target="_blank" rel="noopener">Ver todos no canal do YouTube ↗</a></div>
   </div>
   <div class="track-outer"><div class="track vtrack" id="vTrack" tabindex="0" aria-label="Vídeos: arraste para os lados"><a class="vcard" href="https://youtube.com/shorts/rFHr4URWFmw" target="_blank" rel="noopener" data-vid="rFHr4URWFmw" aria-label="Assistir: 5 dúvidas sobre o INSS que você não pergunta pra ninguém">
   <span class="vthumb"><img src="/img/390a0606522d.webp" alt="Capa do vídeo: 5 dúvidas sobre o INSS que você não pergunta pra ninguém" loading="lazy" decoding="async" width="800" height="1200"><span class="vpc"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i></span></span>
@@ -1385,11 +1386,16 @@ document.getElementById('mapaFechar').onclick=fechar;document.addEventListener('
   const vm=document.getElementById('vmodal'), vf=document.getElementById('vmFrame'), vy=document.getElementById('vmYt');
   const canEmbed=location.protocol==='https:' && !/claude|anthropic|usercontent/.test(location.hostname);
   function closeV(){vm.hidden=true;vf.innerHTML=''}
-  document.querySelectorAll('.vcard').forEach(c=>c.addEventListener('click',e=>{
+  document.getElementById('vTrack').addEventListener('click',e=>{const c=e.target.closest('.vcard');if(!c)return;
     if(!canEmbed||c.closest('.track').dataset.moved==='1')return;
     e.preventDefault();const id=c.dataset.vid;vy.href=c.href;
     vf.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&playsinline=1" title="Vídeo do YouTube" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
-    vm.hidden=false;document.getElementById('vmClose').focus()}));
+    vm.hidden=false;document.getElementById('vmClose').focus()});
+  (function(){const tr=document.getElementById('vTrack');const esc=t=>String(t||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+    const play='<span class="vpc"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i></span>';
+    fetch('/videos.json',{cache:'no-cache'}).then(r=>r.ok?r.json():null).then(d=>{const v=d&&Array.isArray(d.videos)?d.videos.filter(x=>x&&/^[\w-]{6,20}$/.test(x.id)).slice(0,7):[];if(!v.length)return;
+      tr.innerHTML=v.map(x=>'<a class="vcard" href="https://youtube.com/shorts/'+x.id+'" target="_blank" rel="noopener" data-vid="'+x.id+'" aria-label="Assistir: '+esc(x.titulo)+'"><span class="vthumb">'+(x.capa&&x.capa[0]==='/'?'<img src="'+esc(x.capa)+'" alt="Capa do vídeo: '+esc(x.titulo)+'" loading="lazy" decoding="async" width="800" height="1200">':'')+play+'</span><span class="vinfo"><span class="vtag">'+esc(x.tag||'Seus direitos')+'</span><span class="vt">'+esc(x.titulo)+'</span><span class="vgo">Assistir agora · YouTube Shorts</span></span></a>').join('');
+      tr.scrollLeft=0;tr.dispatchEvent(new Event('scroll'))}).catch(()=>{})})();
   document.getElementById('vmClose').onclick=closeV;
   vm.addEventListener('click',e=>{if(e.target===vm)closeV()});
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!vm.hidden)closeV()});
