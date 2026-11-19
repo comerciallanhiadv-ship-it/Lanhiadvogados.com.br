@@ -11,13 +11,13 @@
 <meta name="robots" content="noindex, nofollow">
 <title>HiAdv</title>
 <meta name="description" content="Aplicativo da Lanhi Advogados, de uso restrito a clientes e equipe.">
-<meta name="theme-color" content="#0e0e0e">
+<meta name="theme-color" content="#141414">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <link rel="icon" href="favicon-48.png" sizes="48x48">
 <link rel="preload" href="/fontes/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin><style id="fonte-inter">@font-face{font-family:"Inter";font-style:normal;font-weight:400 800;font-display:swap;src:url(/fontes/inter-latin-wght-normal.woff2) format("woff2")}</style>
-<link rel="stylesheet" href="css/estilo16.bae8c2afe7.css">
+<link rel="stylesheet" href="css/estilo17.bae8c2afe7.css">
 <script>
 // Modo claro ou escuro (escolha guardada no aparelho). Roda no <head> para não piscar.
 // O app da equipe abre no modo claro e guarda a própria escolha; o do cliente abre no escuro.
@@ -69,22 +69,7 @@
 #telaLogin .ent-emerg[open]>summary{display:block;margin-bottom:10px;opacity:1}
 </style>
 <link rel="stylesheet" href="css/eq-modulos.5512b94402.css">
-<style id="hiadv-tema">
-/* HiAdv: preto, branco e cinzas neutros; dourado só em detalhes */
-html[data-app]{--hi-ouro:#a8874f;--e-fundo:#f5f5f4;--e-sup:#ffffff;--e-sup2:#efefee;--e-tx:#111111;--e-tx2:#5f6166;--e-prim:#111111;--e-prim-tx:#ffffff;--e-prim-suave:#ececeb;--e-ouro:var(--hi-ouro);--e-linha:rgba(17,17,17,.09);
-  --st0:#6b7076;--st1:#566d86;--st2:#4f7a78;--st3:#617a53;--st4:#93793f;--st5:#966346;--st6:#8c5866;--st7:#6c6386;--stf:#8b8d90}
-html[data-app]:not(.claro){--hi-ouro:#c9a872;--e-fundo:#0e0e0e;--e-sup:#171717;--e-sup2:#202020;--e-tx:#f3f3f2;--e-tx2:#a3a5a8;--e-prim:#f3f3f2;--e-prim-tx:#111111;--e-prim-suave:rgba(243,243,242,.08);--e-linha:rgba(255,255,255,.08);
-  --st0:#9aa0a6;--st1:#8ea4bd;--st2:#86b0ad;--st3:#9db58c;--st4:#d2b57a;--st5:#d39c7c;--st6:#cd93a1;--st7:#a59ec6;--stf:#9b9da0}
-.hi-marca{display:inline-flex;align-items:flex-end;gap:3px;font:700 21px/1 "Inter","Segoe UI",system-ui,sans-serif;letter-spacing:-.035em;color:var(--e-tx)}
-.hi-marca i{display:block;width:6px;height:6px;margin-bottom:3px;border-radius:1px;background:var(--hi-ouro)}
-.hi-marca.grande{font-size:46px;gap:6px;color:#fff}.hi-marca.grande i{width:11px;height:11px;margin-bottom:7px}
-html[data-app] .topo{box-shadow:inset 0 -1px 0 color-mix(in srgb,var(--hi-ouro) 35%,transparent)}
-html[data-app] :focus-visible{outline:2px solid var(--hi-ouro)!important;outline-offset:2px}
-html[data-app="equipe"] .cs-com-espacos>.cs-abas button[aria-selected="true"]{box-shadow:inset 2px 0 0 var(--hi-ouro)}
-html[data-app="equipe"] [data-aba].on{box-shadow:inset 0 -2px 0 var(--hi-ouro)}
-html[data-app] .link{color:var(--e-tx)!important;text-decoration:underline;text-decoration-color:var(--hi-ouro);text-decoration-thickness:1.5px;text-underline-offset:4px}
-html[data-app] .ent-arte,html[data-app] .faixa-logo{background:#0e0e0e}
-</style>
+<link rel="stylesheet" href="css/hiadv-tema.61e81ae153.css">
 <style id="acess-app">.acess-topo svg{display:block;width:20px;height:20px}html[data-app="equipe"].eq-logado .topo .acess-topo{display:grid!important;margin-left:auto}html[data-app="equipe"].eq-logado .topo .acess-topo+.tema-btn{margin-left:0}</style>
 </head>
 <body>
@@ -105,8 +90,8 @@ html[data-app] .ent-arte,html[data-app] .faixa-logo{background:#0e0e0e}
   <section id="telaLogin" data-tela class="cartao centro esconde">
     <div class="faixa-logo"><span class="hi-marca grande" role="img" aria-label="HiAdv">HiAdv<i></i></span></div>
     <p class="nome-app">Sistema jurídico do seu escritório</p>
-    <h1>Área do Colaborador</h1>
-    <p class="suave peq ent-sub">Entre com o seu e-mail e a sua senha do escritório.</p>
+    <h1>Entrar</h1>
+    <p class="suave peq ent-sub">Use o e-mail que o seu escritório cadastrou.</p>
     <div id="instalarEquipe" class="instalar esconde" role="dialog" aria-label="Instalar o app da equipe">
       <span class="inst-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M12 7v7M9 11l3 3 3-3"/></svg></span>
       <p id="instalarEqTxt"><b>Instale o HiAdv</b><br>Abra o HiAdv com um toque, direto da tela inicial.</p>
@@ -787,7 +772,7 @@ html[data-app] .ent-arte,html[data-app] .faixa-logo{background:#0e0e0e}
 var m=document.querySelector('meta[name=lanhi-config]');window.LANHI_CONFIG=JSON.parse(m.getAttribute('content'));
 </script>
 <script src="js/supabase.4d53a7fb5c.js" defer></script>
-<script src="js/comum.978cadec94.js" defer></script>
+<script src="js/comum.7da2353fb6.js" defer></script>
 <script src="js/traducoes.15b4b462a8.js" defer></script>
 <script src="js/equipe.855d9cb1f3.js" defer></script>
 <script src="js/ui-equipe.f934f7d47c.js" defer></script>
@@ -801,6 +786,7 @@ var m=document.querySelector('meta[name=lanhi-config]');window.LANHI_CONFIG=JSON
 <script src="js/casos-equipe.77817e309f.js" defer></script>
 <script src="js/parceiros-equipe.74a8abcfca.js" defer></script>
 <script src="js/sara-equipe.90df08e131.js" defer></script>
+<script src="js/parte15.6c4056e187.js" defer></script>
 <script src="js/acessibilidade.2c2b2d5816.js" defer></script>
 </body>
 </html>
