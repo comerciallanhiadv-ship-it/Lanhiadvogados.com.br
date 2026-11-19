@@ -109,6 +109,8 @@ body.embed header,body.embed footer,body.embed .topo,body.embed .rodape{display:
 .destaque .valor{font-size:clamp(46px,13vw,64px);font-variant-numeric:tabular-nums;color:#fff;text-shadow:0 4px 30px rgba(93,156,245,.35)}
 .destaque .valor .rs{font-size:.42em;font-weight:600;color:#b9c9e6;margin-right:6px;vertical-align:.62em;letter-spacing:0}
 .destaque .valor small{display:block;margin:8px 0 0;font-size:13.5px;color:#9fb0c8}
+.destaque .valor.fx2{font-size:clamp(32px,8.6vw,46px)}.valor .ate,.kpi .ate{font-size:.55em;font-weight:500;color:#9fb0c8;letter-spacing:0}
+.destaque .kpi strong:has(.ate){font-size:15.5px}
 .destaque .kpis{margin-top:16px}
 .destaque .kpi{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06)}
 .destaque .kpi small{color:#9fb0c8}.destaque .kpi strong{font-size:19px;font-variant-numeric:tabular-nums;color:#fff}
@@ -250,14 +252,14 @@ input[type=range]{width:100%;accent-color:var(--tx)}
   <div class="campo"><div class="lb">Salários</div><div class="chips" id="cModo"><button class="chip on" data-v="media">Uma média</button><button class="chip" data-v="periodos">Por períodos</button></div><div id="cPer" style="display:none;margin-top:10px"><div id="cPerLista"></div><button class="add" id="cAdd">+ Período</button></div></div>
  </details>
  <div class="conta" id="oPassos"></div>
- <p class="nota">Teto do INSS em 2026: R$ 8.475,55. Salário mínimo: R$ 1.621,00. Sem correção dos salários antigos, juros e correção dos atrasados, que costumam aumentar os valores. O valor real depende do seu CNIS e da perícia.</p>
+ <p class="nota">Teto do INSS em 2026: R$ 8.475,55. Salário mínimo: R$ 1.621,00. A faixa é conservadora de propósito: usamos o menor salário da faixa e mostramos também um valor 20% abaixo da conta. Não entram a correção dos salários antigos nem os juros e a correção dos atrasados. O valor real depende do seu CNIS e da perícia; esta estimativa não é promessa de resultado.</p>
 </div></div>
 </main>
 <div class="rodape">Lanhi Advogados · Capinzal (SC) · Informação de caráter educativo<br>Esqueleto: Mariana Ruiz Villarreal (LadyofHats), domínio público, Wikimedia Commons · Musculatura: js-rich-body-highlighter (MIT)</div>
 <script src="esqueleto-data.js"></script>
 <script src="esqueleto-pronto.js"></script><script src="geo.js"></script>
 <script src="app.js"></script>
-<script src="app2.js"></script>
+<script src="app2.js?v=20261119b"></script>
 <script src="corpo-data.js"></script>
 <script src="app3.js"></script>
 </body>
