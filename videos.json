@@ -2,6 +2,13 @@
  "canal": "@felipelanhi",
  "videos": [
   {
+   "id": "dmL7sarALoo",
+   "titulo": "Afastado pelo INSS pode ser mandado embora? A regra que protege você",
+   "publicado": "2026-11-18",
+   "tag": "INSS",
+   "capa": "/img/yt/dmL7sarALoo-9e1c6c.webp"
+  },
+  {
    "id": "GHdXyPg9-4E",
    "titulo": "Ganhou afastamento na justiça? O INSS ainda pode te chamar para a perícia",
    "publicado": "2026-11-16",
@@ -51,13 +58,6 @@
    "capa": "/img/yt/kmWklcmKcxI-7b8500.webp"
   },
   {
-   "id": "7pCqU49o_3s",
-   "titulo": "Advogado previdenciarista raiz vai até o cliente | Bastidores EP. 01",
-   "publicado": "2026-10-29",
-   "tag": "Seus direitos",
-   "capa": "/img/yt/7pCqU49o_3s-468c9e.webp"
-  },
-  {
    "id": "rFHr4URWFmw",
    "titulo": "5 dúvidas sobre o INSS que você não pergunta pra ninguém",
    "publicado": "2026-11-04",
@@ -90,5 +90,5 @@
    "capa": "/img/yt/TGI6pP_E7zg-919c8b.webp"
   }
  ],
- "atualizado_em": "2026-11-18T18:33Z"
+ "atualizado_em": "2026-11-19T01:27Z"
 }
