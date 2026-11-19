@@ -1,6 +1,6 @@
 {
-  "name": "HiAdv · Lanhi Advogados",
-  "short_name": "HiAdv",
+  "name": "Lanhi Advogados Equipe",
+  "short_name": "Lanhi Advogados Equipe",
   "description": "App interno da equipe da Lanhi Advogados: painel, clientes, processos e acessos.",
   "id": "/equipe/",
   "start_url": "./?app=1",

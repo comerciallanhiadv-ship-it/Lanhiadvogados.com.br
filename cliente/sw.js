@@ -1,6 +1,6 @@
 // Service worker do app Lanhi Advogados Cliente: abre rápido e funciona com internet fraca.
 // Nunca guarda dados de clientes; só os arquivos do próprio app.
-const VERSAO = 'lanhi-20261119-1938-cliente';
+const VERSAO = 'lanhi-20261119-2001-cliente';
 const FIXO = 'lanhi-arquivos-cliente-fixos';
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(VERSAO).then((c) => c.addAll(['./', 'icon-192.png'])).catch(() => {}));
