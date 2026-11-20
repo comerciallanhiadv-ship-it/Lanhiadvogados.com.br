@@ -2,6 +2,13 @@
  "canal": "@felipelanhi",
  "videos": [
   {
+   "id": "SV2XRQ6kb0A",
+   "titulo": "Profissão errada no laudo da perícia pode custar o teu benefício",
+   "publicado": "2026-11-19",
+   "tag": "Perícia",
+   "capa": "/img/yt/SV2XRQ6kb0A-cf8254.webp"
+  },
+  {
    "id": "dmL7sarALoo",
    "titulo": "Afastado pelo INSS pode ser mandado embora? A regra que protege você",
    "publicado": "2026-11-18",
@@ -51,13 +58,6 @@
    "capa": "/img/yt/eICaoJlEMZw-36fc64.webp"
   },
   {
-   "id": "kmWklcmKcxI",
-   "titulo": "O pior erro depois do acidente (ranking do 8º ao 1º)",
-   "publicado": "2026-10-30",
-   "tag": "Acidente",
-   "capa": "/img/yt/kmWklcmKcxI-7b8500.webp"
-  },
-  {
    "id": "rFHr4URWFmw",
    "titulo": "5 dúvidas sobre o INSS que você não pergunta pra ninguém",
    "publicado": "2026-11-04",
@@ -90,5 +90,5 @@
    "capa": "/img/yt/TGI6pP_E7zg-919c8b.webp"
   }
  ],
- "atualizado_em": "2026-11-19T01:27Z"
+ "atualizado_em": "2026-11-20T01:21Z"
 }
