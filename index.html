@@ -438,6 +438,11 @@ aside.gloss.on{transform:none}
 /* menu móvel */
 .mnav{position:fixed;inset:0 0 0 auto;width:min(320px,86vw);background:var(--bg);z-index:90;transform:translateX(102%);transition:transform .3s;padding:80px 26px;display:grid;align-content:start;gap:18px;box-shadow:-20px 0 60px -20px rgba(0,0,0,.4)}
 .mnav.on{transform:none}
+.mnav,.laws-list,.lado-corpo{overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+aside.lado,aside.laws,aside.gloss,.mnav{overscroll-behavior:contain;touch-action:pan-y}
+.lado-chips{overscroll-behavior-x:contain;touch-action:pan-x}
+.scrim{touch-action:none}
+.mnav .mnav-acesso a.mnav-hiadv{color:#c9a872}
 .mnav a{text-decoration:none;font-weight:700;font-size:19px}
 .mnav .x{position:absolute;top:20px;right:20px}
 
@@ -999,7 +1004,7 @@ footer .ft-tit{font-family:var(--body);font-weight:700;line-height:1.3}
 
 <nav class="mnav" id="mnav" aria-label="Menu móvel">
   <button class="x" data-close aria-label="Fechar menu">×</button>
-  <div class="mnav-acesso"><a class="btn btn-primary" href="app.html#cliente">Baixar o app do cliente</a><a class="mnav-equipe" href="app.html#equipe">App da equipe (colaboradores)</a></div>
+  <div class="mnav-acesso"><a class="btn btn-primary" href="app.html#cliente">Baixar o app do cliente</a><a class="mnav-equipe" href="app.html#equipe">App da equipe (colaboradores)</a><a class="mnav-equipe mnav-hiadv" href="/hiadv/?instalar=1">Baixar o HiAdv, sistema para advogados</a></div>
   <button class="mnav-tema mnav-acess" type="button" data-acess><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="4.6" r="1.9"/><path d="M4.5 8.6c2.4.8 4.9 1.2 7.5 1.2s5.1-.4 7.5-1.2M12 9.8v4.4M12 14.2l-3 6.3M12 14.2l3 6.3"/></svg><span>Acessibilidade</span></button><button class="mnav-tema" type="button" data-tema aria-label="Mudar para o modo claro"><svg class="sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg><svg class="lua" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg><span class="t-claro">Modo claro</span><span class="t-escuro">Modo escuro</span></button>
   <a href="#areas">Benefícios</a><a href="#mapa">Calcular auxílio-acidente</a><a href="#videos">Vídeos</a><a href="#escritorio">O escritório</a><a href="#advogados">Advogados</a><a href="#" data-open-gloss>Glossário</a><a href="#avaliacoes">Avaliações</a><a href="/avaliar/">★ Avaliar o escritório</a><a href="#duvidas">Dúvidas</a>
   <a class="btn btn-primary" href="https://wa.me/5549999045913?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Lanhi%20Advogados%20e%20quero%20uma%20an%C3%A1lise%20do%20meu%20caso." target="_blank" rel="noopener">Falar com um advogado</a>
@@ -1566,6 +1571,13 @@ document.addEventListener("click",function(e){
   var a=e.target.closest('a[href^="#"]');if(a){var id=a.getAttribute("href").slice(1);if(IDS.indexOf(id)>=0){e.preventDefault();e.stopPropagation();abreLado(id)}}
 },true);
 scrim&&scrim.addEventListener("click",fechaLado);
+/* trava a página de trás enquanto qualquer painel lateral estiver aberto (inclusive no celular) */
+(function(){var ids=["lado","mnav","laws","gloss"],els=ids.map(function(i){return document.getElementById(i)}).filter(Boolean),y=0,preso=false,b=document.body;
+  function confere(){var aberto=els.some(function(el){return el.classList.contains("on")});
+    if(aberto&&!preso){y=window.scrollY||0;preso=true;b.style.position="fixed";b.style.top=-y+"px";b.style.left="0";b.style.right="0";b.style.width="100%";b.style.overflow="hidden"}
+    else if(!aberto&&preso){preso=false;b.style.position=b.style.top=b.style.left=b.style.right=b.style.width=b.style.overflow="";document.documentElement.style.overflow="";var h=document.documentElement,s=h.style.scrollBehavior;h.style.scrollBehavior="auto";window.scrollTo(0,y);h.style.scrollBehavior=s}}
+  if("MutationObserver" in window){var mo=new MutationObserver(confere);els.forEach(function(el){mo.observe(el,{attributes:true,attributeFilter:["class"]})})}
+  scrim&&scrim.addEventListener("touchmove",function(e){e.preventDefault()},{passive:false})})();
 addEventListener("keydown",function(e){if(e.key==="Escape")fechaLado()});
 if(IDS.indexOf(location.hash.slice(1))>=0)setTimeout(function(){abreLado(location.hash.slice(1))},300);
 var reduz=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
